@@ -6,9 +6,100 @@
     <description>Recent content in Tags on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2020 13:37:39 -0800</lastBuildDate>
     
 	<atom:link href="https://melastmohican.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>automation</title>
+      <link>https://melastmohican.github.io/tags/automation/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://melastmohican.github.io/tags/aws/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloudformation</title>
+      <link>https://melastmohican.github.io/tags/cloudformation/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/cloudformation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://melastmohican.github.io/tags/code/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://melastmohican.github.io/tags/development/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>infrastructure</title>
+      <link>https://melastmohican.github.io/tags/infrastructure/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>migration</title>
+      <link>https://melastmohican.github.io/tags/migration/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>resource</title>
+      <link>https://melastmohican.github.io/tags/resource/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/resource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://melastmohican.github.io/tags/terraform/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tool</title>
+      <link>https://melastmohican.github.io/tags/tool/</link>
+      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/tool/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

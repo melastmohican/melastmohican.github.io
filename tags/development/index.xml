@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>melastmohican.github.io</title>
-    <link>https://melastmohican.github.io/</link>
-    <description>Recent content on melastmohican.github.io</description>
+    <title>development on melastmohican.github.io</title>
+    <link>https://melastmohican.github.io/tags/development/</link>
+    <description>Recent content in development on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 14:24:51 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 13:37:39 -0800</lastBuildDate>
     
-	<atom:link href="https://melastmohican.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://melastmohican.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://melastmohican.github.io/about/</link>
-      <pubDate>Thu, 05 Mar 2020 14:24:51 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/about/</guid>
-      <description>It should be noted that no ethically-trained software engineer would ever consent to write a NukeChicago procedure. Basic professional ethics would instead require him to write a NukeCity procedure, to which Chicago could be given as a parameter.
-Why did the API go to sleep? It needed some REST.
-There are 10 types of people in this world, those who understand binary and those who don&amp;rsquo;t.
-How many programmers does it take to change a light bulb?</description>
-    </item>
     
     <item>
       <title>Migrating existing AWS infrastructure to new acount</title>
