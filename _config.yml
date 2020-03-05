@@ -28,7 +28,7 @@ twitter_username: melastmohican
 github_username:  melastmohican
 
 # Build settings
-theme: jekyll-theme-slate
+theme: minima
 plugins:
   - jekyll-feed
 
