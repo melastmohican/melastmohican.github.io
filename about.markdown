@@ -4,15 +4,20 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+It should be noted that no ethically-trained software engineer would ever consent to write a NukeChicago procedure. Basic professional ethics would instead require him to write a NukeCity procedure, to which Chicago could be given as a parameter.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Why did the API go to sleep? It needed some REST.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+There are 10 types of people in this world, those who understand binary and those who don't.
 
+How many programmers does it take to change a light bulb? None, that's a hardware problem.
 
-[jekyll-organization]: https://github.com/jekyll
+Never argue with an idiot. They will only bring you down to their level and beat you with experience.
+
+Programs should be written for people to read, and only incidentally for machines to execute.
+
+In the Beginning, there was no inheritance and no composition, only code.
+
+You must cut down the mightiest tree in the forest ... with a herring.
+
+Programming is 10% science, 20% ingenuity, and 70% getting the ingenuity to work with the science.
