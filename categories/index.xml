@@ -6,7 +6,7 @@
     <description>Recent content in Categories on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 13:37:39 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2020 09:50:53 -0800</lastBuildDate>
     
 	<atom:link href="https://melastmohican.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Code</title>
       <link>https://melastmohican.github.io/categories/code/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/categories/code/</guid>
       <description></description>
@@ -23,9 +23,45 @@
     <item>
       <title>Development</title>
       <link>https://melastmohican.github.io/categories/development/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Generation</title>
+      <link>https://melastmohican.github.io/categories/generation/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/generation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HowTo</title>
+      <link>https://melastmohican.github.io/categories/howto/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>https://melastmohican.github.io/categories/project/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://melastmohican.github.io/categories/template/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/template/</guid>
       <description></description>
     </item>
     

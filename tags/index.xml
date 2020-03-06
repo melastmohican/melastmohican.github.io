@@ -6,7 +6,7 @@
     <description>Recent content in Tags on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 13:37:39 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2020 09:50:53 -0800</lastBuildDate>
     
 	<atom:link href="https://melastmohican.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,90 @@
     <item>
       <title>automation</title>
       <link>https://melastmohican.github.io/tags/automation/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>build</title>
+      <link>https://melastmohican.github.io/tags/build/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://melastmohican.github.io/tags/cli/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://melastmohican.github.io/tags/code/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://melastmohican.github.io/tags/development/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>generation</title>
+      <link>https://melastmohican.github.io/tags/generation/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/generation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://melastmohican.github.io/tags/java/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maven</title>
+      <link>https://melastmohican.github.io/tags/maven/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>project</title>
+      <link>https://melastmohican.github.io/tags/project/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tool</title>
+      <link>https://melastmohican.github.io/tags/tool/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/tags/tool/</guid>
       <description></description>
     </item>
     
@@ -35,24 +116,6 @@
       <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/tags/cloudformation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>code</title>
-      <link>https://melastmohican.github.io/tags/code/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/tags/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>development</title>
-      <link>https://melastmohican.github.io/tags/development/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/tags/development/</guid>
       <description></description>
     </item>
     
@@ -89,15 +152,6 @@
       <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/tags/terraform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tool</title>
-      <link>https://melastmohican.github.io/tags/tool/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/tags/tool/</guid>
       <description></description>
     </item>
     

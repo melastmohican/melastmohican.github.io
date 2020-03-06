@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Maven Archetypes Project Templating</title>
+      <link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</guid>
+      <description>Intro I am developer and I like DRY. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use Spring Initializr to boostrap your new application or even better without leaving the shell Spring Boot CLI. You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files?</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://melastmohican.github.io/about/</link>
       <pubDate>Thu, 05 Mar 2020 14:24:51 -0800</pubDate>

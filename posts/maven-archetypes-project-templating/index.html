@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Mariusz Jurgielewicz">
+    <meta name="description" content="melastmohican.github.io">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Maven Archetypes Project Templating"/>
+<meta name="twitter:description" content="Archetype is a Maven project templating toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. Archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates. Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed by your project or organization. "/>
+
+    <meta property="og:title" content="Maven Archetypes Project Templating" />
+<meta property="og:description" content="Archetype is a Maven project templating toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. Archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates. Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed by your project or organization. " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://melastmohican.github.io/posts/maven-archetypes-project-templating/" />
+<meta property="article:published_time" content="2020-03-06T09:50:53-08:00" />
+<meta property="article:modified_time" content="2020-03-06T09:50:53-08:00" />
+
+
+    
+      <base href="https://melastmohican.github.io/posts/maven-archetypes-project-templating/">
+    
+    <title>
+  Maven Archetypes Project Templating · melastmohican.github.io
+</title>
+
+    
+      <link rel="canonical" href="https://melastmohican.github.io/posts/maven-archetypes-project-templating/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://melastmohican.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://melastmohican.github.io/css/custom.css" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.66.0" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://melastmohican.github.io/">
+      melastmohican.github.io
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://melastmohican.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://melastmohican.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Maven Archetypes Project Templating</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-03-06T09:50:53-08:00'>
+                March 6, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4-minute read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://melastmohican.github.io/categories/development/">Development</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/categories/project/">Project</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/categories/code/">Code</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/categories/generation/">Generation</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/categories/template/">Template</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/categories/howto/">HowTo</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://melastmohican.github.io/tags/generation/">generation</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/code/">code</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/development/">development</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/maven/">maven</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/java/">java</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/project/">project</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/tool/">tool</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/automation/">automation</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/cli/">cli</a>
+      <span class="separator">•</span>
+    <a href="https://melastmohican.github.io/tags/build/">build</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h2 id="intro">Intro</h2>
+<p>I am developer and I like <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use <a href="https://start.spring.io/">Spring Initializr</a> to boostrap your new application or even better without leaving the shell <a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#cli-init">Spring Boot CLI</a>.  You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files? Wouldn&rsquo;t be nice to have project template and generate new one by answersing few simple questions? Project generation (scaffolding) was made popular by the Ruby on Rails framework and now we got many generators included in popular frameworks or standalone but if you are already using Maven as you your build tool don&rsquo;t look any further.</p>
+<h2 id="maven-archetypes">Maven Archetypes</h2>
+<p>Archetype is a Maven project templating toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. Archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates. Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed by your project or organization.</p>
+<p>Maven provides several archetype <a href="https://maven.apache.org/archetypes/index.html">artifacts</a>.</p>
+<h3 id="creating-a-maven-archetype">Creating a Maven Archetype</h3>
+<p>Creating archetype from scratch is possible but I would recomend pick some existing project and generate archetype from it.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mvn archetype:create-from-project
+</code></pre></div><p>Generated source code can then be found under the target/generated-sources/archetype directory. When you type <code>mvn install</code> in this directory it will install archetype in our local Maven repository (${HOME}/.m2/repository). When archetype is used to generate new project it would create a copy of base project which is not particularly useful. When you start parametrizing your archetype things are getting more interesting.</p>
+<h4 id="dynamic-content">Dynamic content</h4>
+<p>Maven Archetypes use Apache Velocity Engine for incorporating the dynamic content in genereted files. Any file in archetype resources is template but some files need to be escaped because they charcters are used by Velocity. For example XML, Java or Groovy files might use similar characters. You have to define special variable to escape them:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">#set( $symbol_pound = &#39;#&#39; )
+#set( $symbol_dollar = &#39;$&#39; )
+#set( $symbol_escape = &#39;\&#39; )
+</code></pre></div><p>Example from Groovy Script or Jenkins config:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">#set( $symbol_pound = &#39;#&#39; )
+#set( $symbol_dollar = &#39;$&#39; )
+#set( $symbol_escape = &#39;\&#39; )
+${symbol_pound}!groovy
+</code></pre></div><p>You can also apply variable substitution to file names. To inject a property into a file name, surround the property erty name with &ldquo;__&quot;.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">archetype-root/src/main/resources/archetype-resources/src/main/java/__library-name__.java
+</code></pre></div><h4 id="defining-additional-properties">Defining additional properties</h4>
+<p>The main properties that are used by the Velocity engine during a project&rsquo;s file generation are groupId, artifactId, version and package. It is possible to define additional properties that must be valued before the file generation. These additional properties can be provided with default values, which enable not to ask the user for there values. Additional properties are defined in the <code>/src/main/resources/META-INF/maven/archetype-metadata.xml</code> file with:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;archetype-descriptor name=&#34;basic&#34;&gt;
+  &lt;requiredProperties&gt;
+    &lt;requiredProperty key=&#34;property-with-default&#34;&gt;
+      &lt;defaultValue&gt;default-value&lt;/defaultValue&gt;
+    &lt;/requiredProperty&gt;
+    &lt;requiredProperty key=&#34;property-without-default&#34;/&gt;
+  &lt;/requiredProperties&gt;
+...
+&lt;/archetype-descriptor&gt;
+</code></pre></div><h4 id="defining-specific-filesets">Defining specific filesets</h4>
+<p>The filesets contained in the <code>/src/main/resources/META-INF/maven/archetype-metadata.xml</code> file defines the way the project&rsquo;s files located in the JAR file are used by the Archetype Plugin to generate a project. Filesets must define the directory where the files will be searched for which is also the directory where the project&rsquo;s files will be generated.This provide a way to describe a large set of files to be selected for the generation process. Filesets can be filtered, which means the selected files will be used as Velocity templates. A fileset is defined in the archetype-metadata.xml with this fragment:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;fileSets&gt;
+    &lt;fileSet filtered=&#34;true&#34; packaged=&#34;true&#34;&gt;
+      &lt;directory&gt;src/test/java&lt;/directory&gt;
+      &lt;includes&gt;
+        &lt;include&gt;**/*.java&lt;/include&gt;
+      &lt;/includes&gt;
+      &lt;excludes&gt;
+        &lt;exclude&gt;AllTest.java&lt;/exclude&gt;
+      &lt;/excludes&gt;
+    &lt;/fileSet&gt;
+  &lt;/fileSets&gt;
+</code></pre></div><h4 id="sample-archetype-directory-structure">Sample archetype directory structure:</h4>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">archetype-root
+└── src
+    └── main
+        └── resources
+            ├── META-INF
+            │   └── maven
+            └── archetype-resources
+                └── src
+                    └── main
+                        ├── java
+                        │   └── __packageInPathFormat__
+                        │       └── __artifactPackage__
+                        │           ├── config
+                        │           ├── model
+                        │           └── rest
+                        └── resources
+                            └── config
+</code></pre></div><h3 id="installing-the-archetype">Installing the Archetype</h3>
+<p>You can install the archetype by invoking this command:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn install
+</code></pre></div><h3 id="create-a-project-using-archetype">Create a project using archetype</h3>
+<p>You can create a Maven project through the generate goal and existing archetype.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn archetype:generate -DarchetypeGroupId=org.example -DarchetypeArtifactId=msg-archetype-spring-boot2-quickstart -DarchetypeVersion=0.1.0-SNAPSHOT  -DgroupId=org.example  -DartifactId=msg-v1-test-rest
+</code></pre></div><h3 id="run-the-project">Run the project</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mvn spring-boot:run
+</code></pre></div><h3 id="test-on-the-browser">Test on the browser</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">http://localhost:8080/v1/test/status
+</code></pre></div><p>Full list of available archetypes can be generated using <code>mvn archetype:generate</code> :</p>
+<script type="application/javascript" src="https://gist.github.com/melastmohican/c13102eb7c7161edebf34269c57e0597.js"></script>
+
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>No bits were harmed during creation of this page.</p>
+    
+    
+      
+        © 2020
+      
+       Mariusz Jurgielewicz 
+    
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

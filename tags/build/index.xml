@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>build on melastmohican.github.io</title>
+    <link>https://melastmohican.github.io/tags/build/</link>
+    <description>Recent content in build on melastmohican.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Mar 2020 09:50:53 -0800</lastBuildDate>
+    
+	<atom:link href="https://melastmohican.github.io/tags/build/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maven Archetypes Project Templating</title>
+      <link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
+      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</guid>
+      <description>Intro I am developer and I like DRY. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use Spring Initializr to boostrap your new application or even better without leaving the shell Spring Boot CLI. You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files?</description>
+    </item>
+    
+  </channel>
+</rss>

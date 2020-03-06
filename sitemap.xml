@@ -3,6 +3,106 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://melastmohican.github.io/tags/automation/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/build/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/cli/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/code/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/code/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/development/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/development/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/generation/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/generation/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/howto/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/java/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/maven/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/posts/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/project/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/project/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/template/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/tool/</loc>
+    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://melastmohican.github.io/about/</loc>
     <lastmod>2020-03-05T14:24:51-08:00</lastmod>
   </url>
@@ -13,42 +113,12 @@
   </url>
   
   <url>
-    <loc>https://melastmohican.github.io/tags/automation/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://melastmohican.github.io/tags/aws/</loc>
     <lastmod>2020-03-05T13:37:39-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://melastmohican.github.io/categories/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://melastmohican.github.io/tags/cloudformation/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/categories/code/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/tags/code/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/categories/development/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/tags/development/</loc>
     <lastmod>2020-03-05T13:37:39-08:00</lastmod>
   </url>
   
@@ -73,27 +143,12 @@
   </url>
   
   <url>
-    <loc>https://melastmohican.github.io/posts/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://melastmohican.github.io/tags/resource/</loc>
     <lastmod>2020-03-05T13:37:39-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://melastmohican.github.io/tags/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://melastmohican.github.io/tags/terraform/</loc>
-    <lastmod>2020-03-05T13:37:39-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/tags/tool/</loc>
     <lastmod>2020-03-05T13:37:39-08:00</lastmod>
   </url>
   
