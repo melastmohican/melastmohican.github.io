@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>awesome on melastmohican.github.io</title>
+    <link>https://melastmohican.github.io/tags/awesome/</link>
+    <description>Recent content in awesome on melastmohican.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Mar 2020 09:51:44 -0800</lastBuildDate>
+    
+	<atom:link href="https://melastmohican.github.io/tags/awesome/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>List of Awesome Lists</title>
+      <link>https://melastmohican.github.io/posts/awesome-awesome-lists/</link>
+      <pubDate>Sat, 07 Mar 2020 09:51:44 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/posts/awesome-awesome-lists/</guid>
+      <description>Awesome Awesome lists about all kinds of interesting topics
+awesome
+AWS Amazon Web Services Awesome Lists
+Awesome CloudFormation
+JeffRMoore/awesome-cloudformation
+adamchainz/awesome-cloudformation
+donnemartin/awesome-aws
+Awesome AWS Amplify
+Bash Bash Awesome Lists
+Awesome Bash
+awesome-lists/awesome-bash
+Awesome Bash Commands
+Awesome Shell
+uhub/awesome-shell
+Dart Dart Language Awesome Lists
+Awesome Dart
+Awesome Angel
+Awesome Flutter
+Design Patterns Design Patterns Awesome Lists
+Awesome Software Design Patterns
+Awesome design patterns
+Docker Docker Awesome Lists
+Awesome Docker
+veggiemonk/awesome-docker
+devopstrainingblr/awesome-docker
+Golang Go Language Awesome Lists</description>
+    </item>
+    
+  </channel>
+</rss>

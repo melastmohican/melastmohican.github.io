@@ -12,6 +12,40 @@
     
     
     <item>
+      <title>List of Awesome Lists</title>
+      <link>https://melastmohican.github.io/posts/awesome-awesome-lists/</link>
+      <pubDate>Sat, 07 Mar 2020 09:51:44 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/posts/awesome-awesome-lists/</guid>
+      <description>Awesome Awesome lists about all kinds of interesting topics
+awesome
+AWS Amazon Web Services Awesome Lists
+Awesome CloudFormation
+JeffRMoore/awesome-cloudformation
+adamchainz/awesome-cloudformation
+donnemartin/awesome-aws
+Awesome AWS Amplify
+Bash Bash Awesome Lists
+Awesome Bash
+awesome-lists/awesome-bash
+Awesome Bash Commands
+Awesome Shell
+uhub/awesome-shell
+Dart Dart Language Awesome Lists
+Awesome Dart
+Awesome Angel
+Awesome Flutter
+Design Patterns Design Patterns Awesome Lists
+Awesome Software Design Patterns
+Awesome design patterns
+Docker Docker Awesome Lists
+Awesome Docker
+veggiemonk/awesome-docker
+devopstrainingblr/awesome-docker
+Golang Go Language Awesome Lists</description>
+    </item>
+    
+    <item>
       <title>Maven Archetypes Project Templating</title>
       <link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
       <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
