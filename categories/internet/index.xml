@@ -6,7 +6,7 @@
     <description>Recent content in Internet on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Mar 2020 09:51:44 -0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 09:51:44 -0800</lastBuildDate>
     
 	<atom:link href="https://melastmohican.github.io/categories/internet/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,11 +14,11 @@
     <item>
       <title>List of Awesome Lists</title>
       <link>https://melastmohican.github.io/posts/awesome-awesome-lists/</link>
-      <pubDate>Sat, 07 Mar 2020 09:51:44 -0800</pubDate>
+      <pubDate>Mon, 09 Mar 2020 09:51:44 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/posts/awesome-awesome-lists/</guid>
       <description>Awesome Awesome lists about all kinds of interesting topics
-awesome
+Awesome
 AWS Amazon Web Services Awesome Lists
 Awesome CloudFormation
 JeffRMoore/awesome-cloudformation
@@ -31,18 +31,18 @@ awesome-lists/awesome-bash
 Awesome Bash Commands
 Awesome Shell
 uhub/awesome-shell
+Awesome dotfiles
+Cheat Sheets Cheat Sheets Lists
+Cheatography
+Awesome-Cheatsheets
+Awesome Cheatsheet
+Cloud Native Cloud Native Lists
+Awesome Cloud Native
+CSV CSV Awesome Lists
+Awesome CSV
 Dart Dart Language Awesome Lists
 Awesome Dart
-Awesome Angel
-Awesome Flutter
-Design Patterns Design Patterns Awesome Lists
-Awesome Software Design Patterns
-Awesome design patterns
-Docker Docker Awesome Lists
-Awesome Docker
-veggiemonk/awesome-docker
-devopstrainingblr/awesome-docker
-Golang Go Language Awesome Lists</description>
+Awesome Angel</description>
     </item>
     
   </channel>
