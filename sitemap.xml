@@ -3,22 +3,97 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://melastmohican.github.io/categories/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/code/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/code/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/dart/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/development/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/development/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/go/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/java/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/kotlin/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/language/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/language/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/migration/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/posts/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/categories/programming/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/programming/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/tags/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</loc>
+    <lastmod>2020-03-13T05:38:17-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://melastmohican.github.io/categories/awesome/</loc>
     <lastmod>2020-03-09T09:51:44-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://melastmohican.github.io/tags/awesome/</loc>
-    <lastmod>2020-03-09T09:51:44-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/categories/</loc>
-    <lastmod>2020-03-09T09:51:44-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/categories/development/</loc>
     <lastmod>2020-03-09T09:51:44-08:00</lastmod>
   </url>
   
@@ -48,16 +123,6 @@
   </url>
   
   <url>
-    <loc>https://melastmohican.github.io/posts/</loc>
-    <lastmod>2020-03-09T09:51:44-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/tags/</loc>
-    <lastmod>2020-03-09T09:51:44-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://melastmohican.github.io/tags/automation/</loc>
     <lastmod>2020-03-06T09:50:53-08:00</lastmod>
   </url>
@@ -73,21 +138,6 @@
   </url>
   
   <url>
-    <loc>https://melastmohican.github.io/categories/code/</loc>
-    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/tags/code/</loc>
-    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/tags/development/</loc>
-    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://melastmohican.github.io/categories/generation/</loc>
     <lastmod>2020-03-06T09:50:53-08:00</lastmod>
   </url>
@@ -99,11 +149,6 @@
   
   <url>
     <loc>https://melastmohican.github.io/categories/howto/</loc>
-    <lastmod>2020-03-06T09:50:53-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://melastmohican.github.io/tags/java/</loc>
     <lastmod>2020-03-06T09:50:53-08:00</lastmod>
   </url>
   

@@ -6,10 +6,19 @@
     <description>Recent content in Development on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2020 09:51:44 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 05:38:17 -0800</lastBuildDate>
     
 	<atom:link href="https://melastmohican.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What new language should I learn as Java Developer</title>
+      <link>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</link>
+      <pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</guid>
+      <description>If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant.</description>
+    </item>
     
     <item>
       <title>List of Awesome Lists</title>
