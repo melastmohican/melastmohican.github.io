@@ -6,7 +6,7 @@
     <description>Recent content in Categories on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2020 05:38:17 -0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2020 21:35:50 -0700</lastBuildDate>
     
 	<atom:link href="https://melastmohican.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Code</title>
       <link>https://melastmohican.github.io/categories/code/</link>
-      <pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
       
       <guid>https://melastmohican.github.io/categories/code/</guid>
       <description></description>
@@ -23,16 +23,25 @@
     <item>
       <title>Development</title>
       <link>https://melastmohican.github.io/categories/development/</link>
-      <pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
       
       <guid>https://melastmohican.github.io/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Kafka</title>
+      <link>https://melastmohican.github.io/categories/kafka/</link>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Language</title>
       <link>https://melastmohican.github.io/categories/language/</link>
-      <pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
       
       <guid>https://melastmohican.github.io/categories/language/</guid>
       <description></description>
@@ -41,7 +50,7 @@
     <item>
       <title>Migration</title>
       <link>https://melastmohican.github.io/categories/migration/</link>
-      <pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
       
       <guid>https://melastmohican.github.io/categories/migration/</guid>
       <description></description>
@@ -50,9 +59,18 @@
     <item>
       <title>Programming</title>
       <link>https://melastmohican.github.io/categories/programming/</link>
-      <pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
       
       <guid>https://melastmohican.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://melastmohican.github.io/categories/security/</link>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/security/</guid>
       <description></description>
     </item>
     
