@@ -245,45 +245,49 @@ provider &#34;aws&#34; {
 
 </code></pre></div><p>Sample env module. It is where you create a module per resource. You can put all resources in one file or group them by resource type e.g.  dynamodb_tables.tf, s3_buckets.tf, etc</p>
 <p><strong>main.tf</strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">module &#34;dynamodb_text_settings&#34; {
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">module &#34;dynamodb&#34; {
   source      = &#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;
   environment = var.environment
-  table_name  = &#34;SOC_${upper(var.environment)}_TEXT_SETTINGS&#34;
+  table_name  = &#34;${upper(var.environment)}_ABC_TABLE&#34;
   attribute_list = [
     {
-      name = &#34;TYPE&#34;
+      name = &#34;convState&#34;
       type = &#34;S&#34;
     },
     {
-      name = &#34;ID&#34;
+      name = &#34;id&#34;
+      type = &#34;S&#34;
+    },
+    {
+      name = &#34;tag&#34;
       type = &#34;S&#34;
     }
   ]
-  hash_key  = &#34;ID&#34;
-  range_key = &#34;TYPE&#34;
+  hash_key  = &#34;id&#34;
+  range_key = &#34;tag&#34;
   tags = {
-    Application = &#34;Social&#34;
+    Application = &#34;Example&#34;
     Environment = &#34;Non-production::${upper(var.environment)}&#34;
-    Owner       = &#34;smpd_devops@t-mobile.com&#34;
+    Owner       = &#34;devops@example.org&#34;
     Role        = &#34;DataSource&#34;
-    Stack       = &#34;Messaging&#34;
   }
 
-  global_secondary_index_list = [
-    {
-      hash_key        = &#34;TYPE&#34;
-      name            = &#34;TYPE-ID-index&#34;
-      non_key_attributes = []
-      projection_type = &#34;ALL&#34;
-      range_key       = &#34;ID&#34;
-      read_capacity   = &#34;0&#34;
-      write_capacity  = &#34;0&#34;
-    }
-  ]
+  global_secondary_index_list = [{
+    hash_key           = &#34;convState&#34;
+    range_key          = null
+    name               = &#34;convState-index&#34;
+    non_key_attributes = []
+    projection_type    = &#34;ALL&#34;
+    read_capacity      = 0
+    write_capacity     = 0
+  }]
 
   local_secondary_index_list = []
 
-  ttl_list = []
+  ttl_list = [{
+    attribute_name = &#34;expirationTime&#34;
+    enabled        = true
+  }]
 
   providers = {
     aws.us-west-2 = aws.us-west-2
