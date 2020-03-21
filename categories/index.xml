@@ -6,7 +6,7 @@
     <description>Recent content in Categories on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Mar 2020 21:35:50 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2020 12:36:30 -0700</lastBuildDate>
     
 	<atom:link href="https://melastmohican.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Code</title>
       <link>https://melastmohican.github.io/categories/code/</link>
-      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
       
       <guid>https://melastmohican.github.io/categories/code/</guid>
       <description></description>
@@ -23,9 +23,18 @@
     <item>
       <title>Development</title>
       <link>https://melastmohican.github.io/categories/development/</link>
-      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
       
       <guid>https://melastmohican.github.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infrastructure</title>
+      <link>https://melastmohican.github.io/categories/infrastructure/</link>
+      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/infrastructure/</guid>
       <description></description>
     </item>
     
@@ -134,15 +143,6 @@
       <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/categories/template/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Infrastructure</title>
-      <link>https://melastmohican.github.io/categories/infrastructure/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/categories/infrastructure/</guid>
       <description></description>
     </item>
     

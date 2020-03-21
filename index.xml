@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Terraform Best Practice Guide for Developers</title>
+      <link>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</link>
+      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</guid>
+      <description>Terraform is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.</description>
+    </item>
+    
+    <item>
       <title>Convert Kafka JKS certificate to PEM</title>
       <link>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</link>
       <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
