@@ -6,10 +6,118 @@
     <description>Recent content in Categories on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2020 09:51:44 -0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 07:54:54 -0700</lastBuildDate>
     
 	<atom:link href="https://melastmohican.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adage</title>
+      <link>https://melastmohican.github.io/categories/adage/</link>
+      <pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/adage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Engineering</title>
+      <link>https://melastmohican.github.io/categories/engineering/</link>
+      <pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Law</title>
+      <link>https://melastmohican.github.io/categories/law/</link>
+      <pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/law/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Universe</title>
+      <link>https://melastmohican.github.io/categories/universe/</link>
+      <pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/universe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://melastmohican.github.io/categories/code/</link>
+      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://melastmohican.github.io/categories/development/</link>
+      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infrastructure</title>
+      <link>https://melastmohican.github.io/categories/infrastructure/</link>
+      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://melastmohican.github.io/categories/kafka/</link>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Language</title>
+      <link>https://melastmohican.github.io/categories/language/</link>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/language/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Migration</title>
+      <link>https://melastmohican.github.io/categories/migration/</link>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://melastmohican.github.io/categories/programming/</link>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://melastmohican.github.io/categories/security/</link>
+      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/security/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Awesome</title>
@@ -17,15 +125,6 @@
       <pubDate>Mon, 09 Mar 2020 09:51:44 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/categories/awesome/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://melastmohican.github.io/categories/development/</link>
-      <pubDate>Mon, 09 Mar 2020 09:51:44 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/categories/development/</guid>
       <description></description>
     </item>
     
@@ -44,15 +143,6 @@
       <pubDate>Mon, 09 Mar 2020 09:51:44 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/categories/list/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Code</title>
-      <link>https://melastmohican.github.io/categories/code/</link>
-      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/categories/code/</guid>
       <description></description>
     </item>
     
@@ -89,15 +179,6 @@
       <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
       
       <guid>https://melastmohican.github.io/categories/template/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Infrastructure</title>
-      <link>https://melastmohican.github.io/categories/infrastructure/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/categories/infrastructure/</guid>
       <description></description>
     </item>
     

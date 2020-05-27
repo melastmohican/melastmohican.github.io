@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering on melastmohican.github.io</title>
+    <link>https://melastmohican.github.io/categories/engineering/</link>
+    <description>Recent content in Engineering on melastmohican.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 May 2020 07:54:54 -0700</lastBuildDate>
+    
+	<atom:link href="https://melastmohican.github.io/categories/engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Murphy&#39;s laws and other principles of disaster</title>
+      <link>https://melastmohican.github.io/posts/murphys-laws/</link>
+      <pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
+      
+      <guid>https://melastmohican.github.io/posts/murphys-laws/</guid>
+      <description>Murphy&amp;rsquo;s Laws  If anything can go wrong, it will. If there is a possibility of several things going wrong, the one that will cause the most damage will be the first one to go wrong. If anything just cannot go wrong, it will anyway. If you perceive that there are four possible ways in which something can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop.</description>
+    </item>
+    
+  </channel>
+</rss>
