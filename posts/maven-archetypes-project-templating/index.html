@@ -57,7 +57,7 @@
     <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.73.0" />
+    <meta name="generator" content="Hugo 0.66.0" />
   </head>
 
   
@@ -172,7 +172,7 @@
 #set( $symbol_dollar = &#39;$&#39; )
 #set( $symbol_escape = &#39;\&#39; )
 ${symbol_pound}!groovy
-</code></pre></div><p>You can also apply variable substitution to file names. To inject a property into a file name, surround the property erty name with &ldquo;__&rdquo;.</p>
+</code></pre></div><p>You can also apply variable substitution to file names. To inject a property into a file name, surround the property erty name with &ldquo;__&quot;.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">archetype-root/src/main/resources/archetype-resources/src/main/java/__library-name__.java
 </code></pre></div><h4 id="defining-additional-properties">Defining additional properties</h4>
 <p>The main properties that are used by the Velocity engine during a project&rsquo;s file generation are groupId, artifactId, version and package. It is possible to define additional properties that must be valued before the file generation. These additional properties can be provided with default values, which enable not to ask the user for there values. Additional properties are defined in the <code>/src/main/resources/META-INF/maven/archetype-metadata.xml</code> file with:</p>
