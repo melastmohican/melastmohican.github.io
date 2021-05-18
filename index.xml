@@ -6,11 +6,7 @@
     <description>Recent content on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 14:24:51 -0800</lastBuildDate>
-    
-	<atom:link href="https://melastmohican.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 20 May 2020 07:54:54 -0700</lastBuildDate><atom:link href="https://melastmohican.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Murphy&#39;s laws and other principles of disaster</title>
       <link>https://melastmohican.github.io/posts/murphys-laws/</link>
@@ -37,7 +33,7 @@
       <guid>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</guid>
       <description>Intro Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).
 Here are the commands to extract the Certificate Authority (CA) certificate:
-$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12$ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pemYou can then convert your client keystore to be usable from languages supporting .</description>
+$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12 $ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem You can then convert your client keystore to be usable from languages supporting .</description>
     </item>
     
     <item>
@@ -100,7 +96,8 @@ Awesome Angel</description>
       <guid>https://melastmohican.github.io/about/</guid>
       <description>COVID-19 Stay @ 127.0.0.1 Don&amp;rsquo;t be 255.255.255.255
 Docker emphasizes on isolation of application inside containers, so that different applications have no effect on each other. Docker is smart&amp;hellip;Be like Docker!
-AI Jokes  To replace programmers with Robots, clients will have to accurately describe what they want. We&amp;rsquo;re safe. A couple scientists created an AI that seemed to be able to answer all questions. It cured cancer and even told them how to travel faster than light.</description>
+6 hours of debugging can save you 5 minutes of reading documentation.
+AI Jokes  To replace programmers with Robots, clients will have to accurately describe what they want. We&amp;rsquo;re safe. A couple scientists created an AI that seemed to be able to answer all questions.</description>
     </item>
     
     <item>

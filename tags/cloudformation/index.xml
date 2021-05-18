@@ -6,11 +6,7 @@
     <description>Recent content in cloudformation on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 13:37:39 -0800</lastBuildDate>
-    
-	<atom:link href="https://melastmohican.github.io/tags/cloudformation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 05 Mar 2020 13:37:39 -0800</lastBuildDate><atom:link href="https://melastmohican.github.io/tags/cloudformation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Migrating existing AWS infrastructure to new acount</title>
       <link>https://melastmohican.github.io/posts/aws-resource-migration/</link>

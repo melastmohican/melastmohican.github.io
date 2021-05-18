@@ -6,11 +6,7 @@
     <description>Recent content in Development on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2020 12:36:30 -0700</lastBuildDate>
-    
-	<atom:link href="https://melastmohican.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 21 Mar 2020 12:36:30 -0700</lastBuildDate><atom:link href="https://melastmohican.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terraform Best Practice Guide for Developers</title>
       <link>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</link>
@@ -28,7 +24,7 @@
       <guid>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</guid>
       <description>Intro Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).
 Here are the commands to extract the Certificate Authority (CA) certificate:
-$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12$ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pemYou can then convert your client keystore to be usable from languages supporting .</description>
+$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12 $ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem You can then convert your client keystore to be usable from languages supporting .</description>
     </item>
     
     <item>

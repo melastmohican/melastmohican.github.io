@@ -6,11 +6,7 @@
     <description>Recent content in Infrastructure on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2020 12:36:30 -0700</lastBuildDate>
-    
-	<atom:link href="https://melastmohican.github.io/categories/infrastructure/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 21 Mar 2020 12:36:30 -0700</lastBuildDate><atom:link href="https://melastmohican.github.io/categories/infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terraform Best Practice Guide for Developers</title>
       <link>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</link>
