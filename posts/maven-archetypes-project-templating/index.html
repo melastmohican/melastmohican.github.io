@@ -16,9 +16,10 @@
     <meta property="og:title" content="Maven Archetypes Project Templating" />
 <meta property="og:description" content="Archetype is a Maven project templating toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. Archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates. Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed by your project or organization. " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://melastmohican.github.io/posts/maven-archetypes-project-templating/" />
+<meta property="og:url" content="https://melastmohican.github.io/posts/maven-archetypes-project-templating/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-06T09:50:53-08:00" />
 <meta property="article:modified_time" content="2020-03-06T09:50:53-08:00" />
+
 
 
     
@@ -57,7 +58,7 @@
     <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.96.0" />
   </head>
 
   
@@ -160,73 +161,73 @@
 <p>Maven provides several archetype <a href="https://maven.apache.org/archetypes/index.html">artifacts</a>.</p>
 <h3 id="creating-a-maven-archetype">Creating a Maven Archetype</h3>
 <p>Creating archetype from scratch is possible but I would recomend pick some existing project and generate archetype from it.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mvn archetype:create-from-project
-</code></pre></div><p>Generated source code can then be found under the target/generated-sources/archetype directory. When you type <code>mvn install</code> in this directory it will install archetype in our local Maven repository (${HOME}/.m2/repository). When archetype is used to generate new project it would create a copy of base project which is not particularly useful. When you start parametrizing your archetype things are getting more interesting.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>mvn archetype:create-from-project
+</span></span></code></pre></div><p>Generated source code can then be found under the target/generated-sources/archetype directory. When you type <code>mvn install</code> in this directory it will install archetype in our local Maven repository (${HOME}/.m2/repository). When archetype is used to generate new project it would create a copy of base project which is not particularly useful. When you start parametrizing your archetype things are getting more interesting.</p>
 <h4 id="dynamic-content">Dynamic content</h4>
 <p>Maven Archetypes use Apache Velocity Engine for incorporating the dynamic content in genereted files. Any file in archetype resources is template but some files need to be escaped because they charcters are used by Velocity. For example XML, Java or Groovy files might use similar characters. You have to define special variable to escape them:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">#set( $symbol_pound = &#39;#&#39; )
-#set( $symbol_dollar = &#39;$&#39; )
-#set( $symbol_escape = &#39;\&#39; )
-</code></pre></div><p>Example from Groovy Script or Jenkins config:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">#set( $symbol_pound = &#39;#&#39; )
-#set( $symbol_dollar = &#39;$&#39; )
-#set( $symbol_escape = &#39;\&#39; )
-${symbol_pound}!groovy
-</code></pre></div><p>You can also apply variable substitution to file names. To inject a property into a file name, surround the property erty name with &ldquo;__&rdquo;.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">archetype-root/src/main/resources/archetype-resources/src/main/java/__library-name__.java
-</code></pre></div><h4 id="defining-additional-properties">Defining additional properties</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>#set( $symbol_pound = &#39;#&#39; )
+</span></span><span style="display:flex;"><span>#set( $symbol_dollar = &#39;$&#39; )
+</span></span><span style="display:flex;"><span>#set( $symbol_escape = &#39;\&#39; )
+</span></span></code></pre></div><p>Example from Groovy Script or Jenkins config:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>#set( $symbol_pound = &#39;#&#39; )
+</span></span><span style="display:flex;"><span>#set( $symbol_dollar = &#39;$&#39; )
+</span></span><span style="display:flex;"><span>#set( $symbol_escape = &#39;\&#39; )
+</span></span><span style="display:flex;"><span>${symbol_pound}!groovy
+</span></span></code></pre></div><p>You can also apply variable substitution to file names. To inject a property into a file name, surround the property erty name with &ldquo;__&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>archetype-root/src/main/resources/archetype-resources/src/main/java/__library-name__.java
+</span></span></code></pre></div><h4 id="defining-additional-properties">Defining additional properties</h4>
 <p>The main properties that are used by the Velocity engine during a project&rsquo;s file generation are groupId, artifactId, version and package. It is possible to define additional properties that must be valued before the file generation. These additional properties can be provided with default values, which enable not to ask the user for there values. Additional properties are defined in the <code>/src/main/resources/META-INF/maven/archetype-metadata.xml</code> file with:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;archetype-descriptor name=&#34;basic&#34;&gt;
-  &lt;requiredProperties&gt;
-    &lt;requiredProperty key=&#34;property-with-default&#34;&gt;
-      &lt;defaultValue&gt;default-value&lt;/defaultValue&gt;
-    &lt;/requiredProperty&gt;
-    &lt;requiredProperty key=&#34;property-without-default&#34;/&gt;
-  &lt;/requiredProperties&gt;
-...
-&lt;/archetype-descriptor&gt;
-</code></pre></div><h4 id="defining-specific-filesets">Defining specific filesets</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>&lt;archetype-descriptor name=&#34;basic&#34;&gt;
+</span></span><span style="display:flex;"><span>  &lt;requiredProperties&gt;
+</span></span><span style="display:flex;"><span>    &lt;requiredProperty key=&#34;property-with-default&#34;&gt;
+</span></span><span style="display:flex;"><span>      &lt;defaultValue&gt;default-value&lt;/defaultValue&gt;
+</span></span><span style="display:flex;"><span>    &lt;/requiredProperty&gt;
+</span></span><span style="display:flex;"><span>    &lt;requiredProperty key=&#34;property-without-default&#34;/&gt;
+</span></span><span style="display:flex;"><span>  &lt;/requiredProperties&gt;
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>&lt;/archetype-descriptor&gt;
+</span></span></code></pre></div><h4 id="defining-specific-filesets">Defining specific filesets</h4>
 <p>The filesets contained in the <code>/src/main/resources/META-INF/maven/archetype-metadata.xml</code> file defines the way the project&rsquo;s files located in the JAR file are used by the Archetype Plugin to generate a project. Filesets must define the directory where the files will be searched for which is also the directory where the project&rsquo;s files will be generated.This provide a way to describe a large set of files to be selected for the generation process. Filesets can be filtered, which means the selected files will be used as Velocity templates. A fileset is defined in the archetype-metadata.xml with this fragment:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;fileSets&gt;
-    &lt;fileSet filtered=&#34;true&#34; packaged=&#34;true&#34;&gt;
-      &lt;directory&gt;src/test/java&lt;/directory&gt;
-      &lt;includes&gt;
-        &lt;include&gt;**/*.java&lt;/include&gt;
-      &lt;/includes&gt;
-      &lt;excludes&gt;
-        &lt;exclude&gt;AllTest.java&lt;/exclude&gt;
-      &lt;/excludes&gt;
-    &lt;/fileSet&gt;
-  &lt;/fileSets&gt;
-</code></pre></div><h4 id="sample-archetype-directory-structure">Sample archetype directory structure:</h4>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">archetype-root
-└── src
-    └── main
-        └── resources
-            ├── META-INF
-            │   └── maven
-            └── archetype-resources
-                └── src
-                    └── main
-                        ├── java
-                        │   └── __packageInPathFormat__
-                        │       └── __artifactPackage__
-                        │           ├── config
-                        │           ├── model
-                        │           └── rest
-                        └── resources
-                            └── config
-</code></pre></div><h3 id="installing-the-archetype">Installing the Archetype</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>&lt;fileSets&gt;
+</span></span><span style="display:flex;"><span>    &lt;fileSet filtered=&#34;true&#34; packaged=&#34;true&#34;&gt;
+</span></span><span style="display:flex;"><span>      &lt;directory&gt;src/test/java&lt;/directory&gt;
+</span></span><span style="display:flex;"><span>      &lt;includes&gt;
+</span></span><span style="display:flex;"><span>        &lt;include&gt;**/*.java&lt;/include&gt;
+</span></span><span style="display:flex;"><span>      &lt;/includes&gt;
+</span></span><span style="display:flex;"><span>      &lt;excludes&gt;
+</span></span><span style="display:flex;"><span>        &lt;exclude&gt;AllTest.java&lt;/exclude&gt;
+</span></span><span style="display:flex;"><span>      &lt;/excludes&gt;
+</span></span><span style="display:flex;"><span>    &lt;/fileSet&gt;
+</span></span><span style="display:flex;"><span>  &lt;/fileSets&gt;
+</span></span></code></pre></div><h4 id="sample-archetype-directory-structure">Sample archetype directory structure:</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>archetype-root
+</span></span><span style="display:flex;"><span>└── src
+</span></span><span style="display:flex;"><span>    └── main
+</span></span><span style="display:flex;"><span>        └── resources
+</span></span><span style="display:flex;"><span>            ├── META-INF
+</span></span><span style="display:flex;"><span>            │   └── maven
+</span></span><span style="display:flex;"><span>            └── archetype-resources
+</span></span><span style="display:flex;"><span>                └── src
+</span></span><span style="display:flex;"><span>                    └── main
+</span></span><span style="display:flex;"><span>                        ├── java
+</span></span><span style="display:flex;"><span>                        │   └── __packageInPathFormat__
+</span></span><span style="display:flex;"><span>                        │       └── __artifactPackage__
+</span></span><span style="display:flex;"><span>                        │           ├── config
+</span></span><span style="display:flex;"><span>                        │           ├── model
+</span></span><span style="display:flex;"><span>                        │           └── rest
+</span></span><span style="display:flex;"><span>                        └── resources
+</span></span><span style="display:flex;"><span>                            └── config
+</span></span></code></pre></div><h3 id="installing-the-archetype">Installing the Archetype</h3>
 <p>You can install the archetype by invoking this command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn install
-</code></pre></div><h3 id="create-a-project-using-archetype">Create a project using archetype</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn install
+</span></span></code></pre></div><h3 id="create-a-project-using-archetype">Create a project using archetype</h3>
 <p>You can create a Maven project through the generate goal and existing archetype.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn archetype:generate -DarchetypeGroupId=org.example -DarchetypeArtifactId=msg-archetype-spring-boot2-quickstart -DarchetypeVersion=0.1.0-SNAPSHOT  -DgroupId=org.example  -DartifactId=msg-v1-test-rest
-</code></pre></div><h3 id="run-the-project">Run the project</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mvn spring-boot:run
-</code></pre></div><h3 id="test-on-the-browser">Test on the browser</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">http://localhost:8080/v1/test/status
-</code></pre></div><p>Full list of available archetypes can be generated using <code>mvn archetype:generate</code> :</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn archetype:generate -DarchetypeGroupId=org.example -DarchetypeArtifactId=msg-archetype-spring-boot2-quickstart -DarchetypeVersion=0.1.0-SNAPSHOT  -DgroupId=org.example  -DartifactId=msg-v1-test-rest
+</span></span></code></pre></div><h3 id="run-the-project">Run the project</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ mvn spring-boot:run
+</span></span></code></pre></div><h3 id="test-on-the-browser">Test on the browser</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>http://localhost:8080/v1/test/status
+</span></span></code></pre></div><p>Full list of available archetypes can be generated using <code>mvn archetype:generate</code> :</p>
 <script type="application/javascript" src="https://gist.github.com/melastmohican/c13102eb7c7161edebf34269c57e0597.js"></script>
 
 
@@ -271,7 +272,7 @@ ${symbol_pound}!groovy
     
     
       
-        © 2021
+        © 2022
       
        Mariusz Jurgielewicz 
     

@@ -54,29 +54,17 @@ $ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore s
       <description>Awesome Awesome lists about all kinds of interesting topics
 Awesome
 AWS Amazon Web Services Awesome Lists
-Awesome CloudFormation
-JeffRMoore/awesome-cloudformation
-adamchainz/awesome-cloudformation
-donnemartin/awesome-aws
-Awesome AWS Amplify
+Awesome CloudFormation JeffRMoore/awesome-cloudformation adamchainz/awesome-cloudformation donnemartin/awesome-aws Awesome AWS Amplify
 Bash Bash Awesome Lists
-Awesome Bash
-awesome-lists/awesome-bash
-Awesome Bash Commands
-Awesome Shell
-uhub/awesome-shell
-Awesome dotfiles
+Awesome Bash awesome-lists/awesome-bash Awesome Bash Commands Awesome Shell uhub/awesome-shell Awesome dotfiles
 Cheat Sheets Cheat Sheets Lists
-Cheatography
-Awesome-Cheatsheets
-Awesome Cheatsheet
+Cheatography Awesome-Cheatsheets Awesome Cheatsheet
 Cloud Native Cloud Native Lists
 Awesome Cloud Native
 CSV CSV Awesome Lists
 Awesome CSV
 Dart Dart Language Awesome Lists
-Awesome Dart
-Awesome Angel</description>
+Awesome Dart Awesome Angel Awesome Flutter</description>
     </item>
     
     <item>
@@ -97,7 +85,8 @@ Awesome Angel</description>
       <description>COVID-19 Stay @ 127.0.0.1 Don&amp;rsquo;t be 255.255.255.255
 Docker emphasizes on isolation of application inside containers, so that different applications have no effect on each other. Docker is smart&amp;hellip;Be like Docker!
 6 hours of debugging can save you 5 minutes of reading documentation.
-AI Jokes  To replace programmers with Robots, clients will have to accurately describe what they want. We&amp;rsquo;re safe. A couple scientists created an AI that seemed to be able to answer all questions.</description>
+DB Jokes Q. What if you are too late to office and the manager catches you? A. Ad hoc updates to system catalogs are not allowed!
+Q. What if your Dad or Mom loses his or her car keys?</description>
     </item>
     
     <item>

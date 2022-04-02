@@ -16,9 +16,10 @@
     <meta property="og:title" content="Convert Kafka JKS certificate to PEM" />
 <meta property="og:description" content="Creating X509 certificates from JKS format" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/" />
+<meta property="og:url" content="https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-14T21:35:50-07:00" />
 <meta property="article:modified_time" content="2020-03-14T21:35:50-07:00" />
+
 
 
     
@@ -57,7 +58,7 @@
     <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.96.0" />
   </head>
 
   
@@ -156,14 +157,13 @@
         <h2 id="intro">Intro</h2>
 <p>Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).</p>
 <p>Here are the commands to extract the Certificate Authority (CA) certificate:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12
-$ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem
-
-</code></pre></div><p>You can then convert your client keystore to be usable from languages supporting .pem, with similar commands:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ keytool -importkeystore -srckeystore dev.client.keystore.jks -destkeystore client.p12 -deststoretype PKCS12
-$ openssl pkcs12 -in client.p12 -nokeys -out client.cer.pem
-$ openssl pkcs12 -in client.p12 -nodes -nocerts -out client.key.pem
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12
+</span></span><span style="display:flex;"><span>$ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem
+</span></span></code></pre></div><p>You can then convert your client keystore to be usable from languages supporting .pem, with similar commands:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ keytool -importkeystore -srckeystore dev.client.keystore.jks -destkeystore client.p12 -deststoretype PKCS12
+</span></span><span style="display:flex;"><span>$ openssl pkcs12 -in client.p12 -nokeys -out client.cer.pem
+</span></span><span style="display:flex;"><span>$ openssl pkcs12 -in client.p12 -nodes -nocerts -out client.key.pem
+</span></span></code></pre></div>
       </div>
 
 
@@ -205,7 +205,7 @@ $ openssl pkcs12 -in client.p12 -nodes -nocerts -out client.key.pem
     
     
       
-        © 2021
+        © 2022
       
        Mariusz Jurgielewicz 
     
