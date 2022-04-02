@@ -54,29 +54,17 @@ $ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore s
       <description>Awesome Awesome lists about all kinds of interesting topics
 Awesome
 AWS Amazon Web Services Awesome Lists
-Awesome CloudFormation
-JeffRMoore/awesome-cloudformation
-adamchainz/awesome-cloudformation
-donnemartin/awesome-aws
-Awesome AWS Amplify
+Awesome CloudFormation JeffRMoore/awesome-cloudformation adamchainz/awesome-cloudformation donnemartin/awesome-aws Awesome AWS Amplify
 Bash Bash Awesome Lists
-Awesome Bash
-awesome-lists/awesome-bash
-Awesome Bash Commands
-Awesome Shell
-uhub/awesome-shell
-Awesome dotfiles
+Awesome Bash awesome-lists/awesome-bash Awesome Bash Commands Awesome Shell uhub/awesome-shell Awesome dotfiles
 Cheat Sheets Cheat Sheets Lists
-Cheatography
-Awesome-Cheatsheets
-Awesome Cheatsheet
+Cheatography Awesome-Cheatsheets Awesome Cheatsheet
 Cloud Native Cloud Native Lists
 Awesome Cloud Native
 CSV CSV Awesome Lists
 Awesome CSV
 Dart Dart Language Awesome Lists
-Awesome Dart
-Awesome Angel</description>
+Awesome Dart Awesome Angel Awesome Flutter</description>
     </item>
     
     <item>
