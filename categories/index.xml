@@ -6,7 +6,61 @@
     <description>Recent content in Categories on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 May 2020 07:54:54 -0700</lastBuildDate><atom:link href="https://melastmohican.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Nov 2022 14:27:13 -0800</lastBuildDate><atom:link href="https://melastmohican.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code</title>
+      <link>https://melastmohican.github.io/categories/code/</link>
+      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://melastmohican.github.io/categories/development/</link>
+      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Embedded</title>
+      <link>https://melastmohican.github.io/categories/embedded/</link>
+      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/embedded/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hardware</title>
+      <link>https://melastmohican.github.io/categories/hardware/</link>
+      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Language</title>
+      <link>https://melastmohican.github.io/categories/language/</link>
+      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/language/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://melastmohican.github.io/categories/programming/</link>
+      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Adage</title>
       <link>https://melastmohican.github.io/categories/adage/</link>
@@ -44,24 +98,6 @@
     </item>
     
     <item>
-      <title>Code</title>
-      <link>https://melastmohican.github.io/categories/code/</link>
-      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/categories/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://melastmohican.github.io/categories/development/</link>
-      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Infrastructure</title>
       <link>https://melastmohican.github.io/categories/infrastructure/</link>
       <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
@@ -80,29 +116,11 @@
     </item>
     
     <item>
-      <title>Language</title>
-      <link>https://melastmohican.github.io/categories/language/</link>
-      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/categories/language/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Migration</title>
       <link>https://melastmohican.github.io/categories/migration/</link>
       <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
       
       <guid>https://melastmohican.github.io/categories/migration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://melastmohican.github.io/categories/programming/</link>
-      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/categories/programming/</guid>
       <description></description>
     </item>
     

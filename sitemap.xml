@@ -2,13 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://melastmohican.github.io/categories/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/code/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/development/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/embedded/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/embedded/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/esp32/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/feather/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/hardware/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/hardware/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/language/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/microcontroller/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/posts/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/programming/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/rust/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/posts/rusty-feather/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/sensor/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/</loc>
+    <lastmod>2022-11-14T14:27:13-08:00</lastmod>
+  </url><url>
     <loc>https://melastmohican.github.io/tags/adage/</loc>
     <lastmod>2020-05-20T07:54:54-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/categories/adage/</loc>
-    <lastmod>2020-05-20T07:54:54-07:00</lastmod>
-  </url><url>
-    <loc>https://melastmohican.github.io/categories/</loc>
     <lastmod>2020-05-20T07:54:54-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/engineering/</loc>
@@ -23,22 +74,13 @@
     <loc>https://melastmohican.github.io/categories/law/</loc>
     <lastmod>2020-05-20T07:54:54-07:00</lastmod>
   </url><url>
-    <loc>https://melastmohican.github.io/</loc>
-    <lastmod>2020-05-20T07:54:54-07:00</lastmod>
-  </url><url>
     <loc>https://melastmohican.github.io/posts/murphys-laws/</loc>
     <lastmod>2020-05-20T07:54:54-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/murphys/</loc>
     <lastmod>2020-05-20T07:54:54-07:00</lastmod>
   </url><url>
-    <loc>https://melastmohican.github.io/posts/</loc>
-    <lastmod>2020-05-20T07:54:54-07:00</lastmod>
-  </url><url>
     <loc>https://melastmohican.github.io/tags/principle/</loc>
-    <lastmod>2020-05-20T07:54:54-07:00</lastmod>
-  </url><url>
-    <loc>https://melastmohican.github.io/tags/</loc>
     <lastmod>2020-05-20T07:54:54-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/universe/</loc>
@@ -56,13 +98,7 @@
     <loc>https://melastmohican.github.io/tags/code/</loc>
     <lastmod>2020-03-21T12:36:30-07:00</lastmod>
   </url><url>
-    <loc>https://melastmohican.github.io/categories/code/</loc>
-    <lastmod>2020-03-21T12:36:30-07:00</lastmod>
-  </url><url>
     <loc>https://melastmohican.github.io/tags/development/</loc>
-    <lastmod>2020-03-21T12:36:30-07:00</lastmod>
-  </url><url>
-    <loc>https://melastmohican.github.io/categories/development/</loc>
     <lastmod>2020-03-21T12:36:30-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/infrastructure/</loc>
@@ -101,16 +137,10 @@
     <loc>https://melastmohican.github.io/categories/kafka/</loc>
     <lastmod>2020-03-14T21:35:50-07:00</lastmod>
   </url><url>
-    <loc>https://melastmohican.github.io/categories/language/</loc>
-    <lastmod>2020-03-14T21:35:50-07:00</lastmod>
-  </url><url>
     <loc>https://melastmohican.github.io/categories/migration/</loc>
     <lastmod>2020-03-14T21:35:50-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/pem/</loc>
-    <lastmod>2020-03-14T21:35:50-07:00</lastmod>
-  </url><url>
-    <loc>https://melastmohican.github.io/categories/programming/</loc>
     <lastmod>2020-03-14T21:35:50-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/categories/security/</loc>

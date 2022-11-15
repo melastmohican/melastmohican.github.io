@@ -6,7 +6,16 @@
     <description>Recent content in Posts on melastmohican.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 May 2020 07:54:54 -0700</lastBuildDate><atom:link href="https://melastmohican.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Nov 2022 14:27:13 -0800</lastBuildDate><atom:link href="https://melastmohican.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rusty Feather</title>
+      <link>https://melastmohican.github.io/posts/rusty-feather/</link>
+      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+      
+      <guid>https://melastmohican.github.io/posts/rusty-feather/</guid>
+      <description>Recently I stumbled upon info about using Rust language on embedded systems including microcontrollers. I searched for some tutorials and online trainings and it seems like you need specific hardware usually. Getting STM32F3DISCOVERY or nRF52840 DK is not practical because I will have limited use for these boards after completing training. I was almost willing to get micro:bit when I found out that Ferrous Systems and Espressif’s announced Rust Training on ESP32.</description>
+    </item>
+    
     <item>
       <title>Murphy&#39;s laws and other principles of disaster</title>
       <link>https://melastmohican.github.io/posts/murphys-laws/</link>
