@@ -58,7 +58,7 @@
     <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="generator" content="Hugo 0.105.0">
   </head>
 
   
@@ -169,8 +169,8 @@
 <li>GCS buckets</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>module &#34;dynamodb&#34; {
-</span></span><span style="display:flex;"><span>  source      = &#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-v" data-lang="v"><span style="display:flex;"><span><span style="font-weight:bold">module</span> <span style="font-style:italic">&#34;dynamodb&#34;</span> {
+</span></span><span style="display:flex;"><span>  source      = <span style="font-style:italic">&#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Terraform AWS DynamoDB module: <a href="https://github.com/melastmohican/tfmodule-aws-dynamodb-global">https://github.com/melastmohican/tfmodule-aws-dynamodb-global</a></p>
 <h2 id="code-structure">Code structure</h2>
@@ -209,18 +209,18 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong>main.tf</strong></p>
 <p>You can structure your code in a folder in many ways. You can have multiple files that terraform would include in one big file.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>module &#34;dev&#34; {
-</span></span><span style="display:flex;"><span>  source = &#34;./env&#34;
-</span></span><span style="display:flex;"><span>  environment = &#34;dev&#34;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-v" data-lang="v"><span style="display:flex;"><span><span style="font-weight:bold">module</span> <span style="font-style:italic">&#34;dev&#34;</span> {
+</span></span><span style="display:flex;"><span>  source = <span style="font-style:italic">&#34;./env&#34;</span>
+</span></span><span style="display:flex;"><span>  environment = <span style="font-style:italic">&#34;dev&#34;</span>
 </span></span><span style="display:flex;"><span>  providers = {
 </span></span><span style="display:flex;"><span>    aws.us-west-2 = aws.us-west-2
 </span></span><span style="display:flex;"><span>    aws.us-east-1 = aws.us-east-1
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>module &#34;stg&#34; {
-</span></span><span style="display:flex;"><span>  source = &#34;./env&#34;
-</span></span><span style="display:flex;"><span>  environment = &#34;stg&#34;
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">module</span> <span style="font-style:italic">&#34;stg&#34;</span> {
+</span></span><span style="display:flex;"><span>  source = <span style="font-style:italic">&#34;./env&#34;</span>
+</span></span><span style="display:flex;"><span>  environment = <span style="font-style:italic">&#34;stg&#34;</span>
 </span></span><span style="display:flex;"><span>  providers = {
 </span></span><span style="display:flex;"><span>    aws.us-west-2 = aws.us-west-2
 </span></span><span style="display:flex;"><span>    aws.us-east-1 = aws.us-east-1
@@ -242,39 +242,39 @@
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Sample env module. It is where you create a module per resource. You can put all resources in one file or group them by resource type e.g.  dynamodb_tables.tf, s3_buckets.tf, etc</p>
 <p><strong>main.tf</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>module &#34;dynamodb&#34; {
-</span></span><span style="display:flex;"><span>  source      = &#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-v" data-lang="v"><span style="display:flex;"><span><span style="font-weight:bold">module</span> <span style="font-style:italic">&#34;dynamodb&#34;</span> {
+</span></span><span style="display:flex;"><span>  source      = <span style="font-style:italic">&#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;</span>
 </span></span><span style="display:flex;"><span>  environment = var.environment
-</span></span><span style="display:flex;"><span>  table_name  = &#34;${upper(var.environment)}_ABC_TABLE&#34;
+</span></span><span style="display:flex;"><span>  table_name  = <span style="font-style:italic">&#34;</span>${upper(var.environment)}<span style="font-style:italic">_ABC_TABLE&#34;</span>
 </span></span><span style="display:flex;"><span>  attribute_list = [
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      name = &#34;convState&#34;
-</span></span><span style="display:flex;"><span>      type = &#34;S&#34;
+</span></span><span style="display:flex;"><span>      name = <span style="font-style:italic">&#34;convState&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">type</span> = <span style="font-style:italic">&#34;S&#34;</span>
 </span></span><span style="display:flex;"><span>    },
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      name = &#34;id&#34;
-</span></span><span style="display:flex;"><span>      type = &#34;S&#34;
+</span></span><span style="display:flex;"><span>      name = <span style="font-style:italic">&#34;id&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">type</span> = <span style="font-style:italic">&#34;S&#34;</span>
 </span></span><span style="display:flex;"><span>    },
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      name = &#34;tag&#34;
-</span></span><span style="display:flex;"><span>      type = &#34;S&#34;
+</span></span><span style="display:flex;"><span>      name = <span style="font-style:italic">&#34;tag&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">type</span> = <span style="font-style:italic">&#34;S&#34;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  ]
-</span></span><span style="display:flex;"><span>  hash_key  = &#34;id&#34;
-</span></span><span style="display:flex;"><span>  range_key = &#34;tag&#34;
+</span></span><span style="display:flex;"><span>  hash_key  = <span style="font-style:italic">&#34;id&#34;</span>
+</span></span><span style="display:flex;"><span>  range_key = <span style="font-style:italic">&#34;tag&#34;</span>
 </span></span><span style="display:flex;"><span>  tags = {
-</span></span><span style="display:flex;"><span>    Application = &#34;Example&#34;
-</span></span><span style="display:flex;"><span>    Environment = &#34;Non-production::${upper(var.environment)}&#34;
-</span></span><span style="display:flex;"><span>    Owner       = &#34;devops@example.org&#34;
-</span></span><span style="display:flex;"><span>    Role        = &#34;DataSource&#34;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">Application</span> = <span style="font-style:italic">&#34;Example&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">Environment</span> = <span style="font-style:italic">&#34;Non-production::</span>${upper(var.environment)}<span style="font-style:italic">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">Owner</span>       = <span style="font-style:italic">&#34;devops@example.org&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">Role</span>        = <span style="font-style:italic">&#34;DataSource&#34;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  global_secondary_index_list = [{
-</span></span><span style="display:flex;"><span>    hash_key           = &#34;convState&#34;
+</span></span><span style="display:flex;"><span>    hash_key           = <span style="font-style:italic">&#34;convState&#34;</span>
 </span></span><span style="display:flex;"><span>    range_key          = null
-</span></span><span style="display:flex;"><span>    name               = &#34;convState-index&#34;
+</span></span><span style="display:flex;"><span>    name               = <span style="font-style:italic">&#34;convState-index&#34;</span>
 </span></span><span style="display:flex;"><span>    non_key_attributes = []
-</span></span><span style="display:flex;"><span>    projection_type    = &#34;ALL&#34;
+</span></span><span style="display:flex;"><span>    projection_type    = <span style="font-style:italic">&#34;ALL&#34;</span>
 </span></span><span style="display:flex;"><span>    read_capacity      = 0
 </span></span><span style="display:flex;"><span>    write_capacity     = 0
 </span></span><span style="display:flex;"><span>  }]
@@ -282,8 +282,8 @@
 </span></span><span style="display:flex;"><span>  local_secondary_index_list = []
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  ttl_list = [{
-</span></span><span style="display:flex;"><span>    attribute_name = &#34;expirationTime&#34;
-</span></span><span style="display:flex;"><span>    enabled        = true
+</span></span><span style="display:flex;"><span>    attribute_name = <span style="font-style:italic">&#34;expirationTime&#34;</span>
+</span></span><span style="display:flex;"><span>    enabled        = <span style="font-weight:bold">true</span>
 </span></span><span style="display:flex;"><span>  }]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  providers = {
@@ -292,12 +292,12 @@
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>provider &#34;aws&#34; {
-</span></span><span style="display:flex;"><span>  alias = &#34;us-west-2&#34;
+</span></span><span style="display:flex;"><span>provider <span style="font-style:italic">&#34;aws&#34;</span> {
+</span></span><span style="display:flex;"><span>  alias = <span style="font-style:italic">&#34;us-west-2&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>provider &#34;aws&#34; {
-</span></span><span style="display:flex;"><span>  alias = &#34;us-east-1&#34;
+</span></span><span style="display:flex;"><span>provider <span style="font-style:italic">&#34;aws&#34;</span> {
+</span></span><span style="display:flex;"><span>  alias = <span style="font-style:italic">&#34;us-east-1&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h4 id="explanation">Explanation:</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>source      = &#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;
