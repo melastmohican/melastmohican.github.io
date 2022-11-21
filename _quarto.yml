@@ -5,6 +5,7 @@ website:
   title: "melastmohican.github.io"
   site-url: https://melastmohican.github.io
   description: "This is Melastmohican's personal Blog."
+  google-analytics: "G-02B3P2J7T2"
   navbar:
     right:
       - about.qmd
