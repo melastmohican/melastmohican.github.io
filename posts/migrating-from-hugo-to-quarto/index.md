@@ -198,6 +198,29 @@ quarto preview
 ```
 
 4. Last step would be:
-```
+``` bash
 quarto publish gh-pages
+? Update site at https://melastmohican.github.io? (Y/n) › Yes
+From https://github.com/melastmohican/melastmohican.github.io
+ * branch            gh-pages   -> FETCH_HEAD
+Rendering for publish:
+[ 2/12] posts/migrating-from-hugo-to-quarto/index.md
+
+branch 'gh-pages' set up to track 'origin/gh-pages'.
+HEAD is now at a871c16 rebuilding site Mon Nov 14 16:32:05 PST 2022
+Preparing worktree (resetting branch 'gh-pages'; was at a871c16)
+[gh-pages 6750867] Built site for gh-pages
+ 39 files changed, 11245 insertions(+), 2402 deletions(-)
+ create mode 100644 posts/migrating-from-hugo-to-quarto/gsearch.png
+ create mode 100644 posts/migrating-from-hugo-to-quarto/index.html
+ create morigin https://github.com/melastmohican/melastmohican.github.io.git (fetch)
+origin  https://github.com/melastmohican/melastmohican.github.io.git (push)
+To https://github.com/melastmohican/melastmohican.github.io.git
+   a871c16..6750867  HEAD -> gh-pages
+
+NOTE: GitHub Pages sites use caching so you might need to click the refresh
+button within your web browser to see changes after deployment.
+
+[✓] Deploying gh-pages branch to website (this may take a few minutes)
+[✓] Published to https://melastmohican.github.io
 ```
