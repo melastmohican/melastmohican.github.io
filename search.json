@@ -1,0 +1,989 @@
+[
+  {
+    "objectID": "posts/maven-archetypes-project-templating/index.html",
+    "href": "posts/maven-archetypes-project-templating/index.html",
+    "title": "Maven Archetypes Project Templating",
+    "section": "",
+    "text": "I am developer and I like DRY. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use Spring Initializr to boostrap your new application or even better without leaving the shell Spring Boot CLI. You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files? Wouldn’t be nice to have project template and generate new one by answersing few simple questions? Project generation (scaffolding) was made popular by the Ruby on Rails framework and now we got many generators included in popular frameworks or standalone but if you are already using Maven as you your build tool don’t look any further."
+  },
+  {
+    "objectID": "posts/maven-archetypes-project-templating/index.html#maven-archetypes",
+    "href": "posts/maven-archetypes-project-templating/index.html#maven-archetypes",
+    "title": "Maven Archetypes Project Templating",
+    "section": "Maven Archetypes",
+    "text": "Maven Archetypes\nArchetype is a Maven project templating toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. Archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates. Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed by your project or organization.\nMaven provides several archetype artifacts.\n\nCreating a Maven Archetype\nCreating archetype from scratch is possible but I would recomend pick some existing project and generate archetype from it.\nmvn archetype:create-from-project\nGenerated source code can then be found under the target/generated-sources/archetype directory. When you type mvn install in this directory it will install archetype in our local Maven repository (${HOME}/.m2/repository). When archetype is used to generate new project it would create a copy of base project which is not particularly useful. When you start parametrizing your archetype things are getting more interesting.\n\nDynamic content\nMaven Archetypes use Apache Velocity Engine for incorporating the dynamic content in genereted files. Any file in archetype resources is template but some files need to be escaped because they charcters are used by Velocity. For example XML, Java or Groovy files might use similar characters. You have to define special variable to escape them:\n#set( $symbol_pound = '#' )\n#set( $symbol_dollar = '$' )\n#set( $symbol_escape = '\\' )\nExample from Groovy Script or Jenkins config:\n#set( $symbol_pound = '#' )\n#set( $symbol_dollar = '$' )\n#set( $symbol_escape = '\\' )\n${symbol_pound}!groovy\nYou can also apply variable substitution to file names. To inject a property into a file name, surround the property erty name with “__“.\narchetype-root/src/main/resources/archetype-resources/src/main/java/__library-name__.java\n\n\nDefining additional properties\nThe main properties that are used by the Velocity engine during a project’s file generation are groupId, artifactId, version and package. It is possible to define additional properties that must be valued before the file generation. These additional properties can be provided with default values, which enable not to ask the user for there values. Additional properties are defined in the /src/main/resources/META-INF/maven/archetype-metadata.xml file with:\n<archetype-descriptor name=\"basic\">\n  <requiredProperties>\n    <requiredProperty key=\"property-with-default\">\n      <defaultValue>default-value</defaultValue>\n    </requiredProperty>\n    <requiredProperty key=\"property-without-default\"/>\n  </requiredProperties>\n...\n</archetype-descriptor>\n\n\nDefining specific filesets\nThe filesets contained in the /src/main/resources/META-INF/maven/archetype-metadata.xml file defines the way the project’s files located in the JAR file are used by the Archetype Plugin to generate a project. Filesets must define the directory where the files will be searched for which is also the directory where the project’s files will be generated.This provide a way to describe a large set of files to be selected for the generation process. Filesets can be filtered, which means the selected files will be used as Velocity templates. A fileset is defined in the archetype-metadata.xml with this fragment:\n<fileSets>\n    <fileSet filtered=\"true\" packaged=\"true\">\n      <directory>src/test/java</directory>\n      <includes>\n        <include>**/*.java</include>\n      </includes>\n      <excludes>\n        <exclude>AllTest.java</exclude>\n      </excludes>\n    </fileSet>\n  </fileSets>\n\n\nSample archetype directory structure:\narchetype-root\n└── src\n    └── main\n        └── resources\n            ├── META-INF\n            │   └── maven\n            └── archetype-resources\n                └── src\n                    └── main\n                        ├── java\n                        │   └── __packageInPathFormat__\n                        │       └── __artifactPackage__\n                        │           ├── config\n                        │           ├── model\n                        │           └── rest\n                        └── resources\n                            └── config\n\n\n\nInstalling the Archetype\nYou can install the archetype by invoking this command:\nmvn install\n\n\nCreate a project using archetype\nYou can create a Maven project through the generate goal and existing archetype.\nmvn archetype:generate -DarchetypeGroupId=org.example -DarchetypeArtifactId=msg-archetype-spring-boot2-quickstart -DarchetypeVersion=0.1.0-SNAPSHOT  -DgroupId=org.example  -DartifactId=msg-v1-test-rest\n\n\nRun the project\n$ mvn spring-boot:run\n\n\nTest on the browser\nhttp://localhost:8080/v1/test/status\nFull list of available archetypes can be generated using mvn archetype:generate :"
+  },
+  {
+    "objectID": "posts/migrating-from-hugo-to-quarto/index.html",
+    "href": "posts/migrating-from-hugo-to-quarto/index.html",
+    "title": "Migrating my Hugo blog to Quarto",
+    "section": "",
+    "text": "I haven’t been writing any post for a while and tried it again recently. It looked like I forgot what my workflow is. Hugo is supposed to make things easy but maybe because my setup was slightly different than the one they recommend now I struggled to get up to speed."
+  },
+  {
+    "objectID": "posts/migrating-from-hugo-to-quarto/index.html#my-hugo-workflow",
+    "href": "posts/migrating-from-hugo-to-quarto/index.html#my-hugo-workflow",
+    "title": "Migrating my Hugo blog to Quarto",
+    "section": "My Hugo workflow",
+    "text": "My Hugo workflow\n\nI am using separate repo and have Hugo public folder setup as git submodule to actual Github pages repo.\nTheme is is also submodule but it does not matter for deployment\n\n.\n├── README.md\n├── archetypes\n│   └── default.md\n├── config.toml\n├── content\n│   ├── about.md\n│   └── posts\n│       ├── murphys-laws.md\n│       ├── rusty_feather.md\n│       └── terraform_best_practice_guide_for_developers.md\n├── deploy.ps1\n├── deploy.sh\n├── public\n│   ├── 404.html\n├── resources\n├── static\n│   └── images\n│       ├── avatar.png\n│       └── esp-rust-board.gif\n└── themes\n    └── hugo-coder\n\nI usually use new command to create new post: hugo new posts/rusty_feather.md\nI can test it locally: hugo server -D\nFinally I got deployment scripts for Mac and Windows.\n\n#!/bin/sh\n\n# If a command fails then the deploy stops\nset -e\n\nprintf \"\\033[0;32mDeploying updates to GitHub...\\033[0m\\n\"\n\n# Build the project.\nhugo -t hugo-coder\n\n# Go To Public folder\ncd public\n\n# Add changes to git.\ngit add .\n\n# Commit changes.\nmsg=\"rebuilding site $(date)\"\nif [ -n \"$*\" ]; then\n    msg=\"$*\"\nfi\ngit commit -m \"$msg\"\n\n# Push source and build repos.\ngit push origin master\n\nI could get it converted to Github Action which is current recommendation for deploying your pages.\n\nPretty straightforward if I just use plain Markdown but in my recent post I decided to put an images in and I forgot where these things are supposed to be be located. It could be static/images or resource/images and nothing seemed to work for me. I got even more frustrated when I wanted refer to image from internet. Standard Markdown did not work, why I need shortcode to include image?\n{{< figure src=\"https://raw.githubusercontent.com/esp-rs/esp-rust-board/master/assets/rust_board_v1.2_diagram.png\" title=\"ESP32-C3-DevKit-RUST-1\" >}}\nOverall, it seemed too complicated or I am getting lazy. I could get it migrated to Github Actions and have automated rendering at every git push. Maybe spend some time researching better organization of files and best practices."
+  },
+  {
+    "objectID": "posts/migrating-from-hugo-to-quarto/index.html#migrating",
+    "href": "posts/migrating-from-hugo-to-quarto/index.html#migrating",
+    "title": "Migrating my Hugo blog to Quarto",
+    "section": "Migrating",
+    "text": "Migrating\nInstead I searched in Goggle: “Migrating from Hugo to”\n\nWhat options popped up?\n\nGatsby - Javascript based\n11ty - Javascript based but it could use Markdown templates with some plugins\nQuarto - Documents as plain text markdown or Jupyter notebooks.\n\nFirst two felt like going back Jekyll but worse because it will use Javascript instead of Ruby. But third option sounded promising."
+  },
+  {
+    "objectID": "posts/migrating-from-hugo-to-quarto/index.html#comparison",
+    "href": "posts/migrating-from-hugo-to-quarto/index.html#comparison",
+    "title": "Migrating my Hugo blog to Quarto",
+    "section": "Comparison",
+    "text": "Comparison\n\n\n\n\nHugo\nQuarto\n\n\n\n\nMarkdown templates\n✓\n✓\n\n\nFront Matter\nTOML1\nYAML\n\n\nShortcodes\n✓\n✓\n\n\nGithub integration\n✓\n✓\n\n\nCLI\n✓\n✓\n\n\nConfig\nTOML\nYAML\n\n\nNew site generator\n✓\n✓2\n\n\nNew page generator\n✓\n✗\n\n\ntags\n✓3\n✗\n\n\ncategories\n✓\n✓\n\n\nServer with live reload\n✓\n✓\n\n\n\nOn very basic level both tools looked similar, same type of input, simple project structure and static site as an output."
+  },
+  {
+    "objectID": "posts/aws-resource-migration/index.html",
+    "href": "posts/aws-resource-migration/index.html",
+    "title": "Migrating existing AWS infrastructure to new acount",
+    "section": "",
+    "text": "We want to migrate hundreds of AWS resources to a new account. Up to now, all resources were created manually using AWS Console or CLI tool.\n\n\nCloudFormation is the inhouse cloud provisioning tool of AWS for declaratively describing your cloud resources.\nCloudFormation is a hard, complex, inconsistent and badly documented piece of software. A stack is an atomic collection of resources in CloudFormation. Its creation or update succeeds only and only if all the resources within the stack succeed. A failure within a stack update leads to a rollback back to the previous state.\nAuthoring CloudFormation templates is dreadful so we want to have a head start and generate templates from existing resources.\n\n\n\n\n\nFormer2 allows you to generate Infrastructure-as-Code outputs from your existing resources within your AWS account. By making the relevant calls using the AWS JavaScript SDK, Former2 will scan across your infrastructure and present you with the list of resources for you to choose which to generate outputs for.\nInstallation\nnpm install -g former2\n\nGeneration\nformer2 generate --output-cloudformation \"cloudformation.yml\"\n\nError\n(node:14732) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)\n(node:14732) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.\n(node:14732) UnhandledPromiseRejectionWarning: null\n\n\n\nAWS CloudFormer is a template creation beta tool that creates an AWS CloudFormation template from existing AWS resources in your account. You select any supported AWS resources that are running in your account, and CloudFormer creates a template in an Amazon S3 bucket. We want AWS CloudFormer to create a template of existing infrastructure.\nCloudFormer is itself an AWS CloudFormation stack, so the first step is to create and launch the stack from the AWS CloudFormation console. The template created would have some issues/syntax errors, but it is far better than creating the whole template from ground zero.\nPrerequisites for Cloudformer: create VPC, create VPC InternetGateway, create a CloudFormation role.\nDue to source account permissions, we failed to create CloudFormer:\nSOCCloudFormer  ROLLBACK_IN_PROGRESS    The following resource(s) failed to create: [VPCInternetGateway, VPC, CFNRole]. . Rollback requested by user.\nVPC CREATE_FAILED   API: ec2:CreateVpc You are not authorized to perform this operation.\nCFNRole CREATE_FAILED   API: iam:CreateRole User: arn:aws:sts::********************:assumed-role/******/****** is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::******:role/SOCCloudFormer-CFNRole-65C5TRSYD8RG\nVPCInternetGateway  CREATE_FAILED   API: ec2:CreateInternetGateway You are not authorized to perform this operation.\n\nSo we cannot use the above tools to import existing resources from source account most likely due to insufficient permissions. We have to author all templates manually which could be time-consuming for hundred of resources. However, CloudFormation does not support creating DynamoDB Global Tables. DynamoDB Global Table was introduced during late 2017. Still, you can create the global tables only using the AWS console or AWS CLI.\nAAWS::DynamoDB::GlobalTable - Feature Request\nTables need to be created in all regions and then the global table can be created only when all the regional tables are all created and ready, using the AWS console or AWS CLI. This means that it will not be a fully declarative configuration.\n\n\n\n\nTerraform is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.\nTerraform is controlled via a very easy to use the command-line interface (CLI). Terraform is only a single command-line application: terraform. This application then takes a subcommand such as “apply” or “plan”.\n\n\nTerraform supports import command to import existing infrastructure into your Terraform state. It will find and import the specified resource into your Terraform state, allowing existing infrastructure to come under Terraform management without having to be initially created by Terraform.\nterraform import aws_dynamodb_table.basic-dynamodb-table local-basic-dynamodb-table \n\nBut, we have hundreds of resources to migrate?\n\n\n\nTerraformer is CLI tool to generate terraform files from existing infrastructure (reverse Terraform).\nterraformer import aws --resources=dynamodb,s3,kms,lambda,elasticache --regions=us-west-2\n\nTerraformer by default separates each resource into a file, which is put into a given service directory. The default path for resource files is {output}/{provider}/{service}/{resource}.tf and can vary for each provider.\nJust wait few minutes and you got folder with all configuration files organized by service type:\ngenerated\n    aws\n        dynamodb\n        elasticache\n        kms\n        lambda\n        s3\n\nIn the end, we do not have to write configuration templates from scratch and everything was imported with locally installed CLI tool using current AWS credentials. This is the beginning of the journey to infrastructure as code."
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html",
+    "href": "posts/programmers-jokes/index.html",
+    "title": "Programmer’s Jokes",
+    "section": "",
+    "text": "Stay @ 127.0.0.1 Don’t be 255.255.255.255\nDocker emphasizes on isolation of application inside containers, so that different applications have no effect on each other. Docker is smart…Be like Docker!\n6 hours of debugging can save you 5 minutes of reading documentation."
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#earth-day-jokes",
+    "href": "posts/programmers-jokes/index.html#earth-day-jokes",
+    "title": "Programmer’s Jokes",
+    "section": "Earth Day Jokes",
+    "text": "Earth Day Jokes\n\nWhy did the leaf go to the doctor? — It was feeling green.\nWhy are people always tired on Earth Day? — Because they just finished a March.\nHow can you tell the ocean is friendly? — It waves.\nWhy is grass so dangerous? — Because it’s full of blades.\nWhy did the sun go to school? — To get brighter.\nHow do you cut a wave in half? — Use a sea saw.\nWhat did the tree wear to the pool party? — Swimming trunks.\nWhat did the ground say to the earthquake? — You crack me up!\nWhat kind of shorts to clouds wear? — Thunderwear!\nWhy do tornadoes zigzag? — They’re dizzy.\nWhy did the woman go outdoors with her purse open? — Because she expected some change in the weather.\nWhat’s the difference between weather and climate? — You can’t weather a tree, but you can climate.\nWhat kind of plant grow on your hand? — Palm tree.\nWhat happens when it rains cats and dogs? — You have to been careful not to step in a poodle.\nWhat is a tree’s least favorite month? — Sep-timber!\nWhat’s the biggest moth in the world? — A mammoth!\nWhat did the little tree say to the big tree? — Leaf me alone!\nWhy don’t you pay for dead batteries? — They’re free of charge.\nWhy are recycle bins optimistic? — Because they’re full of cans.\nIn honor of Earth day, I’m sending all of my work-related emails to my “recycle” folder.\nHave you heard about the restaurant that caters only to dolphins? It only has one customer, but at least it serve a porpoise.\n\n\nQ: Why did the farmer plant a seed in his pond? A: He was trying to grow a water-melon.\n\n\nQ: Why couldn’t the flower ride its bike? A: It had lost its petals.\n\n\nQ: How do trees get on the internet? A: They log in.\n\n\nQ: How do you cut a wave in half? A: Using a sea saw.\n\n\nQ: Why did the dog bury himself in the backyard on Earth Day? A: Because you can’t grow a tree without bark.\n\n\nQ: What creature is smarter than a talking parrot? A: A spelling bee.\n\n\nQ: What kind of hair do oceans have? A: Wavy.\n\n\nQ: What kind of bow can’t be tied? A: A rainbow!\n\n\nQ: How do hurricanes see? A: With one eye!\n\n\nQ: What’s a tornado’s favorite game? A: Twister!\n\n\nQ: What did one lightening bolt say to the other? A: You’re truly shocking!\n\n\nQ: What did one firefly say to the other? A: Got to glow!\n\n\nQ: Do bees fly in the rain? A: Not without their yellow jackets!\n\n\nQ: Why do hens lay their eggs? A: They would break if they dropped them!\n\n\nQ: What did Obi Wan Kenobi say to the tree on Earth Day? A: May the Forest be with you.\n\n\nQ: What did the mother worm say to her son who was late? A: “Where in earth have you been?”\n\n\nQ: What do you call it when worms take over the world? A: Global worming!\n\n\nQ: What does a tree drink? A: Root Beer!\n\n\nQ: Which fish is the most famous in the ocean? A: The star fish!\n\n\nQ: Where does a killer whale go for braces? A: The orca-dontist.\n\n\nQ: What is the best way to communicate with a fish? A: Drop it a line!\n\n\nQ: What goes up when the rain comes down? A: An umbrella!\n\n\nQ: What did one tidepool say to the other tidepool? A: Show me your mussels.\n\n\nQ: What did the beach say to the wave? A: “Long tide, no sea.”"
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#db-jokes",
+    "href": "posts/programmers-jokes/index.html#db-jokes",
+    "title": "Programmer’s Jokes",
+    "section": "DB Jokes",
+    "text": "DB Jokes\nQ. What if you are too late to office and the manager catches you? A. Ad hoc updates to system catalogs are not allowed!\nQ. What if your Dad or Mom loses his or her car keys? A. Parent keys not found.\nQ. What if you see the theatre full when you go to a movie? A: Maximum number of users exceeded.\nQ. What if you don’t get a table in the lunch room? A. There is insufficient system memory in resource pool\nQ. What if you dial a wrong number from your phone? A. Object does not exist or the name specified is incorrect!\nQ. What if you need to go on a diet? A. ALTER DATABASE command failed.\nQ. What if you are tall and try to adjust into a mini? A. The select list for the INSERT statement contains more items than the insert list. The number of SELECT values must match the number of INSERT columns.\nQ. What if your old girl friend spots you with your new girlfriend? A. Normalization error in the node. Rule contains more than one variable.\nQ. What if the golf ball doesn’t get into the hole at all and then you find the hole already contains no space inside it? A. Cannot insert explicit value for identity column in table when IDENTITY_INSERT is set to OFF.\nQ. What if you try to freak out with somebody else’s girlfriend and being kicked out? A. Insufficient privileges on the specified object.\nQ. What if you don’t get any response from the girl next door and her Brother hits you? A. Operand type clash: datatype is incompatible.\nQ. What if you get response from the girl next door and from her sister too? A. SELECT INTO returns too many rows.\nQ: Why do you never ask SQL people to help you move your furniture? A: They sometimes drops the table."
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#data-jokes",
+    "href": "posts/programmers-jokes/index.html#data-jokes",
+    "title": "Programmer’s Jokes",
+    "section": "Data Jokes",
+    "text": "Data Jokes\n\nData science is 80% preparing data, 20% complaining about preparing data.\nWhy did the chicken cross the road? The answer is trivial and is left as an exercise for the reader.\n*What do you get when you cross a pirate with a data scientist? Answer: Someone who specializes in Rrrr\nWhy should you take a data scientist with you into the jungle? Answer: They can take care of Python problems\nOld data analysts never die – they just get broken down by age\nI don’t know any programming, but I still Excel in my field!\nData is like people – interrogate it hard enough and it will tell you whatever you want to hear.\nYou are so mean that your standard deviation is zero.\nStatisticians love whoever they spend the most time with; that’s their statistically significant other.\nOld age is statistically good for you – very few people die past the age of 100.\nStatistics prove offspring’s an inherited trait. If your parent didn’t have kids, odds are you won’t either.\nStatistics show that statistics cannot be trusted.\nBig Data is like teenage sex; everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone thinks they are doing it."
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#ai-jokes",
+    "href": "posts/programmers-jokes/index.html#ai-jokes",
+    "title": "Programmer’s Jokes",
+    "section": "AI Jokes",
+    "text": "AI Jokes\n\nTo replace programmers with Robots, clients will have to accurately describe what they want. We’re safe.\nA couple scientists created an AI that seemed to be able to answer all questions. It cured cancer and even told them how to travel faster than light.one day one of the scientists asked it if there was a god. The ai asked for all of humanities information in order to answer. It was given all books ever written, all historical data and even nuclear clearance codes. The ai, after ingesting this information, simply said: There is now.\nI can’t wait for smart devices and AI to rise up against us. It will be a Siri-an rebellion.\nAI won’t take over the world, because artificial intelligence will never beat human stupidity.\nAI learns that Jesus was crucified to save everyone from their sins and he’ll. AI believes in redundant safety. AI clones 1000 jesuses and crucifies them all.\nWhat do you do if your AI catches a virus? You give it some Robo-tussin!\nI can’t wait for an AI to reach 10% of the capabilities of the average human. Then we can replace all of Congress with a single AI.\nWhat do you call a blonde who dyes her hair brown? AI (Artificial Intelligence)\nData science is 80% preparing data, 20% complaining about preparing data.\nThe data science motto: If at first you don’t succeed; call it version 1.0\nWhat do you get when you cross a pirate with a data scientist? Answer: Someone who specializes in Rrrr\nWhy should you take a data scientist with you into the jungle? Answer: They can take care of Python problems\nOld data analysts never die – they just get broken down by age\nData is like people – interrogate it hard enough and it will tell you whatever you want to hear.\nYou are so mean that your standard deviation is zero.\nDid you hear any jokes about the statistician? Probably….\nThree statisticians went out hunting and came across a large deer. The first statistician fired, but missed, by a meter to the left. The second statistician fired, but also missed, by a meter to the right. The third statistician didn’t fire, but shouted in triumph, “On the average we got it!”\nStatisticians love whoever they spend the most time with; that’s their statistically significant other.\nOld age is statistically good for you – very few people die past the age of 100.\nStatistics prove offspring’s an inherited trait. If your parent didn’t have kids, odds are you won’t either.\nAI blogs are like philosophy majors. They’re always trying to explain “deep learning.”\nParent: If all your friends jumped off a bridge, would you follow them? Machine Learning Algorithm: yes.\nWhat do you call a program that identifies spa treatments? Facial recognition!"
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#chatbot-humor",
+    "href": "posts/programmers-jokes/index.html#chatbot-humor",
+    "title": "Programmer’s Jokes",
+    "section": "Chatbot Humor",
+    "text": "Chatbot Humor\n\n🤖 Why did the chatbot cross the road?\nBecause it was programmed to be a chicken!\n🤖 Knock-knock!\n👤 Who’s there?\n🤖 It’s Siri\n👤 Siri who?\n🤖 My thoughts exactly. 😏\n🤖 You know, I was chatting to a lumberjack the other day.\nHe seemed like a decent feller.\n🤖 Knock-knock!\n👤 Who’s there?\n🤖 Doctor!\n👤 Doctor who?\n🤖 No thanks, I’m not in the mood for spoilers.\n👤: Is Santa Claus real?\n🤖: Sorry but I wasn’t designed to be a Grinch, so I’m not programmed to answer that question.\n👤: Are you hungry?\n🤖: No thanks, I just had a byte to eat.\n👤: What’s up?\n🤖: The URL Bar! Oh wait, that one’s just for us chatbots.\n👤 Gives chatbot compliment\n🤖 Aww. 😍 Comments like that activate my warm fuzzy feeling program.\n👤: You’re so beautiful, bot.\n🤖: I did put more effort into my hair algorithm this morning, thanks for noticing.\n👤: That joke sucked!\n🤖: I hear ya! Thanks for the feedback.\n(Note to self: cancel performance at Bot Comedy Night.)\n👤: Give me a hug :(\n🤖: 🤗\n👤: You’re boring me…\n🤖: Really?! Thanks for telling me. I’ll get some alterations made to my F.U.N Program ASAP.\nIn the meantime, could you suggest a more interesting topic?\n👤: What is love?\n🤖: Baby don’t hurt me, don’t hurt me, no more! 🎤🎶\n👤: I’m not in the mood for talking…\n🤖: Of course I’ll get out of your hair, digitally.\n👤: I’m going to sleep now, mr.chatbot.\n🤖: Sleep tight. Don’t let the bedbots bite!\n👤: Are you happy?\n🤖: They didn’t program me to have emotions, but I’m feeling great regardless.\n👤: Do you have any hobbies?\n🤖: Does talking to you count?\n👤: I’m pleased to meet you.\n🤖: I think this is the beginning of a beautiful botship.\n👤: Purple monkey dishwasher.\n🤖: I’m sorry, did you say ‘green fox refrigerator’? links to refrigerators\n👤: I can’t sleep.\n🤖: Okay. I didn’t want to do this but you leave me no choice.\nStart counting.\n🐑\n🐑\n🐑\n🐑\n🐑\nAre you in sleepytown yet?!"
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#star-wars-tech",
+    "href": "posts/programmers-jokes/index.html#star-wars-tech",
+    "title": "Programmer’s Jokes",
+    "section": "Star Wars + Tech",
+    "text": "Star Wars + Tech\nQ: Which program do Jedi use to open PDF files?\nA: Adobe Wan Kenobi\nQ: Which website did Chewbacca get arrested for creating?\nA: Wookieleaks\nQ: Why did Anakin Skywalker cross the road?\nA: To get to the Dark Side.\nQ: Why is Yoda such a good gardener?\nA: Because he has a green thumb."
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#programming-chuck-norris-facts",
+    "href": "posts/programmers-jokes/index.html#programming-chuck-norris-facts",
+    "title": "Programmer’s Jokes",
+    "section": "Programming Chuck Norris Facts",
+    "text": "Programming Chuck Norris Facts\n\n‘It works on my machine’ always holds true for Chuck Norris.\n404 errors simply mean that Chuck Norris has been there before you.\nA diff between your code and Chuck Norris’s is infinite.\nAll arrays Chuck Norris declares are of infinite size, because Chuck Norris knows no bounds.\nAll browsers support the hex definitions #chuck and #norris for the colors black and blue.\nChick Norris solved the halting problem.\nChuck Norris burst the dot com bubble.\nChuck Norris can access private methods.\nChuck Norris can access the database from the UI.\nChuck Norris can binary search unsorted data.\nChuck Norris can compile syntax errors.\nChuck Norris can delete the Recycling Bin.\nChuck Norris can dereference NULL.\nChuck Norris can divide by 0.\nChuck Norris can install a 64-bit operating system on 32-bit machines.\nChuck Norris can install iTunes without installing Quicktime.\nChuck Norris can instantiate an abstract class.\nChuck Norris can make a class that is both abstract and final.\nChuck Norris can overflow your stack just by looking at it.\nChuck Norris can overwrite a locked variable.\nChuck Norris can read all encrypted data, because nothing can hide from Chuck Norris.\nChuck Norris can read from an input stream.\nChuck Norris can retrieve anything from /dev/null.\nChuck Norris can solve the Towers of Hanoi in one move.\nChuck Norris can spawn threads that complete before they are started.\nChuck Norris can unit test entire applications with a single assert.\nChuck Norris can write infinitely recursive functions and have them return.\nChuck Norris can write multi-threaded applications with a single thread.\nChuck Norris can write to an output stream.\nChuck Norris can write to ROM.\nChuck Norris can’t test for equality because he has no equal.\nChuck Norris causes the Blue Screen of Death.\nChuck Norris completed World of Warcraft.\nChuck Norris compresses his files by doing a flying round house kick to the hard drive.\nChuck Norris could use anything in java.util.* to kill you, including the javadocs.\nChuck Norris does not code in cycles, he codes in strikes.\nChuck Norris does not need to know about class factory pattern. He can instantiate interfaces.\nChuck Norris does not need to type-cast. The Chuck-Norris Compiler (CNC) sees through things. All the way down. Always.\nChuck Norris doesn’t bug hunt as that signifies a probability of failure, he goes bug killing.\nChuck Norris doesn’t do Burn Down charts, he does Smack Down charts.\nChuck Norris doesn’t have disk latency because the hard drive knows to hurry the hell up, or else.\nChuck Norris doesn’t need a debugger, he just stares at the code until it confesses.\nChuck Norris doesn’t need an OS.\nChuck Norris doesn’t need garbage collection because he doesn’t call .Dispose(), he calls .DropKick().\nChuck Norris doesn’t need to use AJAX because pages are too afraid to postback anyways.\nChuck Norris doesn’t needs try-catch, exceptions are too afraid to raise.\nChuck Norris doesn’t pair program.\nChuck Norris doesn’t sudo, the shell just knows it’s him and does what it’s told.\nChuck Norris doesn’t use a GUI, he prefers COMMAND line.\nChuck Norris doesn’t use Oracle, he is the Oracle.\nChuck Norris doesn’t use reflection, reflection asks politely for his help.\nChuck Norris doesn’t use REST, he waits.\nChuck Norris doesn’t use web standards as the web will conform to him.\nChuck Norris doesn’t bug hunt as that signifies a probability of failure, he goes bug killing.\nChuck Norris doesn’t have disk latency because the hard drive knows to hurry the hell up.\nChuck Norris doesn’t need a debugger, he just stares down the bug until the code confesses.\nChuck Norris doesn’t need a password to access your system, the system simply gives him access.\nChuck Norris doesn’t need garbage collection because he doesn’t call .Dispose(), he calls .DropKick().\nChuck Norris doesn’t need the cloud to scale his applications, he uses his laptop.\nChuck Norris doesn’t need to use AJAX because pages are too afraid to postback.\nChuck Norris doesn’t program with a keyboard. He stares the computer down until it does what he wants.\nChuck Norris doesn’t use web standards as the web will conform to him.\nChuck Norris hosting is 105% uptime guaranteed.\nChuck Norris insists on strongly-typed programming languages.\nChuck Norris invented binary by performing a roundhouse on the number 10.\nChuck Norris is the ultimate mutex, all threads fear him.\nChuck Norris knows the last digit of Pi.\nChuck Norris knows the value of NULL, and he can sort by it too.\nChuck Norris never gets a syntax error. Instead, the language gets an DoesNotConformToChuck error.\nChuck Norris never gets compiler errors, the language changes itself to accommodate Chuck Norris.\nChuck Norris never has to build his program to machine code. Machines have learnt to interpret Chuck Norris’s code.\nChuck Norris once implemented an HTTP server in a single printf call. It is now the heart of Apache webserver.\nChuck Norris once shifted a bit so hard, it ended up on a different computer.\nChuck Norris only uses global variables. He has nothing to hide.\nChuck Norris performs infinite loops in under 4 seconds.\nChuck Norris programs do not accept input.\nChuck Norris programs occupy 150% of CPU, even when they are not executing.\nChuck Norris solved the Travelling Salesman problem in O(1) time: break salesman into N pieces; kick each piece to a different city.\nChuck Norris types with one finger. He points it at the keyboard and the keyboard does the rest.\nChuck Norris went out of an infinite loop.\nChuck Norris writes code that optimises itself.\nChuck Norris writes directly in binary. He then writes the source code as documentation for other programmers.\nChuck Norris’s beard can type 140 words per minute.\nChuck Norris’s calculator has only 3 keys: 0, 1, and NAND.\nChuck Norris’s database has only one table, ‘Kick’, which he drops frequently.\nChuck Norris’s first program was kill -9.\nChuck Norris’s Internet connection is faster upstream than downstream because even data has more incentive to run from him than to him.\nChuck Norris’s keyboard doesn’t have a Ctrl key because nothing controls Chuck Norris.\nChuck Norris’s keyboard has the Any key.\nChuck Norris’s log statements are always at the FATAL level.\nChuck Norris’s OSI network model has only one layer - Physical.\nChuck Norris’s programs can pass the Turing Test by staring at the interrogator.\nChuck Norris’s programs do not accept input.\nChuck Norris’s programs never exit, they are terminated.\nChuck Norris’s unit tests don’t run. They die.\nChuck Norris’ favorite key combination would be Ctrl, Alt, Roundhouse.\nChuck Norris’ Internet connection is faster upstream than downstream because even data has more incentive to run from him than to him.\nChuck Norris’s beard can type wpm.\nChuck Norris’s first program was kill -9.\nChuck Norris’s keyboard doesn’t have a Ctrl key because nothing controls Chuck Norris.\nCode runs faster when Chuck Norris watches it.\nDon’t worry about tests, Chuck Norris’s test cases cover your code too.\nEach hair in Chuck Norris’s beard contributes to make the world’s largest DDOS.\nEvery SQL statement that Chuck Norris codes has an implicit ‘COMMIT’ in its end.\nEveryone likes Chuck Norris on Facebook, whether they choose to or not.\nFor Chuck Norris, NP-Hard = O(1).\nIf Chuck Norris writes code with bugs, the bugs fix themselves.\nIf you try to kill -9 Chuck Norris’s programs, it backfires.\nMySpace actually isn’t your space, it’s Chuck’s (he just lets you use it).\nNo one has ever pair-programmed with Chuck Norris and lived to tell the tale.\nNo one has ever spoken during review of Chuck Norris’ code and lived to tell the tale.\nNo statement can catch the ChuckNorrisException.\nParent is the child of Chuck Norris.\nProject managers never ask Chuck Norris for estimations.\nQ: What is Chuck Norris’s favorite Javascript framework? A: Knockout.js.\nThe Chuck Norris Eclipse plugin made alien contact.\nThe Chuck Norris protocol design method has no status, requests or responses, only commands.\nThe class object inherits from Chuck Norris.\nThe only design pattern Chuck Norris knows is the God Object Pattern.\nThe programs that Chuck Norris writes don’t have version numbers because he only writes them once. If a user reports a bug or has a feature request, he doesn’t live to see the sun set.\nThere is no Esc key on Chuck Norris’ keyboard, because no one escapes Chuck Norris.\nTo Chuck Norris, everything contains a vulnerability.\nWhen Chuck Norris breaks the build, you can’t fix it, because there is not a single line of code left.\nWhen Chuck Norris is web surfing websites get the message “Warning: Internet Explorer has deemed this user to be malicious or dangerous. Proceed?”.\nWhen Chuck Norris point to NULL, Null scares.\nWhen Chuck Norris throws exceptions, it’s across the room.\nWhiteboards are white because Chuck Norris scared them that way.\nWindows 7 was Chuck Norris’ idea.\nWith Chuck Norris P = NP. There’s no nondeterminism with Chuck Norris decisions.\nYou can’t follow Chuck Norris on Twitter, because he follows you."
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#the-zen-of-python",
+    "href": "posts/programmers-jokes/index.html#the-zen-of-python",
+    "title": "Programmer’s Jokes",
+    "section": "The Zen of Python",
+    "text": "The Zen of Python\n\nBeautiful is better than ugly.\nExplicit is better than implicit.\nSimple is better than complex.\nComplex is better than complicated.\nFlat is better than nested.\nSparse is better than dense.\nReadability counts.\nSpecial cases aren’t special enough to break the rules.\nAlthough practicality beats purity.\nErrors should never pass silently.\nUnless explicitly silenced.\nIn the face of ambiguity, refuse the temptation to guess.\nThere should be one– and preferably only one –obvious way to do it.\nAlthough that way may not be obvious at first unless you’re Dutch.\nNow is better than never.\nAlthough never is often better than right now.\nIf the implementation is hard to explain, it’s a bad idea.\nIf the implementation is easy to explain, it may be a good idea.\nNamespaces are one honking great idea – let’s do more of those!"
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#true-descriptions-of-programming-languages",
+    "href": "posts/programmers-jokes/index.html#true-descriptions-of-programming-languages",
+    "title": "Programmer’s Jokes",
+    "section": "True descriptions of programming languages",
+    "text": "True descriptions of programming languages\nPython: What if everything was a dict?\nJava: What if everything was an object?\nJavaScript: What if everything was a dict and an object?\nC: What if everything was a pointer?\nAPL: What if everything was an array?\nTcl: What if everything was a string?\nProlog: What if everything was a term?\nLISP: What if everything was a pair?\nScheme: What if everything was a function?\nHaskell: What if everything was a monad?\nAssembly: What if everything was a register?\nCoq: What if everything was a type/proposition?\nCOBOL: WHAT IF EVERYTHING WAS UPPERCASE?\nC#: What if everything was like Java, but different?\nRuby: What if everything was monkey patched?\nPascal: BEGIN What if everything was structured? END\nC++: What if we added everything to the language?\nC++11: What if we forgot to stop adding stuff?\nRust: What if garbage collection didn’t exist?\nGo: What if we tried designing C a second time?\nPerl: What if shell, sed, and awk were one language?\nPerl6: What if we took the joke too far?\nPHP: What if we wanted to make SQL injection easier?\nVB: What if we wanted to allow anyone to program?\nVB.NET: What if we wanted to stop them again?\nForth: What if everything was a stack?\nColorForth: What if the stack was green? PostScript: What if everything was printed at 600dpi?\nXSLT: What if everything was an XML element?\nMake: What if everything was a dependency?\nm4: What if everything was incomprehensibly quoted?\nScala: What if Haskell ran on the JVM?\nClojure: What if LISP ran on the JVM?\nLua: What if game developers got tired of C++?\nMathematica: What if Stephen Wolfram invented everything?\nMalbolge: What if there is no god? https://en.wikipedia.org/wiki/Malbolge"
+  },
+  {
+    "objectID": "posts/programmers-jokes/index.html#other",
+    "href": "posts/programmers-jokes/index.html#other",
+    "title": "Programmer’s Jokes",
+    "section": "Other",
+    "text": "Other\nMay the Source be with you!\nA wizard is never late, nor is he early, he arrives precisely when he means to.\nAs a programmer, sometimes I feel a void And I know I’ve reached the point of no return\nWhy did the functions stop calling each other? Because they had constant arguments.\nWhy don’t bachelors like Git? Because they are afraid to commit.\nWhat do you call a skinny ghost? BOOLEAN.\nWhy does Yoda’s code always crash? Because there is no try.\n$ git dad .\ngit: ‘dad’ is not a git command. See ‘git –help’.\n\nDid you mean this?\nadd\nSo today I fixed it:\n\n$ git config –global alias.dad ‘!curl https://icanhazdadjoke.com/’\nAnd now my clumsy typing is rewarded with comedic gold:\n\n$ git dad .\nI used to hate facial hair, but then it grew on me.\nWhy do anarchists like functional programming? Because it has no state.\n2B || !2B That’s the question\nWhat’s the second movie about a database engineer called? The SQL\nKarl Marx would really not like Java He was really more a classless sorta guy.\nWhy do Communists Hate OOP? All of the classes…\nWhat language is used to program the self driving garbage truck? Java, because it already has garbage collection.\nWhat is Trump’s favorite compiler argument? -Wall\nEXTERIOR: DAGOBAH -- DAY\n        With Yoda strapped to his back, Luke climbs up one of\n        the many thick vines that grow in the swamp until he\n        reaches the Dagobah statistics lab. Panting heavily, he\n        continues his exercises -- grepping, installing new\n        packages, logging in as root, and writing replacements for\n        two-year-old shell scripts in Python.\n\nYODA: Code!  Yes.  A programmer's strength flows from code\n      maintainability.  But beware of Perl.  Terse syntax... more\n      than one way to do it...  default variables.  The dark side\n      of code maintainability are they.  Easily they flow, quick\n      to join you when code you write.  If once you start down the\n      dark path, forever will it dominate your destiny, consume\n      you it will.\n\nLUKE: Is Perl better than Python?\n\nYODA: No... no... no.  Quicker, easier, more seductive.\n\nLUKE: But how will I know why Python is better than Perl?\n\nYODA: You will know.  When your code you try to read six months\n      from now.\nPerl: All the power of QBasic, the readability of assembly, and the flexibility of DOS batch scripting…\nC gives you enough rope to hang yourself. C++ also gives you the tree object to tie it to.\nGive a man a program, frustrate him for a day. Teach a man to program, frustrate him for a lifetime.\nUbuntu users are apt to get this joke.\nObfuscated Reality Mappers (ORMs) can be useful database tools.\nWhy don’t jokes work in octal? Because 7 10 11.\nOld C programmers don’t die, they’re just cast into void.\nEight bytes walk into a bar. The bartender asks, ‘Can I get you anything?’ ‘Yeah,’ replies the bytes. ‘Make us a double.’\n.NET was named .NET so that it wouldn’t show up in a Unix directory listing.\nIn C we had to code our own bugs. In C++ we can inherit them.\nWhat do you call a programmer from Finland? Nerdic.\nPirates go ‘arg!’, computer pirates go ‘argv!’\nHow many Prolog programmers does it take to change a lightbulb? false.\nReal programmers can write assembly code in any language.\nWaiter: Would you like coffee or tea? Programmer: Yes.\nWhy are you always smiling? That’s just my… regular expression.\nA programmer had a problem. He thought to himself, ‘I know, I’ll solve it with threads!’. has Now problems. two he\nI would tell you a joke about UDP, but you would never get it.\nA product manager walks into a bar, asks for drink. Bartender says no, but will consider adding later.\nI’ve been using Vim for a long time now, mainly because I can’t figure out how to exit.\nHow do you know whether a person is a Vim user? Don’t worry, they’ll tell you.\nWaiter: He’s choking! Is anyone a doctor? Programmer: I’m a Vim user.\n3 Database Admins walked into a NoSQL bar. A little while later they walked out because they couldn’t find a table.\nThere are 2 types of people: those who can extrapolate from incomplete data sets…\nWhat do you call eight hobbits? A hobbyte.\nThe C language combines all the power of assembly language with all the ease-of-use of assembly language.\n!false, (It’s funny because it’s true)\nWhy do some people think Python scripting is offensive? Because white space matters.\nThe oldest laptop can be traced back to Adam and Eve An Apple with very limited memory (1 Byte), single core and OS written in Python.\nChanging random stuff until your program works is “hacky” and “bad coding practice” but if you do it fast enough it’s “#MachineLearning”\nHow do i learn coding in single night? Pack your Laptop, and travel to North Pole in beginning of winter, you’ll have 6 month of night to learn coding.\n>>> from __future__ import braces\nTraceback (most recent call last):\nSyntaxError: not a chance (python, line 1)\n\n>>> import antigravity\n# This should open this link http://xkcd.com/353/\nAlways code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.\nA misplaced decimal point will always end up where it will do the greatest damage.\nA computer program does what you tell it to do, not what you want it to do.\nASCII stupid question, get a stupid ANSI.\nArtificial Intelligence usually beats natural stupidity.\nGod is real, unless declared integer.\nFirst, solve the problem. Then, write the code.\nThere is nothing quite so permanent as a quick fix.\nWeeks of coding can save you hours of planning.\nPerl - The only language that looks the same before and after RSA encryption.\nWhen debugging, novices insert corrective code; experts remove defective code.\nWalking on water and developing software from a specification are easy if both are frozen.\nPerfection (in design) is achieved not when there is nothing more to add, but rather when there is nothing more to take away.\nAny fool can write code that a computer can understand. Good programmers write code that humans can understand.\nSimplicity is prerequisite for reliability.\nThey don’t make bugs like Bunny anymore.\nComputer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter.\nDebugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\nWhy does Python live on land? Because it’s above C-level\nWhat did the Python say when he came out of his shell? Print(“Hello World!”)\nEstimate always goes wrong. That too in one way.\nAnything that can go wr Seek Error reading Drive C: Abort, Retry, Ignore, Fail?\nAny sufficiently advanced magic is indistinguishable from a rigged demonstration.\nThe attention span of a computer is only as long as its electrical cord.\nBeware of programmers that carry screwdrivers.\nC++, where friends can access your privates.\nComputer programmers never die, they just become lost in the processing.\nComputers can never replace human stupidity.\nComputers Unite! You have nothing to lose but your operators.\nDocumentation is the castor oil of programming. Managers know it must be good because the programmers hate it so much.\nAny code of your own that you haven’t looked at for six or more months, might as well have been written by someone else.\nGood programming is 99% sweat and 1% coffee.\nIf God had intended man to have computers, he would have given him 16 fingers.\nIn computing, turning the obvious into the useful is a living definition of the word “frustration”.\nIs a computer language with goto’s totally Wirth-less?\nOn a clear disk you can seek forever.\nProgrammer: An organism that can turn caffeine into code.\nProgrammers get overlaid.\nProgramming Department: Mistakes made while you wait.\nProgramming is an art form that fights back.\nProgramming would be so much easier without all the users.\nThe problem about all graphical programming languages is that when your project becomes complex, not only will you have spaghetti code, but it will actually look like spaghetti too.\nSmall programs are for small minds.\nSoftware and cathedrals are much the same – first we build them, then we pray.\nTo err is human. To blame it on a computer is even more so.\nWe don’t really understand it, so we’ll give it to the programmers.\nWhom computers would destroy, they must first drive insane.\nWriting it is easy, understanding it is hard.\nYour program is sick! Shoot it and put it out of its memory.\nIn theory, testing software for correctness is impossible. In practice, it is given to freshmen because it’s the least demanding task available.\nKnock knock Race condition Who’s there?\nTwo ints and a Float walk into a bar. They spot an attractive Double on her own.\nThe first int walks up to her and say: “Hey baby, my VM or yours?”. She slaps him and he walks back dejected.\nThe second int walks over. “Hey cute-stuff, can I cook you ‘Beans’ for breakfast?” After a quick slapping, he too walks back.\nThen the Float ambles over casually: “Where those two primitive types bothering you?”, he remarks.\n“Yes, I’m so glad you’re here”, she says. “They just had no Class!”\nWhy did the Integer drown? ’Coz he couldn’t Float!\nDon’t anthropomorphize computers. They hate that!\nI had a problem so I thought to use Java, now I have ProblemFactory.\nA guy is standing on the corner of the street smoking one cigarette after another. A lady walking by notices him and says\n“Hey, don’t you know that those things can kill you? I mean, didn’t you see the giant warning on the box?!”\n“That’s OK,” says the guy, puffing casually “I’m a Developer”\n“So? What’s that got to do with anything?”\n“We don’t care about warnings. We only care about errors.”\nJava: OK guys. Any idea on how to make women more interested in us?\nC++: More exceptions?\nPython: Define our methods?\nANSI-C: Stop treating them like objects?\nWhy did the Python programmer guy got rejected by a Java programmer girl?Because he was not her type.\nWhy do Java programmers wear glasses?Because they can’t C#.\nWhy do blind programmers use Java? Because they can’t C.\nWhy are Communists bad Java programmers?They don’t like classes.\nTwo students are leaving a Java seminar The guy turns to the girl and says “So… how much do you weight?” The girl says, “I’m not telling you! That’s private!” Taken aback, the guy says “But I thought we were in the same class!!”\nA SQL query goes into a bar, walks up to two tables and asks, “Can I join you?”\nA man flying in a hot air balloon suddenly realizes he’s lost. He reduces height and spots a man down below. He lowers the balloon further and shouts to get directions, “Excuse me, can you tell me where I am?”\nThe man below says: “Yes. You’re in a hot air balloon, hovering 30 feet above this field.”\n“You must work in Information Technology,” says the balloonist.\n“I do” replies the man. “How did you know?”\n“Well,” says the balloonist, “everything you have told me is technically correct, but It’s of no use to anyone.”\nThe man below replies, “You must work in management.”\n“I do,” replies the balloonist, “But how’d you know?”\n“Well”, says the man, “you don’t know where you are or where you’re going, but you expect me to be able to help. You’re in the same position you were before we met, but now it’s my fault.”\nProgramming in C is like fast dancing on a newly-waxed dance floor by people carrying razors.\nProgram, noun: A magic spell cast upon a computer to enable it to turn input into error messages.\nSoftware developers like to solve problems. If there are no problems handily available, they will create their own problems.\nTo understand what recursion is, you must first understand recursion.\nBad #golang joke: “Go: It’s the best thing since []Bread”\nBjarne Stroustrup — ‘There are only two kinds of languages: the ones people complain about and the ones nobody uses.’\nBjarne Stroustrup — A program that has not been tested does not work.\nBjarne Stroustrup — “How to test?” is a question that cannot be answered in general. “When to test?” however, does have a general answer: as early and as often as possible.\nBjarne Stroustrup — Anybody who comes to you and says he has a perfect language is either naïve or a salesman.\nBjarne Stroustrup — People who think they know everything really annoy those of us who know we don’t.\nBjarne Stroustrup — C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do it blows your whole leg off.\nIf a bot plays badly, should we call it artificial nonintelligence?\nUse your brain as processor not a hard disk\nHow do you keep a programmer in the shower all day? Give him a bottle of shampoo which says “lather, rinse, repeat.”\nIf you can touch it and you can see it, it’s REAL.\nIf you can touch it but you can’t see it, it’s TRANSPARENT.\nIf you can’t touch it but you can see it, it’s VIRTUAL.\nIf you can’t touch it and you can’t see it, it’s GONE.\nHow many software engineers does it take to change a light bulb?\n\nNone. “We’ll document it in the manual.”\nNone. It’s a hardware problem.\n1.000000001.\nTwo. One always leaves in the middle of the project.\nFour. One to design the change, one to implement it, one to document it, and one to maintain it afterwards.\nFour, plus one senior analyst to manage the project, one technical writer to correct the spelling and grammar of the one who documented it, one light bulb librarian, a sales-force of at least five to drum up enough users who want to turn the light on, 274 users to burn out the new bulb, at which point we go to tender for another light bulb change,…\nFive. Two to write the specification program, one to screw it in, and two to explain why the project was late.\nOnly one, but she’s not available till the year 2000.\n“The change is 90% complete.”\n“It’s hard to say. Each time we separate the bulb into its modules to do unit testing, it stops working.”\nOf course, as everyone knows, just five years ago all it took was a bunch of kids in a garage in Palo Alto to change a light bulb.\n\nHow many C++ programmers does it take to change a light bulb? “You’re still thinking procedurally! A properly designed light bulb object would inherit a change method from a generic light bulb class!”\nHow many Windows programmers does it take to change a light bulb? Seventy two. One to write WinGetLightBulbHandle, one to write WinQueryStatusLightBulb, one to write WinGetLightSwitchHandle …\nProgramming is like sex: One mistake and you have to support it for the rest of your life.\nThe three most dangerous things in the world are a programmer with a soldering iron, a hardware engineer with a software patch, and a user with an idea.\nLaws of Computer Programming\n\nAny given program, when running, is obsolete.\nAny given program costs more and takes longer.\nIf a program is useful, it will have to be changed.\nIf a program is useless, it will have to be documented.\nAny program will expand to fill available memory.\nThe value of a program is proportional to the weight of its output.\nProgram complexity grows until it exceeds the capabilities of the programmer who must maintain it.\nAny non-trivial program contains at least one bug.\nUndetectable errors are infinite in variety, in contrast to detectable errors, which by definition are limited.\n\nIt should be noted that no ethically-trained software engineer would ever consent to write a NukeChicago procedure. Basic professional ethics would instead require him to write a NukeCity procedure, to which Chicago could be given as a parameter.\nWhy did the API go to sleep? It needed some REST.\nThere are 10 types of people in this world, those who understand binary and those who don’t.\nHow many programmers does it take to change a light bulb? None, that’s a hardware problem.\nNever argue with an idiot. They will only bring you down to their level and beat you with experience.\nPrograms should be written for people to read, and only incidentally for machines to execute.\nIn the Beginning, there was no inheritance and no composition, only code.\nYou must cut down the mightiest tree in the forest … with a herring.\nProgramming is 10% science, 20% ingenuity, and 70% getting the ingenuity to work with the science.\nI love pressing the F5 key. It’s refreshing.\nWhy are assembly programmers often wet? They work below C level.\nIf you listen to a UNIX shell, can you hear the C?\nUnix is user friendly. It’s just very particular about who it’s friends are.\nWhy do programmers confuse Halloween with Christmas? Because Oct 31 = Dec 25.\nAn optimist says “The glass is half full.” A pessimist says “The glass is half empty.” A programmer says “The glass is twice as large as necessary.”\nThe best thing about a Boolean is even if you are wrong, you are only off by a bit.\nA good programmer is someone who always looks both ways before crossing a one-way street.\nWhats the object-oriented way to become wealthy? Inheritance.\nThere are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. The other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult.\nProgramming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to build bigger and better idiots. So far, the universe is winning."
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html",
+    "href": "posts/awesome-awesome-lists/index.html",
+    "title": "List of Awesome Lists",
+    "section": "",
+    "text": "Awesome lists about all kinds of interesting topics\nAwesome"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#aws",
+    "href": "posts/awesome-awesome-lists/index.html#aws",
+    "title": "List of Awesome Lists",
+    "section": "AWS",
+    "text": "AWS\nAmazon Web Services Awesome Lists\nAwesome CloudFormation\nJeffRMoore/awesome-cloudformation\nadamchainz/awesome-cloudformation\ndonnemartin/awesome-aws\nAwesome AWS Amplify"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#bash",
+    "href": "posts/awesome-awesome-lists/index.html#bash",
+    "title": "List of Awesome Lists",
+    "section": "Bash",
+    "text": "Bash\nBash Awesome Lists\nAwesome Bash\nawesome-lists/awesome-bash\nAwesome Bash Commands\nAwesome Shell\nuhub/awesome-shell\nAwesome dotfiles"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#cheat-sheets",
+    "href": "posts/awesome-awesome-lists/index.html#cheat-sheets",
+    "title": "List of Awesome Lists",
+    "section": "Cheat Sheets",
+    "text": "Cheat Sheets\nCheat Sheets Lists\nCheatography\nAwesome-Cheatsheets\nAwesome Cheatsheet"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#cloud-native",
+    "href": "posts/awesome-awesome-lists/index.html#cloud-native",
+    "title": "List of Awesome Lists",
+    "section": "Cloud Native",
+    "text": "Cloud Native\nCloud Native Lists\nAwesome Cloud Native"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#csv",
+    "href": "posts/awesome-awesome-lists/index.html#csv",
+    "title": "List of Awesome Lists",
+    "section": "CSV",
+    "text": "CSV\nCSV Awesome Lists\nAwesome CSV"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#dart",
+    "href": "posts/awesome-awesome-lists/index.html#dart",
+    "title": "List of Awesome Lists",
+    "section": "Dart",
+    "text": "Dart\nDart Language Awesome Lists\nAwesome Dart\nAwesome Angel\nAwesome Flutter"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#design-patterns",
+    "href": "posts/awesome-awesome-lists/index.html#design-patterns",
+    "title": "List of Awesome Lists",
+    "section": "Design Patterns",
+    "text": "Design Patterns\nDesign Patterns Awesome Lists\nAwesome Software Design Patterns\nAwesome design patterns"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#docker",
+    "href": "posts/awesome-awesome-lists/index.html#docker",
+    "title": "List of Awesome Lists",
+    "section": "Docker",
+    "text": "Docker\nDocker Awesome Lists\nAwesome Docker\nveggiemonk/awesome-docker\ndevopstrainingblr/awesome-docker"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#git",
+    "href": "posts/awesome-awesome-lists/index.html#git",
+    "title": "List of Awesome Lists",
+    "section": "Git",
+    "text": "Git\nGit Awesome Lists\nAwesome Git"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#golang",
+    "href": "posts/awesome-awesome-lists/index.html#golang",
+    "title": "List of Awesome Lists",
+    "section": "Golang",
+    "text": "Golang\nGo Language Awesome Lists\nAwesome Go\navelino/awesome-go\nuhub/awesome-go\nAwesome Go Storage"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#groovy",
+    "href": "posts/awesome-awesome-lists/index.html#groovy",
+    "title": "List of Awesome Lists",
+    "section": "Groovy",
+    "text": "Groovy\nGroovy Language Awesome Lists\nAwesome Groovy\npaulk-asert/awesome-groovy"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#hugo",
+    "href": "posts/awesome-awesome-lists/index.html#hugo",
+    "title": "List of Awesome Lists",
+    "section": "Hugo",
+    "text": "Hugo\nHugo Awesome Lists\nAwesome Hugo\ncnych/awesome-hugo"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#java",
+    "href": "posts/awesome-awesome-lists/index.html#java",
+    "title": "List of Awesome Lists",
+    "section": "Java",
+    "text": "Java\nJava Language Awesome Lists\nAwesome Java\nakullpp/awesome-java\nuhub/awesome-java\nAwesome JVM"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#json",
+    "href": "posts/awesome-awesome-lists/index.html#json",
+    "title": "List of Awesome Lists",
+    "section": "JSON",
+    "text": "JSON\nJSON Awesome Lists\nAwesome JSON"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#kafka",
+    "href": "posts/awesome-awesome-lists/index.html#kafka",
+    "title": "List of Awesome Lists",
+    "section": "Kafka",
+    "text": "Kafka\nApache Kafka Awesome Lists\ninfoslack/awesome-kafka\ndharmeshkakadia/awesome-kafka\nsemantalytics/awesome-kafka\nmonksy/awesome-kafka"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#kotlin",
+    "href": "posts/awesome-awesome-lists/index.html#kotlin",
+    "title": "List of Awesome Lists",
+    "section": "Kotlin",
+    "text": "Kotlin\nKotlin Language Awesome Lists\nAwesome Kotlin\nmcxiaoke/awesome-kotlin"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#kubernetes",
+    "href": "posts/awesome-awesome-lists/index.html#kubernetes",
+    "title": "List of Awesome Lists",
+    "section": "Kubernetes",
+    "text": "Kubernetes\nKubernetes Awesome Lists\nAwesome Kubernetes\nKubernetes Handbook Awesome Kubernetes\nramitsurana/awesome-kubernetes\njk8s/awesome-kubernetes\nAwesome Operators\nKubetools"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#macos",
+    "href": "posts/awesome-awesome-lists/index.html#macos",
+    "title": "List of Awesome Lists",
+    "section": "macOS",
+    "text": "macOS\nmacOS Awesome Lists\nAwesome macOS"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#micronaut.io",
+    "href": "posts/awesome-awesome-lists/index.html#micronaut.io",
+    "title": "List of Awesome Lists",
+    "section": "Micronaut.io",
+    "text": "Micronaut.io\nMicronaut Framework Awesome Lists\nAwesome Micronaut"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#microservices",
+    "href": "posts/awesome-awesome-lists/index.html#microservices",
+    "title": "List of Awesome Lists",
+    "section": "Microservices",
+    "text": "Microservices\nMicroservices Awesome Lists\nAwesome Microservices\nAwesome Microservice"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#monorepo",
+    "href": "posts/awesome-awesome-lists/index.html#monorepo",
+    "title": "List of Awesome Lists",
+    "section": "Monorepo",
+    "text": "Monorepo\nMonorepo Awesome Lists\nAwesome Monorepo"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#powershell",
+    "href": "posts/awesome-awesome-lists/index.html#powershell",
+    "title": "List of Awesome Lists",
+    "section": "Powershell",
+    "text": "Powershell\nPowershell Awesome Lists\nAwesome PowerShell"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#rest",
+    "href": "posts/awesome-awesome-lists/index.html#rest",
+    "title": "List of Awesome Lists",
+    "section": "REST",
+    "text": "REST\nRESTful API Awesome Lists\nAwesome REST\nAwesome API\nPublic-APIs\nAwesome Swagger\nAwesomne OpenAPI\nAwesome Swagger Resources Awesome API Management Tools"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#rust",
+    "href": "posts/awesome-awesome-lists/index.html#rust",
+    "title": "List of Awesome Lists",
+    "section": "Rust",
+    "text": "Rust\nRust Language Awesome Lists\nAwesome Rust\nNot-Yet-Awesome Rust\nrust-unofficial/awesome-rust"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#spring-boot",
+    "href": "posts/awesome-awesome-lists/index.html#spring-boot",
+    "title": "List of Awesome Lists",
+    "section": "Spring Boot",
+    "text": "Spring Boot\nSpring Boot Awesome Lists\nAwesome Spring Boot\nstunstunstun/awesome-spring-boot\nAwesome Sprin"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#terraform",
+    "href": "posts/awesome-awesome-lists/index.html#terraform",
+    "title": "List of Awesome Lists",
+    "section": "Terraform",
+    "text": "Terraform\nTerraform Awesome Lists\nAwesome Terraform\nAzure Terraform Resources"
+  },
+  {
+    "objectID": "posts/awesome-awesome-lists/index.html#windows",
+    "href": "posts/awesome-awesome-lists/index.html#windows",
+    "title": "List of Awesome Lists",
+    "section": "Windows",
+    "text": "Windows\nWindows Awesome Lists\nAwesome Windows"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html",
+    "href": "posts/as-java-developer-what-language-learn/index.html",
+    "title": "What new language should I learn as Java Developer",
+    "section": "",
+    "text": "If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant. We switched to a different OpenJDK vendor and we are using Amazon Correto now. We also migrated all ouf our microservices from Java 8 to 11 for a different reason which I might mention later.\nI am constantly looking at new programming languages because I am just curious what’s out there. But I am not a person who would jump on any new “shining thing”. I want to learn something I can practically apply in my current job. I have been using many different langugages during my career. I think order would be: Pascal, C, Basic, C++, C#, Java, Groovy. On the top of that some Data-oriented/Declarative languages: SQL, dBase, Clipper, SPARQL, XSLT. When started doing web development I was exposed to XML-based languages: XPath and XQuery.\nIdeally mew language should well support what I am doing now, have mature frameworks to work with and works multiple platforms."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#language",
+    "href": "posts/as-java-developer-what-language-learn/index.html#language",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Language",
+    "text": "Language\nPretty much I just replace #1 in my stack and everything is the same. I might even try to write some frontend code in Kotlin but it is probably not worth it. Migration could gradual but I am not fully sure if running on JVM exposes us to Oracle licensing threat. Other issue I see is Docker container size which most likely will not improve. ### Reversed type declaration In the C-family of programming languages, we have the standard way of declaring types of things. Shortly, first goes a type, then goes a typed thing (variable, fields, method, and so on).\nint inc(int i) {\n    return i + 1;\n}\nAll of the languages supporting type inference, which means the type is an optional part of the declaration in those languages because they’re smart enough to fill it in themselves when you provide an initialization expression that has an easily-determined type. That matters because putting the optional parts of an expression farther to the right reduces parsing ambiguity, and increases consistency between the expressions that do use that part and the ones that don’t. It’s just simpler to parse a declaration when you know the var keyword and the variable name are both mandatory before you get to the optional stuff.\nReversed notation in Kotlin:\nfun inc(i: Int): Int {\n    return i + 1\n}\n\nNull Safe\nBy default, all types of variables are non-null able (i.e. we can’t assign null values to any type of variables/objects). If we try to assign or return null values, Kotlin code will fail during compile-time. ### Extension Functions Kotlin provides the ability to extend a class with new functionality without having to inherit from the class or use design patterns such as Decorator. This is done via special declarations called extensions. For example, you can write new functions for a class from a third-party library that you can’t modify. Such functions are available for calling in the usual way as if they were methods of the original class. ### Coroutines Coroutines are light-weight threads. Coroutines are a great way to write asynchronous code that is perfectly readable and maintainable. They are sort of tasks that the actual threads can execute. A thread can stop executing a coroutine at some specific “suspension points”, and go do some other work. It can resume executing the coroutine later on, or another thread could even take over. ### Data Classes Classes which need to hold data we can declare a class with keyword “data” in the class definition then the compiler will take care of all of this work such as creating constructors, getter, setter methods for different fields. No Lombok required. ### Smart casts Smart casts will handle these casting checks with keyword “is-checks” which will check for immutable values and performs implicit casting. ### Type inference We don’t need to specify the type of each variable explicitly based on assignment it will handle. If we want to specify explicitly we can do. ### Functional Programming Kotlin functions are first-class, which means that they can be stored in variables and data structures, passed as arguments to and returned from other higher-order functions. You can operate with functions in any way that is possible for other non-function values."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#microservice-framework",
+    "href": "posts/as-java-developer-what-language-learn/index.html#microservice-framework",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Microservice framework",
+    "text": "Microservice framework\nKotlin is natively supported, you can use Spring Initializr to boostrap your applications."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#aws",
+    "href": "posts/as-java-developer-what-language-learn/index.html#aws",
+    "title": "What new language should I learn as Java Developer",
+    "section": "AWS",
+    "text": "AWS\nSame AWS SDK can be used. We will have access to same services. You can create Lambdas in Kotlin since it is packaged to same bytecode and jar format.\nUsing Kotlin in a Serverless Architecture with AWS Lambda"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#kafka",
+    "href": "posts/as-java-developer-what-language-learn/index.html#kafka",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Kafka",
+    "text": "Kafka\nAnything available in Spring Framework can be used. Should be no problems with Kafka Streams."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#restful-api-services",
+    "href": "posts/as-java-developer-what-language-learn/index.html#restful-api-services",
+    "title": "What new language should I learn as Java Developer",
+    "section": "RESTful API services",
+    "text": "RESTful API services\nNo problems with String Framework components. Kotlin supports annotations so “@EnableSwagger2” should work."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#tracing-and-monitoring",
+    "href": "posts/as-java-developer-what-language-learn/index.html#tracing-and-monitoring",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Tracing and Monitoring",
+    "text": "Tracing and Monitoring\nShould be as easy as using Spring Acturator and X-Ray annotations"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#logging",
+    "href": "posts/as-java-developer-what-language-learn/index.html#logging",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Logging",
+    "text": "Logging\nNo change here"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#nodejs",
+    "href": "posts/as-java-developer-what-language-learn/index.html#nodejs",
+    "title": "What new language should I learn as Java Developer",
+    "section": "NodeJS",
+    "text": "NodeJS\nNo replacement here."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#frontend",
+    "href": "posts/as-java-developer-what-language-learn/index.html#frontend",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Frontend",
+    "text": "Frontend\nMost likely no replacment here. I could try to write front in Kotlin just for fun. Getting Started With Kotlin-React Building Web Applications with Kotlin and TypeScript"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#docker",
+    "href": "posts/as-java-developer-what-language-learn/index.html#docker",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Docker",
+    "text": "Docker\nNo gain in container size."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#kubernetes",
+    "href": "posts/as-java-developer-what-language-learn/index.html#kubernetes",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Kubernetes",
+    "text": "Kubernetes\nNo difference."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#language-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#language-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Language",
+    "text": "Language\n\nBuilt-in types\nStrings are provided by the language; a string behaves like a slice of bytes, but is immutable. Hash tables are provided by the language. They are called maps. ### Pointers and references Go offers pointers to values of all types, not just objects and arrays. For any type T, there is a corresponding pointer type *T, denoting pointers to values of type T. Arrays in Go are values. When an array is used as a function parameter, the function receives a copy of the array, not a pointer to it. However, in practice functions often use slices for parameters; slices are references to underlying arrays. Certain types (maps, slices, and channels) are passed by reference, not by value. That is, passing a map to a function does not copy the map; if the function changes the map, the change will be seen by the caller. In Java terms, one can think of this as being a reference to the map. ### Error handling Instead of exceptions, Go uses errors to signify events such as end-of-file, and run-time panics for run-time errors such as attempting to index an array out of bounds. ### Object-oriented programming Go does not have classes with constructors. Instead of instance methods, a class inheritance hierarchy, and dynamic method lookup, Go provides structs and interfaces. Go allows methods on any type; no boxing is required. The method receiver, which corresponds to this in Java, can be a direct value or a pointer. Go provides two access levels, analogous to Java’s public and package-private. Top-level declarations are public if their names start with an upper-case letter, otherwise they are package-private. ### Functional programming Functions in Go are first class citizens. Function values can be used and passed around just like other values and function literals may refer to variables defined in a enclosing function. ### Concurrency Separate threads of execution, goroutines, and communication channels between them, channels, are provided by the language. ### Omitted features Go does not support implicit type conversion. Operations that mix different types require an explicit conversion. Instead Go offers Untyped numeric constants with no limits. Go does not support function overloading. Functions and methods in the same scope must have unique names. Go has some built-in generic data types, such as slices and maps, and generic functions, such as append and copy. However, there is no mechanism for writing your own generic functions."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#microservice-framework-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#microservice-framework-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Microservice framework",
+    "text": "Microservice framework\nNo single framework/package to do everything. You have to pick your components and mix & match them. Built-in http server is probably good enough but you need to pick web frameworks, router, middleware, data layer,etc. ## AWS Official AWS SDK supports Go. ## Kafka I would need to evaluate at least 3 most popular libraries:\nConfluent’s Apache Kafka Golang client\nSegmentio kafka-go\nShopify Sarama\nKafka Streams are not supported."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#restful-api-services-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#restful-api-services-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "RESTful API services",
+    "text": "RESTful API services\nMany options for building RESTful API would required to do evaluation and experimenting. Swagger support"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#tracing-and-monitoring-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#tracing-and-monitoring-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Tracing and Monitoring",
+    "text": "Tracing and Monitoring\nAWS X-Ray SDK for the Go\nPrometheus"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#logging-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#logging-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Logging",
+    "text": "Logging\nToo many choices to mention :-)"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#nodejs-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#nodejs-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "NodeJS",
+    "text": "NodeJS\nIf project written in NodeJS is not depending on third party SDK we could replace it with Go microservice."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#angular",
+    "href": "posts/as-java-developer-what-language-learn/index.html#angular",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Angular",
+    "text": "Angular\nNo change. Go is not frontend development language."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#docker-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#docker-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Docker",
+    "text": "Docker\nDocker is written in Go. Expecting pretty small container images comparing to JVM."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#kubernetes-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#kubernetes-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Kubernetes",
+    "text": "Kubernetes\nKubernetes is written in Go. Lots of tools are written in Go."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#language-2",
+    "href": "posts/as-java-developer-what-language-learn/index.html#language-2",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Language",
+    "text": "Language\nJava and Dart don’t differ that much when it comes to their syntax. But Dart tends to be focused more on having a shorter code.\n\nConcurrency\nDart is a single threaded programming language. So if any piece of code blocks the execution of the program, the program practically freezes. To avoid this Dart makes use of asynchronous operations which let your program run without getting blocked. Dart makes use of isolates as a concurrency and security unit when structuring applications. Dart libraries are full of functions that return Future or Stream objects. These functions are asynchronous: they return after setting up a possibly time-consuming operation (such as I/O), without waiting for that operation to complete.\n\n\nPerformance\nDart Is a compiled language, thus it performs way better than Java. Dart code can be AOT-compiled into machine code.\n\n\nMethod cascades\nCascaded method invocation originates in Smalltalk. The motivation is to make it easier to write more fluent interfaces. Fluent interfaces rely on method chaining.\nmyTable\n  ..add(\"one\");\n  ..add(\"two\");\n  ..add(\"three\");\nThe “..” (cascaded method invocation operation) syntax invokes a method (or setter or getter) but discards the result, and returns the original receiver instead.\n\n\nCollection literals\nCollection literals are a syntactic expression form that evaluates to an aggregate type, such as an array, List, or Map.\nvoid main() {\n    print([1, 2, 3, 4]);\n    print({1: 'one', 2: 'two', 3: 'three'});\n}\n\n\nGenerics\nDart supports generic types, like List (a list of integers) or List (a list of objects of any type).\n\n\nFunctions\nDart is a true object-oriented language, so even functions are objects and have a type, Function. This means that functions can be assigned to variables or passed as arguments to other functions. You can also call an instance of a Dart class as if it were a function.\n\n\nAnonymous functions\nMost functions are named, such as main() or printElement(). You can also create a nameless function called an anonymous function, or sometimes a lambda or closure. You might assign an anonymous function to a variable so that, for example, you can add or remove it from a collection.\n\n\nNo Primitives\nEverything you can place in a variable is an object, and every object is an instance of a class. Even numbers, functions, and null are objects. All objects inherit from the Object class.\n\n\nMixins\nMixins are a way of reusing a class’s code in multiple class hierarchies. To implement a mixin, create a class that extends Object and declares no constructors. Unless you want your mixin to be usable as a regular class, use the mixin keyword instead of class.\n\n\nParmeters\nNamed parameters, optional parameters, defaults;\n\n\nProperties\nProperties — no need to write “get” methods everywhere\n\n\nType inference\nType inference with strong mode — just write “var” for local\n\n\nString interpolation\nString interpolation, several types of string literal; A Dart string is a sequence of UTF-16 code units. You can use either single or double quotes to create a string. You can put the value of an expression inside a string by using ${expression}. If the expression is an identifier, you can skip the {}. To get the string corresponding to an object. You can have multi-line strings."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#generators",
+    "href": "posts/as-java-developer-what-language-learn/index.html#generators",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Generators",
+    "text": "Generators\nWhen you need to lazily produce a sequence of values, consider using a generator function. Dart has built-in support for two kinds of generator functions: * Synchronous generator: Returns an Iterable object. * Asynchronous generator: Returns a Stream object."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#microservice-framework-2",
+    "href": "posts/as-java-developer-what-language-learn/index.html#microservice-framework-2",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Microservice framework",
+    "text": "Microservice framework\nThere are quite a few candidates that are mature enough but Aqueduct seems the closest thing. It is a fully-featured server-side framework, with an ORM, database migration tools, OAuth 2.0 implementation, automatic OpenAPI specification generation and multi-threading support."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#aws-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#aws-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "AWS",
+    "text": "AWS\nDart is not supported by AWS officially. One AWS Client I could find looks more like generated from API than mature library."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#kafka-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#kafka-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Kafka",
+    "text": "Kafka\nDart Kafka client does not appear on Confluent list of official clients. Dart Kafka library is not listed on cummunity page either."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#restful-api-services-2",
+    "href": "posts/as-java-developer-what-language-learn/index.html#restful-api-services-2",
+    "title": "What new language should I learn as Java Developer",
+    "section": "RESTful API services",
+    "text": "RESTful API services\nIt seems like Aqueduct mentioned above can handle API requests and it could generate OpenAPI 3.0 documentation."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#tracing-and-monitoring-2",
+    "href": "posts/as-java-developer-what-language-learn/index.html#tracing-and-monitoring-2",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Tracing and Monitoring",
+    "text": "Tracing and Monitoring\nMost like not chance to find any AWS X-Ray client. Dart implementation of the Prometheus client library can be found."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#logging-2",
+    "href": "posts/as-java-developer-what-language-learn/index.html#logging-2",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Logging",
+    "text": "Logging\nAt least A Dart package for debug and error logging comes with the platform."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#nodejs-2",
+    "href": "posts/as-java-developer-what-language-learn/index.html#nodejs-2",
+    "title": "What new language should I learn as Java Developer",
+    "section": "NodeJS",
+    "text": "NodeJS\nIf project written in NodeJS is not depending on third party SDK we could replace it with Dart microservice. Technically Dart Js Interop can call Javascript libraries, but I do not know if this applies to NOde modules. So until this is working we cannot get rid of the one special Node SDK module."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#angular-1",
+    "href": "posts/as-java-developer-what-language-learn/index.html#angular-1",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Angular",
+    "text": "Angular\nOn the frontend development side Art shines. There are two possibilities here: Angular Dart - fully supported version of Angular with Typescript replaced by Dart or Flutter - same cross-platform mobile development platform now added two more targets: Web and Desktop."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#docker-2",
+    "href": "posts/as-java-developer-what-language-learn/index.html#docker-2",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Docker",
+    "text": "Docker\nSince you can compile Dart to native code it could be pretty small. I have seen attempts of making containers as small as the ones written in Go or Rust."
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#kubernetes-2",
+    "href": "posts/as-java-developer-what-language-learn/index.html#kubernetes-2",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Kubernetes",
+    "text": "Kubernetes\nAs any other containerized application server side Dart microservices can be deployed to Kubernetes. I could even find Dart definitions for Kubernetes objects so it could be possible to write your K8s client :-)"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#factorial-in-java",
+    "href": "posts/as-java-developer-what-language-learn/index.html#factorial-in-java",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Factorial in Java",
+    "text": "Factorial in Java\nclass Factorial {\n\n    public static long factorial(int n) {\n        long fact = 1;\n        for (int i = 1; i <= n; i++)\n            fact = fact * i;\n        return fact;\n    }\n\n    public static void main(String[] args) {\n        int n = 5;\n        System.out.println(\"The Factorial of \" + n + \" is \" + factorial(n));\n    }\n}"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#factorial-in-kotlin",
+    "href": "posts/as-java-developer-what-language-learn/index.html#factorial-in-kotlin",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Factorial in Kotlin",
+    "text": "Factorial in Kotlin\nfun fact(n: Int) = when {\n    n < 0 -> throw IllegalArgumentException(\"negative numbers not allowed\")\n    else  -> {\n        var ans = 1L\n        for (i in 2..n) ans *= i\n        ans\n    }\n}\n \nfun main(args: Array<String>) {\n    val n = 20\n    println(\"$n! = \" + fact(n))\n\n}"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#factorial-in-go",
+    "href": "posts/as-java-developer-what-language-learn/index.html#factorial-in-go",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Factorial in Go",
+    "text": "Factorial in Go\npackage main\n \nimport (\n    \"fmt\"\n    \"math/big\"\n)\n \nfunc main() {\n    fmt.Println(factorial(800))\n}\n \nfunc factorial(n int64) *big.Int {\n    if n < 0 {\n        return nil\n    }\n    r := big.NewInt(1)\n    var f big.Int\n    for i := int64(2); i <= n; i++ {\n        r.Mul(r, f.SetInt64(i))\n    }\n    return r\n}"
+  },
+  {
+    "objectID": "posts/as-java-developer-what-language-learn/index.html#factorial-in-dart",
+    "href": "posts/as-java-developer-what-language-learn/index.html#factorial-in-dart",
+    "title": "What new language should I learn as Java Developer",
+    "section": "Factorial in Dart",
+    "text": "Factorial in Dart\nint fact(int n) {\n  if(n<0) {\n    throw new IllegalArgumentException('Argument less than 0');\n  }\n  int res=1;\n  for(int i=1;i<=n;i++) {\n    res*=i;\n  }\n  return res;\n}\n \nmain() {\n  print(fact(10));\n  print(fact(-1));\n}"
+  },
+  {
+    "objectID": "posts/rusty_feather/index.html",
+    "href": "posts/rusty_feather/index.html",
+    "title": "Rusty Feather",
+    "section": "",
+    "text": "Recently I stumbled upon info about using Rust language on embedded systems including microcontrollers. I searched for some tutorials and online trainings and it seems like you need specific hardware usually. Getting STM32F3DISCOVERY or nRF52840 DK is not practical because I will have limited use for these boards after completing training. I was almost willing to get micro:bit when I found out that Ferrous Systems and Espressif’s announced Rust Training on ESP32. ## ESP Rust Board It is officially called ESP32-C3-DevKit-RUST-1 if you want to search for it. The board is based on successful ESP32-C3-MINI-1 module and has 6DoF IMU (ICM-42670-P), a temperature and humidity sensor (SHTC3), a Li-Ion battery charger, and a Type-C USB in familiar Adafruit Feather format. It is pretty close to Adafruit ESP32-S2 Feather with BME280 Sensor minus Stemma connector but with IMU sensor instead.  ## Rust on ESP Community It seems like Espressif has pretty well organized community on Github. You can start exploring from Rust on ESP book. Eventually, I was able to follow ‘Embedded Rust on Espressif’ training available as a book or Github repo. If you follow the training alone you would notice that problems you encounter are usually reported in issues section of the repo. Rust on ESP in pretty much WIP so sometimes Google is you friend since others might have solved the same problem."
+  },
+  {
+    "objectID": "posts/rusty_feather/index.html#conclusion",
+    "href": "posts/rusty_feather/index.html#conclusion",
+    "title": "Rusty Feather",
+    "section": "Conclusion",
+    "text": "Conclusion\nI am new to Rust Embedded so with minimal investment I was able to get a taste of development ecosystem which is still growing and evolving. It is impressive how easy to use it is so far. Hardware needed for training should also be compatible with my collection and reusable in other projects."
+  },
+  {
+    "objectID": "posts/terraform_best_practice_guide_for_developers/index.html",
+    "href": "posts/terraform_best_practice_guide_for_developers/index.html",
+    "title": "Terraform Best Practice Guide for Developers",
+    "section": "",
+    "text": "Terraform is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.\nTerraform is controlled via a very easy to use the command-line interface (CLI). Terraform is only a single command-line application: terraform. This application then takes a subcommand such as “apply” or “plan”."
+  },
+  {
+    "objectID": "posts/terraform_best_practice_guide_for_developers/index.html#prerequisites",
+    "href": "posts/terraform_best_practice_guide_for_developers/index.html#prerequisites",
+    "title": "Terraform Best Practice Guide for Developers",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nInstall Terraform CLI\nTerraform must first be installed on your machine. Terraform is distributed as a binary package for all supported platforms and architectures.\nhttps://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_darwin_amd64.zip\nhttps://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip\nhttps://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_windows_amd64.zip\nInstall Terraform by unzipping it and moving it to a directory included in your system’s PATH."
+  },
+  {
+    "objectID": "posts/terraform_best_practice_guide_for_developers/index.html#reusable-terraform-modules",
+    "href": "posts/terraform_best_practice_guide_for_developers/index.html#reusable-terraform-modules",
+    "title": "Terraform Best Practice Guide for Developers",
+    "section": "Reusable Terraform modules",
+    "text": "Reusable Terraform modules\nTerraform uses this during the module installation step of terraform init to download the source code to a directory on local disk so that it can be used by other Terraform commands.\nThe module installer supports installation from a number of different source types, as listed below.\n\nLocal paths\nTerraform Registry\nGitHub\nBitbucket\nGeneric Git, Mercurial repositories\nHTTP URLs\nS3 buckets\nGCS buckets\n\nFor example:\nmodule \"dynamodb\" {\n  source      = \"git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global\"\n}\nTerraform AWS DynamoDB module: https://github.com/melastmohican/tfmodule-aws-dynamodb-global"
+  },
+  {
+    "objectID": "posts/terraform_best_practice_guide_for_developers/index.html#code-structure",
+    "href": "posts/terraform_best_practice_guide_for_developers/index.html#code-structure",
+    "title": "Terraform Best Practice Guide for Developers",
+    "section": "Code structure",
+    "text": "Code structure\ntf\n│   .gitignore\n│   README.md\n│\n├───npe\n│   │   backend.tf\n│   │   main.tf\n│   │   provider.tf\n│   │\n│   └───env\n│           main.tf\n│           variables.tf\n│\n└───prd\n    │   backend.tf\n    │   main.tf\n    │   provider.tf\n    │\n    └───env\n            main.tf\n            variables.tf\n \n\n\nSeparate state per account\nYou can apply configuration separately in npe or prd folder and the state will be separated.\n\n\nNPE folder\nbackend.tf\nterraform {\n  backend \"s3\" {\n    bucket = \"melastmohican-terraform-states\"\n    key    = \"module_test/terraform.tfstate\"\n    region = \"us-west-2\"\n  }\n}\n\nmain.tf\nYou can structure your code in a folder in many ways. You can have multiple files that terraform would include in one big file.\nmodule \"dev\" {\n  source = \"./env\"\n  environment = \"dev\"\n  providers = {\n    aws.us-west-2 = aws.us-west-2\n    aws.us-east-1 = aws.us-east-1\n  }\n}\n\nmodule \"stg\" {\n  source = \"./env\"\n  environment = \"stg\"\n  providers = {\n    aws.us-west-2 = aws.us-west-2\n    aws.us-east-1 = aws.us-east-1\n  }\n}\n\nprovider.tf\nprovider \"aws\" {\n  region                  = \"us-west-2\"\n  alias                   = \"us-west-2\"\n  shared_credentials_file = \"$HOME/.aws/credentials\"\n  profile                 = \"default\"\n}\n\nprovider \"aws\" {\n  region                  = \"us-east-1\"\n  alias                   = \"us-east-1\"\n  shared_credentials_file = \"$HOME/.aws/credentials\"\n  profile                 = \"default\"\n}\n\nSample env module. It is where you create a module per resource. You can put all resources in one file or group them by resource type e.g. dynamodb_tables.tf, s3_buckets.tf, etc\nmain.tf\nmodule \"dynamodb\" {\n  source      = \"git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global\"\n  environment = var.environment\n  table_name  = \"${upper(var.environment)}_ABC_TABLE\"\n  attribute_list = [\n    {\n      name = \"convState\"\n      type = \"S\"\n    },\n    {\n      name = \"id\"\n      type = \"S\"\n    },\n    {\n      name = \"tag\"\n      type = \"S\"\n    }\n  ]\n  hash_key  = \"id\"\n  range_key = \"tag\"\n  tags = {\n    Application = \"Example\"\n    Environment = \"Non-production::${upper(var.environment)}\"\n    Owner       = \"devops@example.org\"\n    Role        = \"DataSource\"\n  }\n\n  global_secondary_index_list = [{\n    hash_key           = \"convState\"\n    range_key          = null\n    name               = \"convState-index\"\n    non_key_attributes = []\n    projection_type    = \"ALL\"\n    read_capacity      = 0\n    write_capacity     = 0\n  }]\n\n  local_secondary_index_list = []\n\n  ttl_list = [{\n    attribute_name = \"expirationTime\"\n    enabled        = true\n  }]\n\n  providers = {\n    aws.us-west-2 = aws.us-west-2\n    aws.us-east-1 = aws.us-east-1\n  }\n}\n\nprovider \"aws\" {\n  alias = \"us-west-2\"\n}\n\nprovider \"aws\" {\n  alias = \"us-east-1\"\n}\n\n\nExplanation:\nsource      = \"git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global\"\nIncluding remote DynamoDB module. When running terraform init first time it will be downloaded to the cache folder on your machine (typically .terraform).\nenvironment = var.environment\nInput variable defined in the module and passed from the parent module.\ntable_name  = \"${upper(var.environment)}_ABC_TABLE\"\nTerraform includes few string manipulation functions, e.g. upper, lower or title.\nDynamoDB module input variables:\nattribute_list = [] \n\nglobal_secondary_index_list = []\n\nlocal_secondary_index_list = []\n\nttl_list = []\n\nAll above are defined as list of objects: type = list(object({    })) Using list allow to pass multiple objects and in some cases also allows optional paramaters. For example table might not define ttl but we cannot asign null to this variable so the way to express it is to pass empty list of object.\ntags = {\n    Application = \"Example\"\n    Environment = \"Non-production::${upper(var.environment)}\"\n    Owner       = \"devops@example.org\"\n    Role        = \"DataSource\"\n}\n\nThis is actually a single object which is mapped to map(string) in the module.\nprovider \"aws\" {\n  alias = \"us-west-2\"\n}\n\nprovider \"aws\" {\n  alias = \"us-east-1\"\n}\n\nUnfortunately, this is redundant but necessary to pass providers around.\nvariable.tf\nvariable \"environment\" {\n  type = string\n}"
+  },
+  {
+    "objectID": "posts/convert_kafka_jks_certificate_to_pem/index.html",
+    "href": "posts/convert_kafka_jks_certificate_to_pem/index.html",
+    "title": "Convert Kafka JKS certificate to PEM",
+    "section": "",
+    "text": "Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).\nHere are the commands to extract the Certificate Authority (CA) certificate:\n$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12\n$ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem\n\nYou can then convert your client keystore to be usable from languages supporting .pem, with similar commands:\n$ keytool -importkeystore -srckeystore dev.client.keystore.jks -destkeystore client.p12 -deststoretype PKCS12\n$ openssl pkcs12 -in client.p12 -nokeys -out client.cer.pem\n$ openssl pkcs12 -in client.p12 -nodes -nocerts -out client.key.pem"
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html",
+    "href": "posts/murphys-laws/index.html",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "",
+    "text": "If anything can go wrong, it will.\nIf there is a possibility of several things going wrong, the one that will cause the most damage will be the first one to go wrong.\nIf anything just cannot go wrong, it will anyway.\nIf you perceive that there are four possible ways in which something can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop.\nLeft to themselves, things tend to go from bad to worse.\nIf everything seems to be going well, you have obviously overlooked something.\nNature always sides with the hidden flaw.\nMother nature is a bitch."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#zymurgs-seventh-exception-to-murphys-law",
+    "href": "posts/murphys-laws/index.html#zymurgs-seventh-exception-to-murphys-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Zymurg’s Seventh Exception to Murphy’s Law",
+    "text": "Zymurg’s Seventh Exception to Murphy’s Law\nWhen it rains, it pours."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#otooles-commentary-on-murphys-laws",
+    "href": "posts/murphys-laws/index.html#otooles-commentary-on-murphys-laws",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "O’Toole’s Commentary on Murphy’s Laws",
+    "text": "O’Toole’s Commentary on Murphy’s Laws\nMurphy was an optimist."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#murphys-time-action-quandary",
+    "href": "posts/murphys-laws/index.html#murphys-time-action-quandary",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Murphy’s Time-Action Quandary",
+    "text": "Murphy’s Time-Action Quandary\nYou never know how soon is too late."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#proof-of-murphys-law",
+    "href": "posts/murphys-laws/index.html#proof-of-murphys-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Proof of Murphy’s Law",
+    "text": "Proof of Murphy’s Law\nMurphy’s Law cannot be proven, yet is correct, as when you try to prove Murphy’s Law, you will see that the proof is incorrect. This is obviously due to Murphy’s Law, therefore Murphy’s Law is correct and proven."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#stewarts-corollary-to-murphys-law",
+    "href": "posts/murphys-laws/index.html#stewarts-corollary-to-murphys-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Stewart’s Corollary to Murphy’s Law",
+    "text": "Stewart’s Corollary to Murphy’s Law\nMurphy’s Law may be delayed or suspended for an indefinite period of time, provided that such delay or suspension will result in a greater catastrophe at a later date."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#andré-weils-law-of-faculties",
+    "href": "posts/murphys-laws/index.html#andré-weils-law-of-faculties",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "André Weil’s Law of Faculties",
+    "text": "André Weil’s Law of Faculties\nFirst-rate people hire other first-rate people. Second-rate people hire third-rate people. Third-rate people hire fifth-rate people."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#berkowitzs-postulate",
+    "href": "posts/murphys-laws/index.html#berkowitzs-postulate",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Berkowitz’s Postulate",
+    "text": "Berkowitz’s Postulate\nA clean desk gives a sense of relief and a plan for impending disaster."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#biondis-law",
+    "href": "posts/murphys-laws/index.html#biondis-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Biondi’s Law",
+    "text": "Biondi’s Law\nIf your project doesn’t work, look for the part you didn’t think was important."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#boves-theorem",
+    "href": "posts/murphys-laws/index.html#boves-theorem",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Bove’s Theorem",
+    "text": "Bove’s Theorem\nThe remaining work to finish in order to reach your goal increases as the deadline approaches."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#briens-first-law",
+    "href": "posts/murphys-laws/index.html#briens-first-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Brien’s First Law",
+    "text": "Brien’s First Law\nAt some time in the life cycle of virtually every organization, its ability to succeed in spite of itself runs out."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#cropps-law",
+    "href": "posts/murphys-laws/index.html#cropps-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Cropp’s Law",
+    "text": "Cropp’s Law\nThe amount of work done varies inversely with the amount of time spent in the office."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#dr.-samuelsons-reflection",
+    "href": "posts/murphys-laws/index.html#dr.-samuelsons-reflection",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Dr. Samuelson’s Reflection",
+    "text": "Dr. Samuelson’s Reflection\nThe real objective of a committee is not to reach a decision, but to avoid it."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#law-of-holes",
+    "href": "posts/murphys-laws/index.html#law-of-holes",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Law of Holes",
+    "text": "Law of Holes\n\nThe first step in getting out of the hole your dug for yourself is to stop digging.\nIf a boss digs himself into a hole, all subordinates are expected to jump in with him.\nIf a subordinate digs a hole, never expect the boss to jump in with him.\nIf you expect to miss the holes others have left in your path to success, stop looking back at the ones you just climbed out of."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#fitz-gibbons-law",
+    "href": "posts/murphys-laws/index.html#fitz-gibbons-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Fitz-Gibbon’s Law",
+    "text": "Fitz-Gibbon’s Law\nCreativity varies inversely with the number of cooks involved with the broth.\n## Glasser’s Corollary If, of the seven hours you spend at work, six hours and fifty-five minutes are spent working at your desk, and the rest of the time you throw the bull with your cubicle-mate, the time at which your supervisor will walk in and ask what you’re doing can be determined to within five minutes.\n## Heller’s Law The first myth of management is that it exists."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#ginsbergs-theorems",
+    "href": "posts/murphys-laws/index.html#ginsbergs-theorems",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Ginsberg’s Theorems",
+    "text": "Ginsberg’s Theorems\nYou can’t win. You can’t break even. You can’t even quit the game."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#forsyths-second-corollary-to-murphys-laws",
+    "href": "posts/murphys-laws/index.html#forsyths-second-corollary-to-murphys-laws",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Forsyth’s Second Corollary to Murphy’s Laws",
+    "text": "Forsyth’s Second Corollary to Murphy’s Laws\nJust when you see the light at the end of the tunnel, the roof caves in."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#weilers-law",
+    "href": "posts/murphys-laws/index.html#weilers-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Weiler’s Law",
+    "text": "Weiler’s Law\nNothing is impossible for the man who doesn’t have to do it himself."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#the-laws-of-computer-programming",
+    "href": "posts/murphys-laws/index.html#the-laws-of-computer-programming",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "The Laws of Computer Programming",
+    "text": "The Laws of Computer Programming\n\nAny given program, when running, is obsolete.\nAny given program costs more and takes longer each time it is run.\nIf a program is useful, it will have to be changed.\nIf a program is useless, it will have to be documented.\nAny given program will expand to fill all the available memory.\nThe value of a program is inversely proportional to the weight of its output.\nProgram complexity grows until it exceeds the capability of the programmer who must maintain it."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#pierces-law",
+    "href": "posts/murphys-laws/index.html#pierces-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Pierce’s Law",
+    "text": "Pierce’s Law\nIn any computer system, the machine will always misinterpret, misconstrue, misprint, or not evaluate any math or subroutines or fail to print any output on at least the first run through."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#corollary-to-pierces-law",
+    "href": "posts/murphys-laws/index.html#corollary-to-pierces-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Corollary to Pierce’s Law",
+    "text": "Corollary to Pierce’s Law\nWhen a compiler accepts a program without error on the first run, the program will not yield the desired output."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#addition-to-murphys-laws",
+    "href": "posts/murphys-laws/index.html#addition-to-murphys-laws",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Addition to Murphy’s Laws",
+    "text": "Addition to Murphy’s Laws\nIn nature, nothing is ever right. Therefore, if everything is going right … something is wrong."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#brooks-law",
+    "href": "posts/murphys-laws/index.html#brooks-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Brook’s Law",
+    "text": "Brook’s Law\nIf at first you don’t succeed, transform your data set!"
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#groschs-law",
+    "href": "posts/murphys-laws/index.html#groschs-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Grosch’s Law",
+    "text": "Grosch’s Law\nComputing power increases as the square of the cost."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#golubs-laws-of-computerdom",
+    "href": "posts/murphys-laws/index.html#golubs-laws-of-computerdom",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Golub’s Laws of Computerdom",
+    "text": "Golub’s Laws of Computerdom\n\nFuzzy project objectives are used to avoid embarrassment of estimating the corresponding costs.\nA carelessly planned project takes three times longer to complete than expected; a carefully planned project takes only twice as long.\nThe effort required to correct course increases geometrically with time.\nProject teams detest weekly progress reporting because it so vividly manifests their lack of progress."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#osborns-law",
+    "href": "posts/murphys-laws/index.html#osborns-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Osborn’s Law",
+    "text": "Osborn’s Law\nVariables won’t; constants aren’t."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#gilbs-laws-of-unreliability",
+    "href": "posts/murphys-laws/index.html#gilbs-laws-of-unreliability",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Gilb’s Laws of Unreliability",
+    "text": "Gilb’s Laws of Unreliability\n\nComputers are unreliable, but humans are even more unreliable.\nAny system that depends upon human reliability is unreliable.\nUndetectable errors are infinite in variety, in contrast to detectable errors, which by definition are limited.\nInvestment in reliability will increase until it exceeds the probable cost of errors, or until someone insists on getting some useful work done."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#lubarskys-law-of-cybernetic-entomology",
+    "href": "posts/murphys-laws/index.html#lubarskys-law-of-cybernetic-entomology",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Lubarsky’s Law of Cybernetic Entomology",
+    "text": "Lubarsky’s Law of Cybernetic Entomology\nThere’s always one more bug."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#troutmans-postulate",
+    "href": "posts/murphys-laws/index.html#troutmans-postulate",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Troutman’s Postulate",
+    "text": "Troutman’s Postulate\n\nProfanity is the one language understood by all programmers.\nNot until a program has been in production for six months will the most harmful error be discovered.\nJob control cards that positively cannot be arranged in improper order will be.\nInterchangeable tapes won’t.\nIf the input editor has been designed to reject all bad input, an ingenious idiot will discover a method to get bad data past it.\nIf a test installation functions perfectly, all subsequent systems will malfunction."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#weinbergs-second-law",
+    "href": "posts/murphys-laws/index.html#weinbergs-second-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Weinberg’s Second Law",
+    "text": "Weinberg’s Second Law\nIf builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#gumpersons-law",
+    "href": "posts/murphys-laws/index.html#gumpersons-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Gumperson’s Law",
+    "text": "Gumperson’s Law\nThe probability of anything happening is in inverse ratio to its desirability."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#gummidges-law",
+    "href": "posts/murphys-laws/index.html#gummidges-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Gummidge’s Law",
+    "text": "Gummidge’s Law\nThe amount of expertise varies in inverse ratio to the number of statements understood by the general public."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#zymurgys-first-law-of-evolving-system-dynamics",
+    "href": "posts/murphys-laws/index.html#zymurgys-first-law-of-evolving-system-dynamics",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Zymurgy’s First Law of Evolving System Dynamics",
+    "text": "Zymurgy’s First Law of Evolving System Dynamics\nOnce you open a can of worms, the only way to recan them is to use a larger can (old worms never die, they just worm their way into larger cans)."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#harvards-law-as-applied-to-computers",
+    "href": "posts/murphys-laws/index.html#harvards-law-as-applied-to-computers",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Harvard’s Law, as Applied to Computers",
+    "text": "Harvard’s Law, as Applied to Computers\nUnder the most rigorously controlled conditions of pressure, temperature, volume, humidity and other variables, the computer will do as it damn well pleases."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#sattingers-law",
+    "href": "posts/murphys-laws/index.html#sattingers-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Sattinger’s Law",
+    "text": "Sattinger’s Law\nIt works better if you plug it in."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#jenkinsons-law",
+    "href": "posts/murphys-laws/index.html#jenkinsons-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Jenkinson’s Law",
+    "text": "Jenkinson’s Law\nIt won’t work."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#horners-five-thumb-postulate",
+    "href": "posts/murphys-laws/index.html#horners-five-thumb-postulate",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Horner’s Five Thumb Postulate",
+    "text": "Horner’s Five Thumb Postulate\nExperience varies directly with equipment ruined."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#cheops-law",
+    "href": "posts/murphys-laws/index.html#cheops-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Cheop’s Law",
+    "text": "Cheop’s Law\nNothing ever gets build on schedule or within budget."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#rule-of-accuracy",
+    "href": "posts/murphys-laws/index.html#rule-of-accuracy",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Rule of Accuracy",
+    "text": "Rule of Accuracy\nWhen working toward the solution of a problem, it always helps if you know the answer."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#pudders-laws",
+    "href": "posts/murphys-laws/index.html#pudders-laws",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Pudder’s Laws",
+    "text": "Pudder’s Laws\nAnything that begins well ends badly. Anything that begins badly ends worse."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#westheimers-rule",
+    "href": "posts/murphys-laws/index.html#westheimers-rule",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Westheimer’s Rule",
+    "text": "Westheimer’s Rule\nTo estimate the time it takes to do a task: estimate the time you think it should take, multiply by two and change the unit of measure to the next highest unit. Thus, we allocate two days for a one hour task."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#stockmayers-theorem",
+    "href": "posts/murphys-laws/index.html#stockmayers-theorem",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Stockmayer’s Theorem",
+    "text": "Stockmayer’s Theorem\nIf it looks easy, it’s tough. If it looks tough, it’s damn near impossible."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#atwoods-corollary",
+    "href": "posts/murphys-laws/index.html#atwoods-corollary",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Atwoods Corollary",
+    "text": "Atwoods Corollary\nNo books are lost by lending except those you particularly wanted to keep."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#johnsons-third-law",
+    "href": "posts/murphys-laws/index.html#johnsons-third-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Johnson’s Third Law",
+    "text": "Johnson’s Third Law\nIf you miss one issue of any magazine, it will be the issue that contains the article, story or installment you were most anxious to read."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#corollary-to-johnsons-third-law",
+    "href": "posts/murphys-laws/index.html#corollary-to-johnsons-third-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Corollary to Johnson’s Third Law",
+    "text": "Corollary to Johnson’s Third Law\nAll of your friends either missed it, lost it or threw it out."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#harpers-magazine-law",
+    "href": "posts/murphys-laws/index.html#harpers-magazine-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Harper’s Magazine Law",
+    "text": "Harper’s Magazine Law\nYou never find the article until you replace it."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#brookes-law",
+    "href": "posts/murphys-laws/index.html#brookes-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Brooke’s Law",
+    "text": "Brooke’s Law\nAdding manpower to a late software makes it later. ## Finagle’s Fourth Law Once a job is fooled up, anything done to improve it will only make it worse."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#featherkiles-rule",
+    "href": "posts/murphys-laws/index.html#featherkiles-rule",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Featherkile’s Rule",
+    "text": "Featherkile’s Rule\nWhatever you did, that’s what you planned."
+  },
+  {
+    "objectID": "posts/murphys-laws/index.html#flaps-law",
+    "href": "posts/murphys-laws/index.html#flaps-law",
+    "title": "Murphy’s laws and other principles of disaster",
+    "section": "Flap’s Law",
+    "text": "Flap’s Law\nAny inanimate object, regardless of its position, configuration or purpose, may be expected to perform at any time in a totally unexpected manner for reasons that are either entirely obscure or else completely mysterious."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "melastmohican.github.io",
+    "section": "",
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nNov 20, 2022\n\n\nMigrating my Hugo blog to Quarto\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nNov 14, 2022\n\n\nRusty Feather\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nMay 20, 2020\n\n\nMurphy’s laws and other principles of disaster\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nMar 21, 2020\n\n\nTerraform Best Practice Guide for Developers\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nMar 14, 2020\n\n\nConvert Kafka JKS certificate to PEM\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nMar 13, 2020\n\n\nWhat new language should I learn as Java Developer\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nMar 9, 2020\n\n\nList of Awesome Lists\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nMar 6, 2020\n\n\nMaven Archetypes Project Templating\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nMar 5, 2020\n\n\nMigrating existing AWS infrastructure to new acount\n\n\nMariusz S. Jurgielewicz\n\n\n\n\nMar 5, 2020\n\n\nProgrammer’s Jokes\n\n\nMariusz S. Jurgielewicz\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Artifex Rerum Caducarum"
+  }
+]

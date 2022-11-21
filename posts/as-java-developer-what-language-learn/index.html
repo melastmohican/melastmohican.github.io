@@ -1,158 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
 
-    <meta name="author" content="Mariusz Jurgielewicz">
-    <meta name="description" content="melastmohican.github.io">
-    <meta name="keywords" content="blog,developer,personal">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="What new language should I learn as Java Developer"/>
-<meta name="twitter:description" content="If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone"/>
+<meta name="author" content="Mariusz S. Jurgielewicz">
+<meta name="dcterms.date" content="2020-03-13">
 
-    <meta property="og:title" content="What new language should I learn as Java Developer" />
-<meta property="og:description" content="If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://melastmohican.github.io/posts/as-java-developer-what-language-learn/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-03-13T05:38:17-08:00" />
-<meta property="article:modified_time" content="2020-03-13T05:38:17-08:00" />
+<title>melastmohican.github.io - What new language should I learn as Java Developer</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
 
-    
-      <base href="https://melastmohican.github.io/posts/as-java-developer-what-language-learn/">
-    
-    <title>
-  What new language should I learn as Java Developer · melastmohican.github.io
-</title>
 
-    
-      <link rel="canonical" href="https://melastmohican.github.io/posts/as-java-developer-what-language-learn/">
-    
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+<body class="floating nav-fixed">
 
-    
-      
-      
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-
-    
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/custom.css" />
-    
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
-
-    <meta name="generator" content="Hugo 0.105.0">
-  </head>
-
-  
-  
-  <body class="colorscheme-light">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://melastmohican.github.io/">
-      melastmohican.github.io
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">melastmohican.github.io</span>
     </a>
-    
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/posts/">Blog</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/about/">About</a>
-          </li>
-        
-      
-      
-    </ul>
-    
-  </section>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melastmohican"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://universeodon.com/@melastmohican"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#my-current-development-stack" id="toc-my-current-development-stack" class="nav-link active" data-scroll-target="#my-current-development-stack">My current development stack</a></li>
+  <li><a href="#kotlin" id="toc-kotlin" class="nav-link" data-scroll-target="#kotlin">Kotlin</a>
+  <ul class="collapse">
+  <li><a href="#language" id="toc-language" class="nav-link" data-scroll-target="#language">Language</a>
+  <ul class="collapse">
+  <li><a href="#null-safe" id="toc-null-safe" class="nav-link" data-scroll-target="#null-safe">Null Safe</a></li>
+  </ul></li>
+  <li><a href="#microservice-framework" id="toc-microservice-framework" class="nav-link" data-scroll-target="#microservice-framework">Microservice framework</a></li>
+  <li><a href="#aws" id="toc-aws" class="nav-link" data-scroll-target="#aws">AWS</a></li>
+  <li><a href="#kafka" id="toc-kafka" class="nav-link" data-scroll-target="#kafka">Kafka</a></li>
+  <li><a href="#restful-api-services" id="toc-restful-api-services" class="nav-link" data-scroll-target="#restful-api-services">RESTful API services</a></li>
+  <li><a href="#tracing-and-monitoring" id="toc-tracing-and-monitoring" class="nav-link" data-scroll-target="#tracing-and-monitoring">Tracing and Monitoring</a></li>
+  <li><a href="#logging" id="toc-logging" class="nav-link" data-scroll-target="#logging">Logging</a></li>
+  <li><a href="#nodejs" id="toc-nodejs" class="nav-link" data-scroll-target="#nodejs">NodeJS</a></li>
+  <li><a href="#frontend" id="toc-frontend" class="nav-link" data-scroll-target="#frontend">Frontend</a></li>
+  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker">Docker</a></li>
+  <li><a href="#kubernetes" id="toc-kubernetes" class="nav-link" data-scroll-target="#kubernetes">Kubernetes</a></li>
+  </ul></li>
+  <li><a href="#go" id="toc-go" class="nav-link" data-scroll-target="#go">Go</a>
+  <ul class="collapse">
+  <li><a href="#language-1" id="toc-language-1" class="nav-link" data-scroll-target="#language-1">Language</a>
+  <ul class="collapse">
+  <li><a href="#built-in-types" id="toc-built-in-types" class="nav-link" data-scroll-target="#built-in-types">Built-in types</a></li>
+  </ul></li>
+  <li><a href="#microservice-framework-1" id="toc-microservice-framework-1" class="nav-link" data-scroll-target="#microservice-framework-1">Microservice framework</a></li>
+  <li><a href="#restful-api-services-1" id="toc-restful-api-services-1" class="nav-link" data-scroll-target="#restful-api-services-1">RESTful API services</a></li>
+  <li><a href="#tracing-and-monitoring-1" id="toc-tracing-and-monitoring-1" class="nav-link" data-scroll-target="#tracing-and-monitoring-1">Tracing and Monitoring</a></li>
+  <li><a href="#logging-1" id="toc-logging-1" class="nav-link" data-scroll-target="#logging-1">Logging</a></li>
+  <li><a href="#nodejs-1" id="toc-nodejs-1" class="nav-link" data-scroll-target="#nodejs-1">NodeJS</a></li>
+  <li><a href="#angular" id="toc-angular" class="nav-link" data-scroll-target="#angular">Angular</a></li>
+  <li><a href="#docker-1" id="toc-docker-1" class="nav-link" data-scroll-target="#docker-1">Docker</a></li>
+  <li><a href="#kubernetes-1" id="toc-kubernetes-1" class="nav-link" data-scroll-target="#kubernetes-1">Kubernetes</a></li>
+  </ul></li>
+  <li><a href="#dart" id="toc-dart" class="nav-link" data-scroll-target="#dart">Dart</a>
+  <ul class="collapse">
+  <li><a href="#language-2" id="toc-language-2" class="nav-link" data-scroll-target="#language-2">Language</a>
+  <ul class="collapse">
+  <li><a href="#concurrency" id="toc-concurrency" class="nav-link" data-scroll-target="#concurrency">Concurrency</a></li>
+  <li><a href="#performance" id="toc-performance" class="nav-link" data-scroll-target="#performance">Performance</a></li>
+  <li><a href="#method-cascades" id="toc-method-cascades" class="nav-link" data-scroll-target="#method-cascades">Method cascades</a></li>
+  <li><a href="#collection-literals" id="toc-collection-literals" class="nav-link" data-scroll-target="#collection-literals">Collection literals</a></li>
+  <li><a href="#generics" id="toc-generics" class="nav-link" data-scroll-target="#generics">Generics</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#anonymous-functions" id="toc-anonymous-functions" class="nav-link" data-scroll-target="#anonymous-functions">Anonymous functions</a></li>
+  <li><a href="#no-primitives" id="toc-no-primitives" class="nav-link" data-scroll-target="#no-primitives">No Primitives</a></li>
+  <li><a href="#mixins" id="toc-mixins" class="nav-link" data-scroll-target="#mixins">Mixins</a></li>
+  <li><a href="#parmeters" id="toc-parmeters" class="nav-link" data-scroll-target="#parmeters">Parmeters</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
+  <li><a href="#type-inference" id="toc-type-inference" class="nav-link" data-scroll-target="#type-inference">Type inference</a></li>
+  <li><a href="#string-interpolation" id="toc-string-interpolation" class="nav-link" data-scroll-target="#string-interpolation">String interpolation</a></li>
+  </ul></li>
+  <li><a href="#generators" id="toc-generators" class="nav-link" data-scroll-target="#generators">Generators</a></li>
+  <li><a href="#microservice-framework-2" id="toc-microservice-framework-2" class="nav-link" data-scroll-target="#microservice-framework-2">Microservice framework</a></li>
+  <li><a href="#aws-1" id="toc-aws-1" class="nav-link" data-scroll-target="#aws-1">AWS</a></li>
+  <li><a href="#kafka-1" id="toc-kafka-1" class="nav-link" data-scroll-target="#kafka-1">Kafka</a></li>
+  <li><a href="#restful-api-services-2" id="toc-restful-api-services-2" class="nav-link" data-scroll-target="#restful-api-services-2">RESTful API services</a></li>
+  <li><a href="#tracing-and-monitoring-2" id="toc-tracing-and-monitoring-2" class="nav-link" data-scroll-target="#tracing-and-monitoring-2">Tracing and Monitoring</a></li>
+  <li><a href="#logging-2" id="toc-logging-2" class="nav-link" data-scroll-target="#logging-2">Logging</a></li>
+  <li><a href="#nodejs-2" id="toc-nodejs-2" class="nav-link" data-scroll-target="#nodejs-2">NodeJS</a></li>
+  <li><a href="#angular-1" id="toc-angular-1" class="nav-link" data-scroll-target="#angular-1">Angular</a></li>
+  <li><a href="#docker-2" id="toc-docker-2" class="nav-link" data-scroll-target="#docker-2">Docker</a></li>
+  <li><a href="#kubernetes-2" id="toc-kubernetes-2" class="nav-link" data-scroll-target="#kubernetes-2">Kubernetes</a></li>
+  </ul></li>
+  <li><a href="#sample-code" id="toc-sample-code" class="nav-link" data-scroll-target="#sample-code">Sample code</a>
+  <ul class="collapse">
+  <li><a href="#factorial-in-java" id="toc-factorial-in-java" class="nav-link" data-scroll-target="#factorial-in-java">Factorial in Java</a></li>
+  <li><a href="#factorial-in-kotlin" id="toc-factorial-in-kotlin" class="nav-link" data-scroll-target="#factorial-in-kotlin">Factorial in Kotlin</a></li>
+  <li><a href="#factorial-in-go" id="toc-factorial-in-go" class="nav-link" data-scroll-target="#factorial-in-go">Factorial in Go</a></li>
+  <li><a href="#factorial-in-dart" id="toc-factorial-in-dart" class="nav-link" data-scroll-target="#factorial-in-dart">Factorial in Dart</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
 </nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">What new language should I learn as Java Developer</h1>
+<p class="subtitle lead">If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">development</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">programming</div>
+    <div class="quarto-category">migration</div>
+    <div class="quarto-category">java</div>
+    <div class="quarto-category">kotlin</div>
+    <div class="quarto-category">go</div>
+    <div class="quarto-category">dart</div>
+  </div>
+  </div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">What new language should I learn as Java Developer</h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fas fa-calendar"></i>
-              <time datetime='2020-03-13T05:38:17-08:00'>
-                March 13, 2020
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fas fa-clock"></i>
-              15-minute read
-            </span>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mariusz S. Jurgielewicz </p>
           </div>
-          <div class="categories">
-  <i class="fas fa-folder"></i>
-    <a href="https://melastmohican.github.io/categories/development/">Development</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/categories/code/">Code</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/categories/programming/">Programming</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/categories/language/">Language</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/categories/migration/">Migration</a></div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 13, 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
-          <div class="tags">
-  <i class="fas fa-tag"></i>
-    <a href="https://melastmohican.github.io/tags/code/">code</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/development/">development</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/java/">java</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/kotlin/">kotlin</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/go/">go</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/dart/">dart</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/programming/">programming</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/language/">language</a></div>
+</header>
 
-        </div>
-      </header>
-
-      <div>
-        
-        <p>If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant. We switched to a different OpenJDK vendor and we are using <a href="https://aws.amazon.com/corretto/">Amazon Correto</a> now. We also migrated all ouf our microservices from Java 8 to 11 for a different reason which I might mention later.</p>
-<p>I am constantly looking at new programming languages because I am just curious what&rsquo;s out there. But I am not a person who would jump on any new &ldquo;shining thing&rdquo;.  I want to learn something I can practically apply in my current job. I have been using many different langugages during my career. I think order would be: Pascal, C, Basic, C++, C#, Java, Groovy. On the top of that some Data-oriented/Declarative languages: SQL, dBase, Clipper, SPARQL, XSLT. When started doing web development I was exposed to XML-based languages: XPath and XQuery.</p>
+<p>If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant. We switched to a different OpenJDK vendor and we are using <a href="https://aws.amazon.com/corretto/">Amazon Correto</a> now. We also migrated all ouf our microservices from Java 8 to 11 for a different reason which I might mention later.</p>
+<p>I am constantly looking at new programming languages because I am just curious what’s out there. But I am not a person who would jump on any new “shining thing”. I want to learn something I can practically apply in my current job. I have been using many different langugages during my career. I think order would be: Pascal, C, Basic, C++, C#, Java, Groovy. On the top of that some Data-oriented/Declarative languages: SQL, dBase, Clipper, SPARQL, XSLT. When started doing web development I was exposed to XML-based languages: XPath and XQuery.</p>
 <p>Ideally mew language should well support what I am doing now, have mature frameworks to work with and works multiple platforms.</p>
-<h1 id="my-current-development-stack">My current development stack</h1>
-<ol>
+<section id="my-current-development-stack" class="level1">
+<h1>My current development stack</h1>
+<ol type="1">
 <li>Java</li>
 <li>Spring Boot (microservice framework)</li>
 <li>AWS</li>
@@ -166,304 +311,456 @@
 <li>Kubernetes</li>
 </ol>
 <p>So if new language can replace these with mature equivalents then I would consider it.</p>
-<h1 id="kotlin">Kotlin</h1>
+</section>
+<section id="kotlin" class="level1">
+<h1>Kotlin</h1>
 <p>Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference. Kotlin is designed to interoperate fully with Java, and the JVM version of its standard library depends on the Java Class Library, but type inference allows its syntax to be more concise. Kotlin mainly targets the JVM, but also compiles to JavaScript or native code.</p>
-<h2 id="language">Language</h2>
-<p>Pretty much I just replace #1 in my stack and everything is the same. I might even try to write some frontend code in Kotlin but it is probably not worth it. Migration could gradual but I am not fully sure if running on JVM exposes us to Oracle licensing threat. Other issue I see is Docker container size which most likely will not improve.</p>
-<h3 id="reversed-type-declaration">Reversed type declaration</h3>
-<p>In the C-family of programming languages, we have the standard way of declaring types of things. Shortly, first goes a type, then goes a typed thing (variable, fields, method, and so on).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="">int</span> inc(<span style="">int</span> i) {
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> i + 1;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>All of the languages supporting type inference, which means the type is an optional part of the declaration in those languages because they&rsquo;re smart enough to fill it in themselves when you provide an initialization expression that has an easily-determined type. That matters because putting the optional parts of an expression farther to the right reduces parsing ambiguity, and increases consistency between the expressions that do use that part and the ones that don&rsquo;t. It&rsquo;s just simpler to parse a declaration when you know the var keyword and the variable name are both mandatory before you get to the optional stuff.</p>
+<section id="language" class="level2">
+<h2 class="anchored" data-anchor-id="language">Language</h2>
+<p>Pretty much I just replace #1 in my stack and everything is the same. I might even try to write some frontend code in Kotlin but it is probably not worth it. Migration could gradual but I am not fully sure if running on JVM exposes us to Oracle licensing threat. Other issue I see is Docker container size which most likely will not improve. ### Reversed type declaration In the C-family of programming languages, we have the standard way of declaring types of things. Shortly, first goes a type, then goes a typed thing (variable, fields, method, and so on).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> <span class="fu">inc</span><span class="op">(</span><span class="dt">int</span> i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>All of the languages supporting type inference, which means the type is an optional part of the declaration in those languages because they’re smart enough to fill it in themselves when you provide an initialization expression that has an easily-determined type. That matters because putting the optional parts of an expression farther to the right reduces parsing ambiguity, and increases consistency between the expressions that do use that part and the ones that don’t. It’s just simpler to parse a declaration when you know the var keyword and the variable name are both mandatory before you get to the optional stuff.</p>
 <p>Reversed notation in Kotlin:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Kotlin" data-lang="Kotlin"><span style="display:flex;"><span><span style="font-weight:bold">fun</span> inc(i: Int): Int {
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> i + 1
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="null-safe">Null Safe</h3>
-<p>By default, all types of variables are non-null able (i.e. we can’t assign null values to any type of variables/objects). If we try to assign or return null values, Kotlin code will fail during compile-time.</p>
-<h3 id="extension-functions">Extension Functions</h3>
-<p>Kotlin provides the ability to extend a class with new functionality without having to inherit from the class or use design patterns such as Decorator. This is done via special declarations called extensions. For example, you can write new functions for a class from a third-party library that you can&rsquo;t modify. Such functions are available for calling in the usual way as if they were methods of the original class.</p>
-<h3 id="coroutines">Coroutines</h3>
-<p>Coroutines are light-weight threads. Coroutines are a great way to write asynchronous code that is perfectly readable and maintainable. They are sort of tasks that the actual threads can execute. A thread can stop executing a coroutine at some specific “suspension points”, and go do some other work. It can resume executing the coroutine later on, or another thread could even take over.</p>
-<h3 id="data-classes">Data Classes</h3>
-<p>Classes which need to hold data we can declare a class with keyword “data” in the class definition then the compiler will take care of all of this work such as creating constructors, getter, setter methods for different fields. No Lombok required.</p>
-<h3 id="smart-casts">Smart casts</h3>
-<p>Smart casts will handle these casting checks with keyword “is-checks” which will check for immutable values and performs implicit casting.</p>
-<h3 id="type-inference">Type inference</h3>
-<p>We don’t need to specify the type of each variable explicitly based on assignment it will handle. If we want to specify explicitly we can do.</p>
-<h3 id="functional-programming">Functional Programming</h3>
-<p>Kotlin functions are first-class, which means that they can be stored in variables and data structures, passed as arguments to and returned from other higher-order functions. You can operate with functions in any way that is possible for other non-function values.</p>
-<h2 id="microservice-framework">Microservice framework</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode kotlin code-with-copy"><code class="sourceCode kotlin"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fun</span> <span class="fu">inc</span><span class="op">(</span><span class="va">i</span><span class="op">:</span> <span class="dt">Int</span><span class="op">):</span> <span class="dt">Int</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="null-safe" class="level3">
+<h3 class="anchored" data-anchor-id="null-safe">Null Safe</h3>
+<p>By default, all types of variables are non-null able (i.e.&nbsp;we can’t assign null values to any type of variables/objects). If we try to assign or return null values, Kotlin code will fail during compile-time. ### Extension Functions Kotlin provides the ability to extend a class with new functionality without having to inherit from the class or use design patterns such as Decorator. This is done via special declarations called extensions. For example, you can write new functions for a class from a third-party library that you can’t modify. Such functions are available for calling in the usual way as if they were methods of the original class. ### Coroutines Coroutines are light-weight threads. Coroutines are a great way to write asynchronous code that is perfectly readable and maintainable. They are sort of tasks that the actual threads can execute. A thread can stop executing a coroutine at some specific “suspension points”, and go do some other work. It can resume executing the coroutine later on, or another thread could even take over. ### Data Classes Classes which need to hold data we can declare a class with keyword “data” in the class definition then the compiler will take care of all of this work such as creating constructors, getter, setter methods for different fields. No Lombok required. ### Smart casts Smart casts will handle these casting checks with keyword “is-checks” which will check for immutable values and performs implicit casting. ### Type inference We don’t need to specify the type of each variable explicitly based on assignment it will handle. If we want to specify explicitly we can do. ### Functional Programming Kotlin functions are first-class, which means that they can be stored in variables and data structures, passed as arguments to and returned from other higher-order functions. You can operate with functions in any way that is possible for other non-function values.</p>
+</section>
+</section>
+<section id="microservice-framework" class="level2">
+<h2 class="anchored" data-anchor-id="microservice-framework">Microservice framework</h2>
 <p>Kotlin is natively supported, you can use <a href="https://start.spring.io/">Spring Initializr</a> to boostrap your applications.</p>
-<h2 id="aws">AWS</h2>
+</section>
+<section id="aws" class="level2">
+<h2 class="anchored" data-anchor-id="aws">AWS</h2>
 <p>Same AWS SDK can be used. We will have access to same services. You can create Lambdas in Kotlin since it is packaged to same bytecode and jar format.</p>
 <p><a href="https://medium.com/tech-travelstart/using-kotlin-in-a-serverless-architecture-with-aws-lambda-part-1-setting-up-the-project-87033790e2f4">Using Kotlin in a Serverless Architecture with AWS Lambda</a></p>
-<h2 id="kafka">Kafka</h2>
+</section>
+<section id="kafka" class="level2">
+<h2 class="anchored" data-anchor-id="kafka">Kafka</h2>
 <p>Anything available in Spring Framework can be used. Should be no problems with Kafka Streams.</p>
-<h2 id="restful-api-services">RESTful API services</h2>
-<p>No problems with String Framework components. Kotlin supports annotations so &ldquo;@EnableSwagger2&rdquo; should work.</p>
-<h2 id="tracing-and-monitoring">Tracing and Monitoring</h2>
+</section>
+<section id="restful-api-services" class="level2">
+<h2 class="anchored" data-anchor-id="restful-api-services">RESTful API services</h2>
+<p>No problems with String Framework components. Kotlin supports annotations so “<span class="citation" data-cites="EnableSwagger2">@EnableSwagger2</span>” should work.</p>
+</section>
+<section id="tracing-and-monitoring" class="level2">
+<h2 class="anchored" data-anchor-id="tracing-and-monitoring">Tracing and Monitoring</h2>
 <p>Should be as easy as using Spring Acturator and X-Ray annotations</p>
-<h2 id="logging">Logging</h2>
+</section>
+<section id="logging" class="level2">
+<h2 class="anchored" data-anchor-id="logging">Logging</h2>
 <p>No change here</p>
-<h2 id="nodejs">NodeJS</h2>
+</section>
+<section id="nodejs" class="level2">
+<h2 class="anchored" data-anchor-id="nodejs">NodeJS</h2>
 <p>No replacement here.</p>
-<h2 id="frontend">Frontend</h2>
-<p>Most likely no replacment here. I could try to write front in Kotlin just for fun.
-<a href="https://medium.com/@ralf.stuckert/getting-started-with-kotlin-react-c5f3b079a8bf">Getting Started With Kotlin-React</a>
-<a href="https://medium.com/javascript-in-plain-english/building-applications-with-kotlin-and-typescript-8a165e76252c">Building Web Applications with Kotlin and TypeScript</a></p>
-<h2 id="docker">Docker</h2>
+</section>
+<section id="frontend" class="level2">
+<h2 class="anchored" data-anchor-id="frontend">Frontend</h2>
+<p>Most likely no replacment here. I could try to write front in Kotlin just for fun. <a href="https://medium.com/@ralf.stuckert/getting-started-with-kotlin-react-c5f3b079a8bf">Getting Started With Kotlin-React</a> <a href="https://medium.com/javascript-in-plain-english/building-applications-with-kotlin-and-typescript-8a165e76252c">Building Web Applications with Kotlin and TypeScript</a></p>
+</section>
+<section id="docker" class="level2">
+<h2 class="anchored" data-anchor-id="docker">Docker</h2>
 <p>No gain in container size.</p>
-<h2 id="kubernetes">Kubernetes</h2>
+</section>
+<section id="kubernetes" class="level2">
+<h2 class="anchored" data-anchor-id="kubernetes">Kubernetes</h2>
 <p>No difference.</p>
-<h1 id="go">Go</h1>
+</section>
+</section>
+<section id="go" class="level1">
+<h1>Go</h1>
 <p>Go is a statically typed, compiled programming language. Go is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency.</p>
-<h2 id="language-1">Language</h2>
-<h3 id="built-in-types">Built-in types</h3>
-<p>Strings are provided by the language; a string behaves like a slice of bytes, but is immutable.
-Hash tables are provided by the language. They are called maps.</p>
-<h3 id="pointers-and-references">Pointers and references</h3>
-<p>Go offers pointers to values of all types, not just objects and arrays. For any type T, there is a corresponding pointer type *T, denoting pointers to values of type T.
-Arrays in Go are values. When an array is used as a function parameter, the function receives a copy of the array, not a pointer to it. However, in practice functions often use slices for parameters; slices are references to underlying arrays.
-Certain types (maps, slices, and channels) are passed by reference, not by value. That is, passing a map to a function does not copy the map; if the function changes the map, the change will be seen by the caller. In Java terms, one can think of this as being a reference to the map.</p>
-<h3 id="error-handling">Error handling</h3>
-<p>Instead of exceptions, Go uses errors to signify events such as end-of-file, and run-time panics for run-time errors such as attempting to index an array out of bounds.</p>
-<h3 id="object-oriented-programming">Object-oriented programming</h3>
-<p>Go does not have classes with constructors. Instead of instance methods, a class inheritance hierarchy, and dynamic method lookup, Go provides structs and interfaces.
-Go allows methods on any type; no boxing is required. The method receiver, which corresponds to this in Java, can be a direct value or a pointer.
-Go provides two access levels, analogous to Java’s public and package-private. Top-level declarations are public if their names start with an upper-case letter, otherwise they are package-private.</p>
-<h3 id="functional-programming-1">Functional programming</h3>
-<p>Functions in Go are first class citizens. Function values can be used and passed around just like other values and function literals may refer to variables defined in a enclosing function.</p>
-<h3 id="concurrency">Concurrency</h3>
-<p>Separate threads of execution, goroutines, and communication channels between them, channels, are provided by the language.</p>
-<h3 id="omitted-features">Omitted features</h3>
-<p>Go does not support implicit type conversion. Operations that mix different types require an explicit conversion. Instead Go offers Untyped numeric constants with no limits.
-Go does not support function overloading. Functions and methods in the same scope must have unique names. Go has some built-in generic data types, such as slices and maps, and generic functions, such as append and copy. However, there is no mechanism for writing your own generic functions.</p>
-<h2 id="microservice-framework-1">Microservice framework</h2>
-<p>No single framework/package to do everything. You have to pick your components and mix &amp; match them. Built-in http server is probably good enough but you need to pick web frameworks, router, middleware, data layer,etc.</p>
-<h2 id="aws-1">AWS</h2>
-<p>Official <a href="https://aws.amazon.com/sdk-for-go/">AWS SDK</a> supports Go.</p>
-<h2 id="kafka-1">Kafka</h2>
-<p>I would need to evaluate at least 3 most popular libraries: <br>
-<a href="https://github.com/confluentinc/confluent-kafka-go">Confluent&rsquo;s Apache Kafka Golang client</a> <br>
-<a href="https://github.com/segmentio/kafka-go">Segmentio kafka-go</a> <br>
+<section id="language-1" class="level2">
+<h2 class="anchored" data-anchor-id="language-1">Language</h2>
+<section id="built-in-types" class="level3">
+<h3 class="anchored" data-anchor-id="built-in-types">Built-in types</h3>
+<p>Strings are provided by the language; a string behaves like a slice of bytes, but is immutable. Hash tables are provided by the language. They are called maps. ### Pointers and references Go offers pointers to values of all types, not just objects and arrays. For any type T, there is a corresponding pointer type *T, denoting pointers to values of type T. Arrays in Go are values. When an array is used as a function parameter, the function receives a copy of the array, not a pointer to it. However, in practice functions often use slices for parameters; slices are references to underlying arrays. Certain types (maps, slices, and channels) are passed by reference, not by value. That is, passing a map to a function does not copy the map; if the function changes the map, the change will be seen by the caller. In Java terms, one can think of this as being a reference to the map. ### Error handling Instead of exceptions, Go uses errors to signify events such as end-of-file, and run-time panics for run-time errors such as attempting to index an array out of bounds. ### Object-oriented programming Go does not have classes with constructors. Instead of instance methods, a class inheritance hierarchy, and dynamic method lookup, Go provides structs and interfaces. Go allows methods on any type; no boxing is required. The method receiver, which corresponds to this in Java, can be a direct value or a pointer. Go provides two access levels, analogous to Java’s public and package-private. Top-level declarations are public if their names start with an upper-case letter, otherwise they are package-private. ### Functional programming Functions in Go are first class citizens. Function values can be used and passed around just like other values and function literals may refer to variables defined in a enclosing function. ### Concurrency Separate threads of execution, goroutines, and communication channels between them, channels, are provided by the language. ### Omitted features Go does not support implicit type conversion. Operations that mix different types require an explicit conversion. Instead Go offers Untyped numeric constants with no limits. Go does not support function overloading. Functions and methods in the same scope must have unique names. Go has some built-in generic data types, such as slices and maps, and generic functions, such as append and copy. However, there is no mechanism for writing your own generic functions.</p>
+</section>
+</section>
+<section id="microservice-framework-1" class="level2">
+<h2 class="anchored" data-anchor-id="microservice-framework-1">Microservice framework</h2>
+<p>No single framework/package to do everything. You have to pick your components and mix &amp; match them. Built-in http server is probably good enough but you need to pick web frameworks, router, middleware, data layer,etc. ## AWS Official <a href="https://aws.amazon.com/sdk-for-go/">AWS SDK</a> supports Go. ## Kafka I would need to evaluate at least 3 most popular libraries:<br>
+<a href="https://github.com/confluentinc/confluent-kafka-go">Confluent’s Apache Kafka Golang client</a><br>
+<a href="https://github.com/segmentio/kafka-go">Segmentio kafka-go</a><br>
 <a href="https://github.com/Shopify/sarama">Shopify Sarama</a></p>
 <p>Kafka Streams are not <a href="https://github.com/confluentinc/confluent-kafka-go/issues/181">supported</a>.</p>
-<h2 id="restful-api-services-1">RESTful API services</h2>
-<p>Many options for building RESTful API would required to do evaluation and experimenting.
-<a href="https://github.com/go-swagger/go-swagger">Swagger support</a></p>
-<h2 id="tracing-and-monitoring-1">Tracing and Monitoring</h2>
-<p><a href="https://github.com/aws/aws-xray-sdk-go">AWS X-Ray SDK for the Go</a> <br>
+</section>
+<section id="restful-api-services-1" class="level2">
+<h2 class="anchored" data-anchor-id="restful-api-services-1">RESTful API services</h2>
+<p>Many options for building RESTful API would required to do evaluation and experimenting. <a href="https://github.com/go-swagger/go-swagger">Swagger support</a></p>
+</section>
+<section id="tracing-and-monitoring-1" class="level2">
+<h2 class="anchored" data-anchor-id="tracing-and-monitoring-1">Tracing and Monitoring</h2>
+<p><a href="https://github.com/aws/aws-xray-sdk-go">AWS X-Ray SDK for the Go</a><br>
 <a href="https://prometheus.io/docs/guides/go-application/">Prometheus</a></p>
-<h2 id="logging-1">Logging</h2>
+</section>
+<section id="logging-1" class="level2">
+<h2 class="anchored" data-anchor-id="logging-1">Logging</h2>
 <p>Too many choices to mention :-)</p>
-<h2 id="nodejs-1">NodeJS</h2>
+</section>
+<section id="nodejs-1" class="level2">
+<h2 class="anchored" data-anchor-id="nodejs-1">NodeJS</h2>
 <p>If project written in NodeJS is not depending on third party SDK we could replace it with Go microservice.</p>
-<h2 id="angular">Angular</h2>
+</section>
+<section id="angular" class="level2">
+<h2 class="anchored" data-anchor-id="angular">Angular</h2>
 <p>No change. Go is not frontend development language.</p>
-<h2 id="docker-1">Docker</h2>
+</section>
+<section id="docker-1" class="level2">
+<h2 class="anchored" data-anchor-id="docker-1">Docker</h2>
 <p>Docker is written in Go. Expecting pretty small container images comparing to JVM.</p>
-<h2 id="kubernetes-1">Kubernetes</h2>
+</section>
+<section id="kubernetes-1" class="level2">
+<h2 class="anchored" data-anchor-id="kubernetes-1">Kubernetes</h2>
 <p>Kubernetes is written in Go. Lots of tools are written in Go.</p>
-<h1 id="dart">Dart</h1>
+</section>
+</section>
+<section id="dart" class="level1">
+<h1>Dart</h1>
 <p>Dart is a client-optimized programming language for apps on multiple platforms. It is developed by Google and is used to build mobile, desktop, server, and web applications.Dart is an object-oriented, class-based, garbage-collected language with C-style syntax. Dart can compile to either native code or JavaScript. It supports interfaces, mixins, abstract classes, reified generics, and type inference.</p>
-<p>Orginally Dart was meant as a replacement for JavaScript in browsers; it also had its own virtual machine (VM) for running native applications in the Chrome browser. Whatever Google’s intentions were, frontend developers still preferred to stick with JavaScript. In the news Google launched Dart as a JavaScript killer but none of browser developers added support. All modern browsers can execute Dart code that&rsquo;s been compiled to JavaScript. It could mean end of the road for Dart language but it was brought back to life by sudden popularity of Flutter, Google’s UI framework for building native interfaces in iOS and Android. Cross-Platform App Development was always dream hard to achieve. There were many attempts in the past Apache Cordova, Xamarin, Ionic, Adobe PhoneGap and recently React Native or Kotlin Native. Flutter is able to support glitch-free, jank-free graphics at the native speed of mobile device thanks to engine, written primarily in C++ that provides low-level rendering support using Google&rsquo;s Skia graphics library. Flutter code is powered by the Dart platform, which enables compilation to native 32-bit and 64-bit ARM code for iOS and Android. Also Google’s Fuchsia which eventually replace Android is also built with Dart.</p>
-<h2 id="language-2">Language</h2>
+<p>Orginally Dart was meant as a replacement for JavaScript in browsers; it also had its own virtual machine (VM) for running native applications in the Chrome browser. Whatever Google’s intentions were, frontend developers still preferred to stick with JavaScript. In the news Google launched Dart as a JavaScript killer but none of browser developers added support. All modern browsers can execute Dart code that’s been compiled to JavaScript. It could mean end of the road for Dart language but it was brought back to life by sudden popularity of Flutter, Google’s UI framework for building native interfaces in iOS and Android. Cross-Platform App Development was always dream hard to achieve. There were many attempts in the past Apache Cordova, Xamarin, Ionic, Adobe PhoneGap and recently React Native or Kotlin Native. Flutter is able to support glitch-free, jank-free graphics at the native speed of mobile device thanks to engine, written primarily in C++ that provides low-level rendering support using Google’s Skia graphics library. Flutter code is powered by the Dart platform, which enables compilation to native 32-bit and 64-bit ARM code for iOS and Android. Also Google’s Fuchsia which eventually replace Android is also built with Dart.</p>
+<section id="language-2" class="level2">
+<h2 class="anchored" data-anchor-id="language-2">Language</h2>
 <p>Java and Dart don’t differ that much when it comes to their syntax. But Dart tends to be focused more on having a shorter code.</p>
-<h3 id="concurrency-1">Concurrency</h3>
+<section id="concurrency" class="level3">
+<h3 class="anchored" data-anchor-id="concurrency">Concurrency</h3>
 <p>Dart is a single threaded programming language. So if any piece of code blocks the execution of the program, the program practically freezes. To avoid this Dart makes use of asynchronous operations which let your program run without getting blocked. Dart makes use of isolates as a concurrency and security unit when structuring applications. Dart libraries are full of functions that return Future or Stream objects. These functions are asynchronous: they return after setting up a possibly time-consuming operation (such as I/O), without waiting for that operation to complete.</p>
-<h3 id="performance">Performance</h3>
+</section>
+<section id="performance" class="level3">
+<h3 class="anchored" data-anchor-id="performance">Performance</h3>
 <p>Dart Is a compiled language, thus it performs way better than Java. Dart code can be AOT-compiled into machine code.</p>
-<h3 id="method-cascades">Method cascades</h3>
+</section>
+<section id="method-cascades" class="level3">
+<h3 class="anchored" data-anchor-id="method-cascades">Method cascades</h3>
 <p>Cascaded method invocation originates in Smalltalk. The motivation is to make it easier to write more fluent interfaces. Fluent interfaces rely on method chaining.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>myTable
-</span></span><span style="display:flex;"><span>  ..add(&#34;one&#34;);
-</span></span><span style="display:flex;"><span>  ..add(&#34;two&#34;);
-</span></span><span style="display:flex;"><span>  ..add(&#34;three&#34;);
-</span></span></code></pre></div><p>The &ldquo;..&rdquo; (cascaded method invocation operation) syntax invokes a method (or setter or getter) but discards the result, and returns the original receiver instead.</p>
-<h3 id="collection-literals">Collection literals</h3>
+<pre><code>myTable
+  ..add("one");
+  ..add("two");
+  ..add("three");</code></pre>
+<p>The “..” (cascaded method invocation operation) syntax invokes a method (or setter or getter) but discards the result, and returns the original receiver instead.</p>
+</section>
+<section id="collection-literals" class="level3">
+<h3 class="anchored" data-anchor-id="collection-literals">Collection literals</h3>
 <p>Collection literals are a syntactic expression form that evaluates to an aggregate type, such as an array, List, or Map.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>void main() {
-</span></span><span style="display:flex;"><span>    print([1, 2, 3, 4]);
-</span></span><span style="display:flex;"><span>    print({1: &#39;one&#39;, 2: &#39;two&#39;, 3: &#39;three&#39;});
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="generics">Generics</h3>
-<p>Dart supports generic types, like List<!-- raw HTML omitted --> (a list of integers) or List<!-- raw HTML omitted --> (a list of objects of any type).</p>
-<h3 id="functions">Functions</h3>
+<pre><code>void main() {
+    print([1, 2, 3, 4]);
+    print({1: 'one', 2: 'two', 3: 'three'});
+}</code></pre>
+</section>
+<section id="generics" class="level3">
+<h3 class="anchored" data-anchor-id="generics">Generics</h3>
+<p>Dart supports generic types, like List<int> (a list of integers) or List<dynamic> (a list of objects of any type).</dynamic></int></p>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
 <p>Dart is a true object-oriented language, so even functions are objects and have a type, Function. This means that functions can be assigned to variables or passed as arguments to other functions. You can also call an instance of a Dart class as if it were a function.</p>
-<h3 id="anonymous-functions">Anonymous functions</h3>
+</section>
+<section id="anonymous-functions" class="level3">
+<h3 class="anchored" data-anchor-id="anonymous-functions">Anonymous functions</h3>
 <p>Most functions are named, such as main() or printElement(). You can also create a nameless function called an anonymous function, or sometimes a lambda or closure. You might assign an anonymous function to a variable so that, for example, you can add or remove it from a collection.</p>
-<h3 id="no-primitives">No Primitives</h3>
+</section>
+<section id="no-primitives" class="level3">
+<h3 class="anchored" data-anchor-id="no-primitives">No Primitives</h3>
 <p>Everything you can place in a variable is an object, and every object is an instance of a class. Even numbers, functions, and null are objects. All objects inherit from the Object class.</p>
-<h3 id="mixins">Mixins</h3>
+</section>
+<section id="mixins" class="level3">
+<h3 class="anchored" data-anchor-id="mixins">Mixins</h3>
 <p>Mixins are a way of reusing a class’s code in multiple class hierarchies. To implement a mixin, create a class that extends Object and declares no constructors. Unless you want your mixin to be usable as a regular class, use the mixin keyword instead of class.</p>
-<h3 id="parmeters">Parmeters</h3>
+</section>
+<section id="parmeters" class="level3">
+<h3 class="anchored" data-anchor-id="parmeters">Parmeters</h3>
 <p>Named parameters, optional parameters, defaults;</p>
-<h3 id="properties">Properties</h3>
+</section>
+<section id="properties" class="level3">
+<h3 class="anchored" data-anchor-id="properties">Properties</h3>
 <p>Properties — no need to write “get” methods everywhere</p>
-<h3 id="type-inference-1">Type inference</h3>
+</section>
+<section id="type-inference" class="level3">
+<h3 class="anchored" data-anchor-id="type-inference">Type inference</h3>
 <p>Type inference with strong mode — just write “var” for local</p>
-<h3 id="string-interpolation">String interpolation</h3>
+</section>
+<section id="string-interpolation" class="level3">
+<h3 class="anchored" data-anchor-id="string-interpolation">String interpolation</h3>
 <p>String interpolation, several types of string literal; A Dart string is a sequence of UTF-16 code units. You can use either single or double quotes to create a string. You can put the value of an expression inside a string by using ${expression}. If the expression is an identifier, you can skip the {}. To get the string corresponding to an object. You can have multi-line strings.</p>
-<h2 id="generators">Generators</h2>
-<p>When you need to lazily produce a sequence of values, consider using a generator function. Dart has built-in support for two kinds of generator functions:</p>
-<ul>
-<li>Synchronous generator: Returns an Iterable object.</li>
-<li>Asynchronous generator: Returns a Stream object.</li>
-</ul>
-<h2 id="microservice-framework-2">Microservice framework</h2>
+</section>
+</section>
+<section id="generators" class="level2">
+<h2 class="anchored" data-anchor-id="generators">Generators</h2>
+<p>When you need to lazily produce a sequence of values, consider using a generator function. Dart has built-in support for two kinds of generator functions: * Synchronous generator: Returns an Iterable object. * Asynchronous generator: Returns a Stream object.</p>
+</section>
+<section id="microservice-framework-2" class="level2">
+<h2 class="anchored" data-anchor-id="microservice-framework-2">Microservice framework</h2>
 <p>There are quite a few candidates that are mature enough but <a href="https://aqueduct.io/">Aqueduct</a> seems the closest thing. It is a fully-featured server-side framework, with an ORM, database migration tools, OAuth 2.0 implementation, automatic OpenAPI specification generation and multi-threading support.</p>
-<h2 id="aws-2">AWS</h2>
+</section>
+<section id="aws-1" class="level2">
+<h2 class="anchored" data-anchor-id="aws-1">AWS</h2>
 <p>Dart is not supported by AWS officially. One <a href="https://github.com/agilord/aws_client">AWS Client</a> I could find looks more like generated from API than mature library.</p>
-<h2 id="kafka-2">Kafka</h2>
+</section>
+<section id="kafka-1" class="level2">
+<h2 class="anchored" data-anchor-id="kafka-1">Kafka</h2>
 <p>Dart Kafka client does not appear on Confluent <a href="https://docs.confluent.io/current/clients/index.html">list</a> of official clients. <a href="https://github.com/dart-kafka/kafka">Dart Kafka</a> library is not listed on <a href="https://github.com/confluentinc/examples/blob/5.4.1-post/clients/cloud/README.md">cummunity page</a> either.</p>
-<h2 id="restful-api-services-2">RESTful API services</h2>
+</section>
+<section id="restful-api-services-2" class="level2">
+<h2 class="anchored" data-anchor-id="restful-api-services-2">RESTful API services</h2>
 <p>It seems like Aqueduct mentioned above can handle API requests and it could generate OpenAPI 3.0 documentation.</p>
-<h2 id="tracing-and-monitoring-2">Tracing and Monitoring</h2>
+</section>
+<section id="tracing-and-monitoring-2" class="level2">
+<h2 class="anchored" data-anchor-id="tracing-and-monitoring-2">Tracing and Monitoring</h2>
 <p>Most like not chance to find any AWS X-Ray client. Dart implementation of the Prometheus client library can be <a href="https://github.com/Fox32/prometheus_client">found</a>.</p>
-<h2 id="logging-2">Logging</h2>
+</section>
+<section id="logging-2" class="level2">
+<h2 class="anchored" data-anchor-id="logging-2">Logging</h2>
 <p>At least A Dart package for debug and error logging comes with the platform.</p>
-<h2 id="nodejs-2">NodeJS</h2>
+</section>
+<section id="nodejs-2" class="level2">
+<h2 class="anchored" data-anchor-id="nodejs-2">NodeJS</h2>
 <p>If project written in NodeJS is not depending on third party SDK we could replace it with Dart microservice. Technically Dart Js Interop can call Javascript libraries, but I do not know if this applies to NOde modules. So until this is working we cannot get rid of the one special Node SDK module.</p>
-<h2 id="angular-1">Angular</h2>
+</section>
+<section id="angular-1" class="level2">
+<h2 class="anchored" data-anchor-id="angular-1">Angular</h2>
 <p>On the frontend development side Art shines. There are two possibilities here: <a href="https://angulardart.dev/">Angular Dart</a> - fully supported version of Angular with Typescript replaced by Dart or <a href="https://flutter.dev/">Flutter</a> - same cross-platform mobile development platform now added two more targets: Web and Desktop.</p>
-<h2 id="docker-2">Docker</h2>
+</section>
+<section id="docker-2" class="level2">
+<h2 class="anchored" data-anchor-id="docker-2">Docker</h2>
 <p>Since you can compile Dart to native code it could be pretty small. I have seen attempts of making containers as small as the ones written in Go or Rust.</p>
-<h2 id="kubernetes-2">Kubernetes</h2>
+</section>
+<section id="kubernetes-2" class="level2">
+<h2 class="anchored" data-anchor-id="kubernetes-2">Kubernetes</h2>
 <p>As any other containerized application server side Dart microservices can be deployed to Kubernetes. I could even find Dart definitions for <a href="https://github.com/stablekernel/dart-kubernetes">Kubernetes objects</a> so it could be possible to write your K8s client :-)</p>
-<h1 id="sample-code">Sample code</h1>
-<h2 id="factorial-in-java">Factorial in Java</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">Factorial</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">static</span> <span style="">long</span> factorial(<span style="">int</span> n) {
-</span></span><span style="display:flex;"><span>        <span style="">long</span> fact = 1;
-</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">for</span> (<span style="">int</span> i = 1; i &lt;= n; i++)
-</span></span><span style="display:flex;"><span>            fact = fact * i;
-</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">return</span> fact;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">static</span> <span style="">void</span> main(String[] args) {
-</span></span><span style="display:flex;"><span>        <span style="">int</span> n = 5;
-</span></span><span style="display:flex;"><span>        System.out.println(<span style="font-style:italic">&#34;The Factorial of &#34;</span> + n + <span style="font-style:italic">&#34; is &#34;</span> + factorial(n));
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="factorial-in-kotlin">Factorial in Kotlin</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>fun fact(n: Int) = when {
-</span></span><span style="display:flex;"><span>    n &lt; 0 -&gt; throw IllegalArgumentException(&#34;negative numbers not allowed&#34;)
-</span></span><span style="display:flex;"><span>    else  -&gt; {
-</span></span><span style="display:flex;"><span>        var ans = 1L
-</span></span><span style="display:flex;"><span>        for (i in 2..n) ans *= i
-</span></span><span style="display:flex;"><span>        ans
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>fun main(args: Array&lt;String&gt;) {
-</span></span><span style="display:flex;"><span>    val n = 20
-</span></span><span style="display:flex;"><span>    println(&#34;$n! = &#34; + fact(n))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="factorial-in-go">Factorial in Go</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">package</span> main
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> (
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">&#34;fmt&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">&#34;math/big&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> main() {
-</span></span><span style="display:flex;"><span>    fmt.Println(factorial(800))
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> factorial(n <span style="">int64</span>) *big.Int {
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> n &lt; 0 {
-</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">return</span> <span style="font-weight:bold">nil</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    r := big.NewInt(1)
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">var</span> f big.Int
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span> i := int64(2); i &lt;= n; i++ {
-</span></span><span style="display:flex;"><span>        r.Mul(r, f.SetInt64(i))
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> r
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="factorial-in-dart">Factorial in Dart</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>int fact(int n) {
-</span></span><span style="display:flex;"><span>  if(n&lt;0) {
-</span></span><span style="display:flex;"><span>    throw new IllegalArgumentException(&#39;Argument less than 0&#39;);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  int res=1;
-</span></span><span style="display:flex;"><span>  for(int i=1;i&lt;=n;i++) {
-</span></span><span style="display:flex;"><span>    res*=i;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  return res;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>main() {
-</span></span><span style="display:flex;"><span>  print(fact(10));
-</span></span><span style="display:flex;"><span>  print(fact(-1));
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h1 id="conclusion">Conclusion</h1>
+</section>
+</section>
+<section id="sample-code" class="level1">
+<h1>Sample code</h1>
+<section id="factorial-in-java" class="level2">
+<h2 class="anchored" data-anchor-id="factorial-in-java">Factorial in Java</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Factorial <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">factorial</span><span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">long</span> fact <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> n<span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            fact <span class="op">=</span> fact <span class="op">*</span> i<span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> fact<span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[]</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> n <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">"The Factorial of "</span> <span class="op">+</span> n <span class="op">+</span> <span class="st">" is "</span> <span class="op">+</span> <span class="fu">factorial</span><span class="op">(</span>n<span class="op">));</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="factorial-in-kotlin" class="level2">
+<h2 class="anchored" data-anchor-id="factorial-in-kotlin">Factorial in Kotlin</h2>
+<pre><code>fun fact(n: Int) = when {
+    n &lt; 0 -&gt; throw IllegalArgumentException("negative numbers not allowed")
+    else  -&gt; {
+        var ans = 1L
+        for (i in 2..n) ans *= i
+        ans
+    }
+}
+ 
+fun main(args: Array&lt;String&gt;) {
+    val n = 20
+    println("$n! = " + fact(n))
+
+}
+</code></pre>
+</section>
+<section id="factorial-in-go" class="level2">
+<h2 class="anchored" data-anchor-id="factorial-in-go">Factorial in Go</h2>
+<pre><code>package main
+ 
+import (
+    "fmt"
+    "math/big"
+)
+ 
+func main() {
+    fmt.Println(factorial(800))
+}
+ 
+func factorial(n int64) *big.Int {
+    if n &lt; 0 {
+        return nil
+    }
+    r := big.NewInt(1)
+    var f big.Int
+    for i := int64(2); i &lt;= n; i++ {
+        r.Mul(r, f.SetInt64(i))
+    }
+    return r
+}
+</code></pre>
+</section>
+<section id="factorial-in-dart" class="level2">
+<h2 class="anchored" data-anchor-id="factorial-in-dart">Factorial in Dart</h2>
+<pre><code>int fact(int n) {
+  if(n&lt;0) {
+    throw new IllegalArgumentException('Argument less than 0');
+  }
+  int res=1;
+  for(int i=1;i&lt;=n;i++) {
+    res*=i;
+  }
+  return res;
+}
+ 
+main() {
+  print(fact(10));
+  print(fact(-1));
+}
+</code></pre>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
 <p>I cannot tell which language is clear winner. Any of them could be a niche player but would not entirely replace Java with current stack. With Kotlin risk is minimal but gains would be purely aesthetical. If I can convince others that it is better version of Java we could have next service started in Kotlin. We already run a lot of microservices and having huge container images it too costly we might gradually switch to Go. Dart could be a winner if we start our next Angular project with it. There will be no one fits all replacement for now.</p>
 
-      </div>
 
+</section>
 
-      <footer>
-        
-
-
-        
-        
-        
-      </footer>
-    </article>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
       }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
     };
-  </script>
-  </section>
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
 
-      </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-      <p>No bits were harmed during creation of this page.</p>
-    
-    
-      
-        © 2022
-      
-       Mariusz Jurgielewicz 
-    
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-    
-  </section>
-</footer>
 
-    </main>
-
-    
-
-    
-
-  </body>
-
-</html>
+</body></html>

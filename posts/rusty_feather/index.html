@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Mariusz S. Jurgielewicz">
-<meta name="dcterms.date" content="2020-03-14">
+<meta name="dcterms.date" content="2022-11-14">
 
-<title>melastmohican.github.io - Convert Kafka JKS certificate to PEM</title>
+<title>melastmohican.github.io - Rusty Feather</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link active" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
 </nav>
@@ -121,18 +121,16 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Convert Kafka JKS certificate to PEM</h1>
-<p class="subtitle lead">Creating X509 certificates from JKS format</p>
+<h1 class="title">Rusty Feather</h1>
+<p class="subtitle lead">Rust on ESP with ESP32-C3-DevKit-RUST-1</p>
   <div class="quarto-categories">
-    <div class="quarto-category">code</div>
-    <div class="quarto-category">development</div>
-    <div class="quarto-category">java</div>
-    <div class="quarto-category">kafka</div>
-    <div class="quarto-category">certificate</div>
-    <div class="quarto-category">ssl</div>
-    <div class="quarto-category">tls</div>
-    <div class="quarto-category">jks</div>
-    <div class="quarto-category">pem</div>
+    <div class="quarto-category">rust</div>
+    <div class="quarto-category">esp32</div>
+    <div class="quarto-category">microcontroller</div>
+    <div class="quarto-category">embedded</div>
+    <div class="quarto-category">hardware</div>
+    <div class="quarto-category">sensor</div>
+    <div class="quarto-category">feather</div>
   </div>
   </div>
 
@@ -150,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2020</p>
+      <p class="date">November 14, 2022</p>
     </div>
   </div>
   
@@ -160,17 +158,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="intro" class="level2">
-<h2 class="anchored" data-anchor-id="intro">Intro</h2>
-<p>Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).</p>
-<p>Here are the commands to extract the Certificate Authority (CA) certificate:</p>
-<pre><code>$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12
-$ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem
-</code></pre>
-<p>You can then convert your client keystore to be usable from languages supporting .pem, with similar commands:</p>
-<pre><code>$ keytool -importkeystore -srckeystore dev.client.keystore.jks -destkeystore client.p12 -deststoretype PKCS12
-$ openssl pkcs12 -in client.p12 -nokeys -out client.cer.pem
-$ openssl pkcs12 -in client.p12 -nodes -nocerts -out client.key.pem</code></pre>
+<p>Recently I stumbled upon info about using Rust language on embedded systems including microcontrollers. I searched for some tutorials and online trainings and it seems like you need specific hardware usually. Getting <a href="https://docs.rust-embedded.org/book/intro/hardware.html">STM32F3DISCOVERY</a> or <a href="https://embedded-trainings.ferrous-systems.com/hardware.html">nRF52840 DK</a> is not practical because I will have limited use for these boards after completing training. I was almost willing to get <a href="https://docs.rust-embedded.org/discovery/microbit/02-requirements/index.html">micro:bit</a> when I found out that Ferrous Systems and Espressif’s <a href="https://www.espressif.com/en/news/ESP_RUST_training">announced</a> <em><strong>Rust Training on ESP32</strong></em>. ## ESP Rust Board It is officially called <strong>ESP32-C3-DevKit-RUST-1</strong> if you want to search for it. The board is based on successful ESP32-C3-MINI-1 module and has 6DoF IMU (ICM-42670-P), a temperature and humidity sensor (SHTC3), a Li-Ion battery charger, and a Type-C USB in familiar Adafruit Feather format. It is pretty close to <a href="https://www.adafruit.com/product/5303">Adafruit ESP32-S2 Feather with BME280 Sensor</a> minus Stemma connector but with IMU sensor instead. <img src="https://raw.githubusercontent.com/esp-rs/esp-rust-board/master/assets/rust_board_v1.2_diagram.png" class="img-fluid" alt="ESP32-C3-DevKit-RUST-1"> ## Rust on ESP Community It seems like Espressif has pretty well organized <a href="https://github.com/esp-rs">community</a> on Github. You can start exploring from <em><strong>Rust on ESP</strong></em> <a href="https://esp-rs.github.io/book/introduction.html">book</a>. Eventually, I was able to follow ‘Embedded Rust on Espressif’ <a href="https://ferrous-systems.com/blog/announce-esp-training/">training</a> available as a <a href="https://espressif-trainings.ferrous-systems.com/">book</a> or Github <a href="https://github.com/ferrous-systems/espressif-trainings">repo</a>. If you follow the training alone you would notice that problems you encounter are usually reported in issues section of the repo. Rust on ESP in pretty much WIP so sometimes Google is you friend since others might have solved the same problem.</p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>I am new to Rust Embedded so with minimal investment I was able to get a taste of development ecosystem which is still growing and evolving. It is impressive how easy to use it is so far. Hardware needed for training should also be compatible with my collection and reusable in other projects. <img src="esp-rust-board.gif" class="img-fluid" data-fig-align="center" alt="Blinky"></p>
 
 
 </section>

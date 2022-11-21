@@ -1,262 +1,389 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
 
-    <meta name="author" content="Mariusz Jurgielewicz">
-    <meta name="description" content="melastmohican.github.io">
-    <meta name="keywords" content="blog,developer,personal">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Migrating existing AWS infrastructure to new acount"/>
-<meta name="twitter:description" content="Researching how to import existing AWS infrastructure into configuration template"/>
+<meta name="author" content="Mariusz S. Jurgielewicz">
+<meta name="dcterms.date" content="2020-03-05">
 
-    <meta property="og:title" content="Migrating existing AWS infrastructure to new acount" />
-<meta property="og:description" content="Researching how to import existing AWS infrastructure into configuration template" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://melastmohican.github.io/posts/aws-resource-migration/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-03-05T13:37:39-08:00" />
-<meta property="article:modified_time" content="2020-03-05T13:37:39-08:00" />
+<title>melastmohican.github.io - Migrating existing AWS infrastructure to new acount</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
 
 
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
 
-    
-      <base href="https://melastmohican.github.io/posts/aws-resource-migration/">
-    
-    <title>
-  Migrating existing AWS infrastructure to new acount · melastmohican.github.io
-</title>
 
-    
-      <link rel="canonical" href="https://melastmohican.github.io/posts/aws-resource-migration/">
-    
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+<body class="floating nav-fixed">
 
-    
-      
-      
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-
-    
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/custom.css" />
-    
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
-
-    <meta name="generator" content="Hugo 0.105.0">
-  </head>
-
-  
-  
-  <body class="colorscheme-light">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://melastmohican.github.io/">
-      melastmohican.github.io
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">melastmohican.github.io</span>
     </a>
-    
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/posts/">Blog</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/about/">About</a>
-          </li>
-        
-      
-      
-    </ul>
-    
-  </section>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melastmohican"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://universeodon.com/@melastmohican"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#scenario" id="toc-scenario" class="nav-link active" data-scroll-target="#scenario">Scenario</a>
+  <ul class="collapse">
+  <li><a href="#cloudformation" id="toc-cloudformation" class="nav-link" data-scroll-target="#cloudformation">CloudFormation</a></li>
+  <li><a href="#generate-cloudformation-templates-from-your-existing-aws-resources." id="toc-generate-cloudformation-templates-from-your-existing-aws-resources." class="nav-link" data-scroll-target="#generate-cloudformation-templates-from-your-existing-aws-resources.">Generate CloudFormation templates from your existing AWS resources.</a>
+  <ul class="collapse">
+  <li><a href="#former2" id="toc-former2" class="nav-link" data-scroll-target="#former2">Former2</a></li>
+  <li><a href="#aws-cloudformer" id="toc-aws-cloudformer" class="nav-link" data-scroll-target="#aws-cloudformer">AWS CloudFormer</a></li>
+  </ul></li>
+  <li><a href="#terraform" id="toc-terraform" class="nav-link" data-scroll-target="#terraform">Terraform</a>
+  <ul class="collapse">
+  <li><a href="#import-existing-aws-infrastructure-into-terraform" id="toc-import-existing-aws-infrastructure-into-terraform" class="nav-link" data-scroll-target="#import-existing-aws-infrastructure-into-terraform">Import existing AWS infrastructure into Terraform</a></li>
+  <li><a href="#terraformer" id="toc-terraformer" class="nav-link" data-scroll-target="#terraformer">Terraformer</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
 </nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Migrating existing AWS infrastructure to new acount</h1>
+<p class="subtitle lead">Researching how to import existing AWS infrastructure into configuration template</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">infrastructure</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">development</div>
+    <div class="quarto-category">aws</div>
+    <div class="quarto-category">terraform</div>
+    <div class="quarto-category">cloudformation</div>
+    <div class="quarto-category">resource</div>
+    <div class="quarto-category">tool</div>
+    <div class="quarto-category">automation</div>
+    <div class="quarto-category">migration</div>
+  </div>
+  </div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">Migrating existing AWS infrastructure to new acount</h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fas fa-calendar"></i>
-              <time datetime='2020-03-05T13:37:39-08:00'>
-                March 5, 2020
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fas fa-clock"></i>
-              4-minute read
-            </span>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mariusz S. Jurgielewicz </p>
           </div>
-          <div class="categories">
-  <i class="fas fa-folder"></i>
-    <a href="https://melastmohican.github.io/categories/development/">Development</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/categories/infrastructure/">Infrastructure</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/categories/code/">Code</a></div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 5, 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
-          <div class="tags">
-  <i class="fas fa-tag"></i>
-    <a href="https://melastmohican.github.io/tags/infrastructure/">infrastructure</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/code/">code</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/development/">development</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/aws/">aws</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/terraform/">terraform</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/cloudformation/">cloudformation</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/resource/">resource</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/tool/">tool</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/automation/">automation</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/migration/">migration</a></div>
+</header>
 
-        </div>
-      </header>
-
-      <div>
-        
-        <h1 id="scenario">Scenario</h1>
+<section id="scenario" class="level1">
+<h1>Scenario</h1>
 <p>We want to migrate hundreds of AWS resources to a new account. Up to now, all resources were created manually using AWS Console or CLI tool.</p>
-<h2 id="cloudformation">CloudFormation</h2>
+<section id="cloudformation" class="level2">
+<h2 class="anchored" data-anchor-id="cloudformation">CloudFormation</h2>
 <p>CloudFormation is the inhouse cloud provisioning tool of AWS for declaratively describing your cloud resources.</p>
 <p>CloudFormation is a hard, complex, inconsistent and badly documented piece of software. A stack is an atomic collection of resources in CloudFormation. Its creation or update succeeds only and only if all the resources within the stack succeed. A failure within a stack update leads to a rollback back to the previous state.</p>
 <p>Authoring CloudFormation templates is dreadful so we want to have a head start and generate templates from existing resources.</p>
-<h2 id="generate-cloudformation-templates-from-your-existing-aws-resources">Generate CloudFormation templates from your existing AWS resources.</h2>
-<h3 id="former2">Former2</h3>
+</section>
+<section id="generate-cloudformation-templates-from-your-existing-aws-resources." class="level2">
+<h2 class="anchored" data-anchor-id="generate-cloudformation-templates-from-your-existing-aws-resources.">Generate CloudFormation templates from your existing AWS resources.</h2>
+<section id="former2" class="level3">
+<h3 class="anchored" data-anchor-id="former2">Former2</h3>
 <p><a href="https://github.com/iann0036/former2">Former2</a> allows you to generate Infrastructure-as-Code outputs from your existing resources within your AWS account. By making the relevant calls using the AWS JavaScript SDK, Former2 will scan across your infrastructure and present you with the list of resources for you to choose which to generate outputs for.</p>
 <p><strong>Installation</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>npm install -g former2
-</span></span></code></pre></div><p><strong>Generation</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>former2 generate --output-cloudformation &#34;cloudformation.yml&#34;
-</span></span></code></pre></div><p><strong>Error</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(node:14732) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
-</span></span><span style="display:flex;"><span>(node:14732) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
-</span></span><span style="display:flex;"><span>(node:14732) UnhandledPromiseRejectionWarning: null
-</span></span></code></pre></div><h3 id="aws-cloudformer">AWS CloudFormer</h3>
+<pre><code>npm install -g former2
+</code></pre>
+<p><strong>Generation</strong></p>
+<pre><code>former2 generate --output-cloudformation "cloudformation.yml"
+</code></pre>
+<p><strong>Error</strong></p>
+<pre><code>(node:14732) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:14732) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:14732) UnhandledPromiseRejectionWarning: null</code></pre>
+</section>
+<section id="aws-cloudformer" class="level3">
+<h3 class="anchored" data-anchor-id="aws-cloudformer">AWS CloudFormer</h3>
 <p>AWS CloudFormer is a template creation beta tool that creates an AWS CloudFormation template from existing AWS resources in your account. You select any supported AWS resources that are running in your account, and CloudFormer creates a template in an Amazon S3 bucket. We want AWS CloudFormer to create a template of existing infrastructure.</p>
 <p>CloudFormer is itself an AWS CloudFormation stack, so the first step is to create and launch the stack from the AWS CloudFormation console. The template created would have some issues/syntax errors, but it is far better than creating the whole template from ground zero.</p>
 <p>Prerequisites for Cloudformer: create VPC, create VPC InternetGateway, create a CloudFormation role.</p>
 <p>Due to source account permissions, we failed to create CloudFormer:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>SOCCloudFormer	ROLLBACK_IN_PROGRESS	The following resource(s) failed to create: [VPCInternetGateway, VPC, CFNRole]. . Rollback requested by user.
-</span></span><span style="display:flex;"><span>VPC	CREATE_FAILED	API: ec2:CreateVpc You are not authorized to perform this operation.
-</span></span><span style="display:flex;"><span>CFNRole	CREATE_FAILED	API: iam:CreateRole User: arn:aws:sts::********************:assumed-role/******/****** is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::******:role/SOCCloudFormer-CFNRole-65C5TRSYD8RG
-</span></span><span style="display:flex;"><span>VPCInternetGateway	CREATE_FAILED	API: ec2:CreateInternetGateway You are not authorized to perform this operation.
-</span></span></code></pre></div><p>So we cannot use the above tools to import existing resources from source account most likely due to insufficient permissions. We have to author all templates manually which could be time-consuming for hundred of resources. However, CloudFormation does not support creating DynamoDB Global Tables. DynamoDB Global Table was introduced during late 2017. Still, you can create the global tables only using the AWS console or AWS CLI.</p>
+<pre><code>SOCCloudFormer  ROLLBACK_IN_PROGRESS    The following resource(s) failed to create: [VPCInternetGateway, VPC, CFNRole]. . Rollback requested by user.
+VPC CREATE_FAILED   API: ec2:CreateVpc You are not authorized to perform this operation.
+CFNRole CREATE_FAILED   API: iam:CreateRole User: arn:aws:sts::********************:assumed-role/******/****** is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::******:role/SOCCloudFormer-CFNRole-65C5TRSYD8RG
+VPCInternetGateway  CREATE_FAILED   API: ec2:CreateInternetGateway You are not authorized to perform this operation.
+</code></pre>
+<p>So we cannot use the above tools to import existing resources from source account most likely due to insufficient permissions. We have to author all templates manually which could be time-consuming for hundred of resources. However, CloudFormation does not support creating DynamoDB Global Tables. DynamoDB Global Table was introduced during late 2017. Still, you can create the global tables only using the AWS console or AWS CLI.</p>
 <p><a href="https://github.com/aws-cloudformation/aws-cloudformation-coverage-roadmap/issues/57">AAWS::DynamoDB::GlobalTable - Feature Request</a></p>
 <p>Tables need to be created in all regions and then the global table can be created only when all the regional tables are all created and ready, using the AWS console or AWS CLI. This means that it will not be a fully declarative configuration.</p>
-<h2 id="terraform">Terraform</h2>
+</section>
+</section>
+<section id="terraform" class="level2">
+<h2 class="anchored" data-anchor-id="terraform">Terraform</h2>
 <p><a href="https://www.terraform.io/">Terraform</a> is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.</p>
-<p>Terraform is controlled via a very easy to use the command-line interface (CLI). Terraform is only a single command-line application: terraform. This application then takes a subcommand such as &ldquo;apply&rdquo; or &ldquo;plan&rdquo;.</p>
-<h3 id="import-existing-aws-infrastructure-into-terraform">Import existing AWS infrastructure into Terraform</h3>
+<p>Terraform is controlled via a very easy to use the command-line interface (CLI). Terraform is only a single command-line application: terraform. This application then takes a subcommand such as “apply” or “plan”.</p>
+<section id="import-existing-aws-infrastructure-into-terraform" class="level3">
+<h3 class="anchored" data-anchor-id="import-existing-aws-infrastructure-into-terraform">Import existing AWS infrastructure into Terraform</h3>
 <p>Terraform supports import command to import existing infrastructure into your Terraform state. It will find and import the specified resource into your Terraform state, allowing existing infrastructure to come under Terraform management without having to be initially created by Terraform.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>terraform import aws_dynamodb_table.basic-dynamodb-table local-basic-dynamodb-table 
-</span></span></code></pre></div><p>But, we have hundreds of resources to migrate?</p>
-<h3 id="terraformer">Terraformer</h3>
+<pre><code>terraform import aws_dynamodb_table.basic-dynamodb-table local-basic-dynamodb-table 
+</code></pre>
+<p>But, we have hundreds of resources to migrate?</p>
+</section>
+<section id="terraformer" class="level3">
+<h3 class="anchored" data-anchor-id="terraformer">Terraformer</h3>
 <p><a href="https://github.com/GoogleCloudPlatform/terraformer">Terraformer</a> is CLI tool to generate terraform files from existing infrastructure (reverse Terraform).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>terraformer import aws --resources=dynamodb,s3,kms,lambda,elasticache --regions=us-west-2
-</span></span></code></pre></div><p>Terraformer by default separates each resource into a file, which is put into a given service directory. The default path for resource files is {output}/{provider}/{service}/{resource}.tf and can vary for each provider.</p>
+<pre><code>terraformer import aws --resources=dynamodb,s3,kms,lambda,elasticache --regions=us-west-2
+</code></pre>
+<p>Terraformer by default separates each resource into a file, which is put into a given service directory. The default path for resource files is {output}/{provider}/{service}/{resource}.tf and can vary for each provider.</p>
 <p>Just wait few minutes and you got folder with all configuration files organized by service type:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>generated
-</span></span><span style="display:flex;"><span>    aws
-</span></span><span style="display:flex;"><span>        dynamodb
-</span></span><span style="display:flex;"><span>        elasticache
-</span></span><span style="display:flex;"><span>        kms
-</span></span><span style="display:flex;"><span>        lambda
-</span></span><span style="display:flex;"><span>        s3
-</span></span></code></pre></div><p>In the end, we do not have to write configuration templates from scratch and everything was imported with locally installed CLI tool using current AWS credentials. This is the beginning of the journey to infrastructure as code.</p>
-
-      </div>
-
-
-      <footer>
-        
+<pre><code>generated
+    aws
+        dynamodb
+        elasticache
+        kms
+        lambda
+        s3
+</code></pre>
+<p>In the end, we do not have to write configuration templates from scratch and everything was imported with locally installed CLI tool using current AWS credentials. This is the beginning of the journey to infrastructure as code.</p>
 
 
-        
-        
-        
-      </footer>
-    </article>
+</section>
+</section>
+</section>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
       }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
     };
-  </script>
-  </section>
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
 
-      </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-      <p>No bits were harmed during creation of this page.</p>
-    
-    
-      
-        © 2022
-      
-       Mariusz Jurgielewicz 
-    
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-    
-  </section>
-</footer>
 
-    </main>
-
-    
-
-    
-
-  </body>
-
-</html>
+</body></html>

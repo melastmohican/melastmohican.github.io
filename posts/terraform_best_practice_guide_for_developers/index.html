@@ -1,161 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
 
-    <meta name="author" content="Mariusz Jurgielewicz">
-    <meta name="description" content="melastmohican.github.io">
-    <meta name="keywords" content="blog,developer,personal">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Terraform Best Practice Guide for Developers"/>
-<meta name="twitter:description" content="Developer guide for Terraform configuration"/>
+<meta name="author" content="Mariusz S. Jurgielewicz">
+<meta name="dcterms.date" content="2020-03-21">
 
-    <meta property="og:title" content="Terraform Best Practice Guide for Developers" />
-<meta property="og:description" content="Developer guide for Terraform configuration" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-03-21T12:36:30-07:00" />
-<meta property="article:modified_time" content="2020-03-21T12:36:30-07:00" />
+<title>melastmohican.github.io - Terraform Best Practice Guide for Developers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
 
 
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
 
-    
-      <base href="https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/">
-    
-    <title>
-  Terraform Best Practice Guide for Developers · melastmohican.github.io
-</title>
 
-    
-      <link rel="canonical" href="https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/">
-    
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+<body class="floating nav-fixed">
 
-    
-      
-      
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-
-    
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/custom.css" />
-    
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
-
-    <meta name="generator" content="Hugo 0.105.0">
-  </head>
-
-  
-  
-  <body class="colorscheme-light">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://melastmohican.github.io/">
-      melastmohican.github.io
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">melastmohican.github.io</span>
     </a>
-    
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/posts/">Blog</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/about/">About</a>
-          </li>
-        
-      
-      
-    </ul>
-    
-  </section>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melastmohican"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://universeodon.com/@melastmohican"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a>
+  <ul class="collapse">
+  <li><a href="#install-terraform-cli" id="toc-install-terraform-cli" class="nav-link" data-scroll-target="#install-terraform-cli">Install Terraform CLI</a></li>
+  </ul></li>
+  <li><a href="#reusable-terraform-modules" id="toc-reusable-terraform-modules" class="nav-link" data-scroll-target="#reusable-terraform-modules">Reusable Terraform modules</a></li>
+  <li><a href="#code-structure" id="toc-code-structure" class="nav-link" data-scroll-target="#code-structure">Code structure</a>
+  <ul class="collapse">
+  <li><a href="#separate-state-per-account" id="toc-separate-state-per-account" class="nav-link" data-scroll-target="#separate-state-per-account">Separate state per account</a></li>
+  <li><a href="#npe-folder" id="toc-npe-folder" class="nav-link" data-scroll-target="#npe-folder">NPE folder</a></li>
+  </ul></li>
+  </ul>
 </nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Terraform Best Practice Guide for Developers</h1>
+<p class="subtitle lead">Developer guide for Terraform configuration</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">infrastructure</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">development</div>
+    <div class="quarto-category">aws</div>
+    <div class="quarto-category">terraform</div>
+    <div class="quarto-category">development</div>
+    <div class="quarto-category">resource</div>
+    <div class="quarto-category">tool</div>
+    <div class="quarto-category">automation</div>
+  </div>
+  </div>
 
 
-      <div class="content">
-        
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">Terraform Best Practice Guide for Developers</h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fas fa-calendar"></i>
-              <time datetime='2020-03-21T12:36:30-07:00'>
-                March 21, 2020
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fas fa-clock"></i>
-              4-minute read
-            </span>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mariusz S. Jurgielewicz </p>
           </div>
-          <div class="categories">
-  <i class="fas fa-folder"></i>
-    <a href="https://melastmohican.github.io/categories/development/">Development</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/categories/infrastructure/">Infrastructure</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/categories/code/">Code</a></div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 21, 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
-          <div class="tags">
-  <i class="fas fa-tag"></i>
-    <a href="https://melastmohican.github.io/tags/infrastructure/">infrastructure</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/code/">code</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/development/">development</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/aws/">aws</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/terraform/">terraform</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/development/">development</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/resource/">resource</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/tool/">tool</a>
-      <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/automation/">automation</a></div>
+</header>
 
-        </div>
-      </header>
-
-      <div>
-        
-        <p><a href="https://www.terraform.io/">Terraform</a> is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.</p>
-<p>Terraform is controlled via a very easy to use the command-line interface (CLI). Terraform is only a single command-line application: terraform. This application then takes a subcommand such as &ldquo;apply&rdquo; or &ldquo;plan&rdquo;.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<h3 id="install-terraform-cli">Install Terraform CLI</h3>
+<p><a href="https://www.terraform.io/">Terraform</a> is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.</p>
+<p>Terraform is controlled via a very easy to use the command-line interface (CLI). Terraform is only a single command-line application: terraform. This application then takes a subcommand such as “apply” or “plan”.</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<section id="install-terraform-cli" class="level3">
+<h3 class="anchored" data-anchor-id="install-terraform-cli">Install Terraform CLI</h3>
 <p>Terraform must first be installed on your machine. Terraform is distributed as a binary package for all supported platforms and architectures.</p>
-<p><a href="https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_darwin_amd64.zip">https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_darwin_amd64.zip</a></p>
-<p><a href="https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip">https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip</a></p>
-<p><a href="https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_windows_amd64.zip">https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_windows_amd64.zip</a></p>
-<p>Install Terraform by unzipping it and moving it to a directory included in your system&rsquo;s PATH.</p>
-<h2 id="reusable-terraform-modules">Reusable Terraform modules</h2>
+<p>https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_darwin_amd64.zip</p>
+<p>https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip</p>
+<p>https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_windows_amd64.zip</p>
+<p>Install Terraform by unzipping it and moving it to a directory included in your system’s PATH.</p>
+</section>
+</section>
+<section id="reusable-terraform-modules" class="level2">
+<h2 class="anchored" data-anchor-id="reusable-terraform-modules">Reusable Terraform modules</h2>
 <p>Terraform uses this during the module installation step of terraform init to download the source code to a directory on local disk so that it can be used by other Terraform commands.</p>
 <p>The module installer supports installation from a number of different source types, as listed below.</p>
 <ul>
@@ -169,231 +197,328 @@
 <li>GCS buckets</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-v" data-lang="v"><span style="display:flex;"><span><span style="font-weight:bold">module</span> <span style="font-style:italic">&#34;dynamodb&#34;</span> {
-</span></span><span style="display:flex;"><span>  source      = <span style="font-style:italic">&#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Terraform AWS DynamoDB module: <a href="https://github.com/melastmohican/tfmodule-aws-dynamodb-global">https://github.com/melastmohican/tfmodule-aws-dynamodb-global</a></p>
-<h2 id="code-structure">Code structure</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tf
-</span></span><span style="display:flex;"><span>│   .gitignore
-</span></span><span style="display:flex;"><span>│   README.md
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>├───npe
-</span></span><span style="display:flex;"><span>│   │   backend.tf
-</span></span><span style="display:flex;"><span>│   │   main.tf
-</span></span><span style="display:flex;"><span>│   │   provider.tf
-</span></span><span style="display:flex;"><span>│   │
-</span></span><span style="display:flex;"><span>│   └───env
-</span></span><span style="display:flex;"><span>│           main.tf
-</span></span><span style="display:flex;"><span>│           variables.tf
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>└───prd
-</span></span><span style="display:flex;"><span>    │   backend.tf
-</span></span><span style="display:flex;"><span>    │   main.tf
-</span></span><span style="display:flex;"><span>    │   provider.tf
-</span></span><span style="display:flex;"><span>    │
-</span></span><span style="display:flex;"><span>    └───env
-</span></span><span style="display:flex;"><span>            main.tf
-</span></span><span style="display:flex;"><span>            variables.tf
-</span></span><span style="display:flex;"><span> 
-</span></span></code></pre></div><h3 id="separate-state-per-account">Separate state per account</h3>
+<pre><code>module "dynamodb" {
+  source      = "git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global"
+}</code></pre>
+<p>Terraform AWS DynamoDB module: https://github.com/melastmohican/tfmodule-aws-dynamodb-global</p>
+</section>
+<section id="code-structure" class="level2">
+<h2 class="anchored" data-anchor-id="code-structure">Code structure</h2>
+<pre><code>tf
+│   .gitignore
+│   README.md
+│
+├───npe
+│   │   backend.tf
+│   │   main.tf
+│   │   provider.tf
+│   │
+│   └───env
+│           main.tf
+│           variables.tf
+│
+└───prd
+    │   backend.tf
+    │   main.tf
+    │   provider.tf
+    │
+    └───env
+            main.tf
+            variables.tf
+ 
+</code></pre>
+<section id="separate-state-per-account" class="level3">
+<h3 class="anchored" data-anchor-id="separate-state-per-account">Separate state per account</h3>
 <p>You can apply configuration separately in npe or prd folder and the state will be separated.</p>
-<h3 id="npe-folder">NPE folder</h3>
+</section>
+<section id="npe-folder" class="level3">
+<h3 class="anchored" data-anchor-id="npe-folder">NPE folder</h3>
 <p><strong>backend.tf</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>terraform {
-</span></span><span style="display:flex;"><span>  backend &#34;s3&#34; {
-</span></span><span style="display:flex;"><span>    bucket = &#34;melastmohican-terraform-states&#34;
-</span></span><span style="display:flex;"><span>    key    = &#34;module_test/terraform.tfstate&#34;
-</span></span><span style="display:flex;"><span>    region = &#34;us-west-2&#34;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>main.tf</strong></p>
-<p>You can structure your code in a folder in many ways. You can have multiple files that terraform would include in one big file.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-v" data-lang="v"><span style="display:flex;"><span><span style="font-weight:bold">module</span> <span style="font-style:italic">&#34;dev&#34;</span> {
-</span></span><span style="display:flex;"><span>  source = <span style="font-style:italic">&#34;./env&#34;</span>
-</span></span><span style="display:flex;"><span>  environment = <span style="font-style:italic">&#34;dev&#34;</span>
-</span></span><span style="display:flex;"><span>  providers = {
-</span></span><span style="display:flex;"><span>    aws.us-west-2 = aws.us-west-2
-</span></span><span style="display:flex;"><span>    aws.us-east-1 = aws.us-east-1
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">module</span> <span style="font-style:italic">&#34;stg&#34;</span> {
-</span></span><span style="display:flex;"><span>  source = <span style="font-style:italic">&#34;./env&#34;</span>
-</span></span><span style="display:flex;"><span>  environment = <span style="font-style:italic">&#34;stg&#34;</span>
-</span></span><span style="display:flex;"><span>  providers = {
-</span></span><span style="display:flex;"><span>    aws.us-west-2 = aws.us-west-2
-</span></span><span style="display:flex;"><span>    aws.us-east-1 = aws.us-east-1
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>provider.tf</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>provider &#34;aws&#34; {
-</span></span><span style="display:flex;"><span>  region                  = &#34;us-west-2&#34;
-</span></span><span style="display:flex;"><span>  alias                   = &#34;us-west-2&#34;
-</span></span><span style="display:flex;"><span>  shared_credentials_file = &#34;$HOME/.aws/credentials&#34;
-</span></span><span style="display:flex;"><span>  profile                 = &#34;default&#34;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>provider &#34;aws&#34; {
-</span></span><span style="display:flex;"><span>  region                  = &#34;us-east-1&#34;
-</span></span><span style="display:flex;"><span>  alias                   = &#34;us-east-1&#34;
-</span></span><span style="display:flex;"><span>  shared_credentials_file = &#34;$HOME/.aws/credentials&#34;
-</span></span><span style="display:flex;"><span>  profile                 = &#34;default&#34;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Sample env module. It is where you create a module per resource. You can put all resources in one file or group them by resource type e.g.  dynamodb_tables.tf, s3_buckets.tf, etc</p>
+<pre><code>terraform {
+  backend "s3" {
+    bucket = "melastmohican-terraform-states"
+    key    = "module_test/terraform.tfstate"
+    region = "us-west-2"
+  }
+}
+</code></pre>
 <p><strong>main.tf</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-v" data-lang="v"><span style="display:flex;"><span><span style="font-weight:bold">module</span> <span style="font-style:italic">&#34;dynamodb&#34;</span> {
-</span></span><span style="display:flex;"><span>  source      = <span style="font-style:italic">&#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;</span>
-</span></span><span style="display:flex;"><span>  environment = var.environment
-</span></span><span style="display:flex;"><span>  table_name  = <span style="font-style:italic">&#34;</span>${upper(var.environment)}<span style="font-style:italic">_ABC_TABLE&#34;</span>
-</span></span><span style="display:flex;"><span>  attribute_list = [
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      name = <span style="font-style:italic">&#34;convState&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">type</span> = <span style="font-style:italic">&#34;S&#34;</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      name = <span style="font-style:italic">&#34;id&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">type</span> = <span style="font-style:italic">&#34;S&#34;</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      name = <span style="font-style:italic">&#34;tag&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">type</span> = <span style="font-style:italic">&#34;S&#34;</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  ]
-</span></span><span style="display:flex;"><span>  hash_key  = <span style="font-style:italic">&#34;id&#34;</span>
-</span></span><span style="display:flex;"><span>  range_key = <span style="font-style:italic">&#34;tag&#34;</span>
-</span></span><span style="display:flex;"><span>  tags = {
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">Application</span> = <span style="font-style:italic">&#34;Example&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">Environment</span> = <span style="font-style:italic">&#34;Non-production::</span>${upper(var.environment)}<span style="font-style:italic">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">Owner</span>       = <span style="font-style:italic">&#34;devops@example.org&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">Role</span>        = <span style="font-style:italic">&#34;DataSource&#34;</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  global_secondary_index_list = [{
-</span></span><span style="display:flex;"><span>    hash_key           = <span style="font-style:italic">&#34;convState&#34;</span>
-</span></span><span style="display:flex;"><span>    range_key          = null
-</span></span><span style="display:flex;"><span>    name               = <span style="font-style:italic">&#34;convState-index&#34;</span>
-</span></span><span style="display:flex;"><span>    non_key_attributes = []
-</span></span><span style="display:flex;"><span>    projection_type    = <span style="font-style:italic">&#34;ALL&#34;</span>
-</span></span><span style="display:flex;"><span>    read_capacity      = 0
-</span></span><span style="display:flex;"><span>    write_capacity     = 0
-</span></span><span style="display:flex;"><span>  }]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  local_secondary_index_list = []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  ttl_list = [{
-</span></span><span style="display:flex;"><span>    attribute_name = <span style="font-style:italic">&#34;expirationTime&#34;</span>
-</span></span><span style="display:flex;"><span>    enabled        = <span style="font-weight:bold">true</span>
-</span></span><span style="display:flex;"><span>  }]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  providers = {
-</span></span><span style="display:flex;"><span>    aws.us-west-2 = aws.us-west-2
-</span></span><span style="display:flex;"><span>    aws.us-east-1 = aws.us-east-1
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>provider <span style="font-style:italic">&#34;aws&#34;</span> {
-</span></span><span style="display:flex;"><span>  alias = <span style="font-style:italic">&#34;us-west-2&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>provider <span style="font-style:italic">&#34;aws&#34;</span> {
-</span></span><span style="display:flex;"><span>  alias = <span style="font-style:italic">&#34;us-east-1&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="explanation">Explanation:</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>source      = &#34;git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global&#34;
-</span></span></code></pre></div><p>Including remote DynamoDB module. When running terraform init first time it will be downloaded to the cache folder on your machine (typically .terraform).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>environment = var.environment
-</span></span></code></pre></div><p>Input variable defined in the module and passed from the parent module.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>table_name  = &#34;${upper(var.environment)}_ABC_TABLE&#34;
-</span></span></code></pre></div><p>Terraform includes few string manipulation functions, e.g. upper, lower or title.</p>
+<p>You can structure your code in a folder in many ways. You can have multiple files that terraform would include in one big file.</p>
+<pre><code>module "dev" {
+  source = "./env"
+  environment = "dev"
+  providers = {
+    aws.us-west-2 = aws.us-west-2
+    aws.us-east-1 = aws.us-east-1
+  }
+}
+
+module "stg" {
+  source = "./env"
+  environment = "stg"
+  providers = {
+    aws.us-west-2 = aws.us-west-2
+    aws.us-east-1 = aws.us-east-1
+  }
+}
+</code></pre>
+<p><strong>provider.tf</strong></p>
+<pre><code>provider "aws" {
+  region                  = "us-west-2"
+  alias                   = "us-west-2"
+  shared_credentials_file = "$HOME/.aws/credentials"
+  profile                 = "default"
+}
+
+provider "aws" {
+  region                  = "us-east-1"
+  alias                   = "us-east-1"
+  shared_credentials_file = "$HOME/.aws/credentials"
+  profile                 = "default"
+}
+</code></pre>
+<p>Sample env module. It is where you create a module per resource. You can put all resources in one file or group them by resource type e.g.&nbsp;dynamodb_tables.tf, s3_buckets.tf, etc</p>
+<p><strong>main.tf</strong></p>
+<pre><code>module "dynamodb" {
+  source      = "git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global"
+  environment = var.environment
+  table_name  = "${upper(var.environment)}_ABC_TABLE"
+  attribute_list = [
+    {
+      name = "convState"
+      type = "S"
+    },
+    {
+      name = "id"
+      type = "S"
+    },
+    {
+      name = "tag"
+      type = "S"
+    }
+  ]
+  hash_key  = "id"
+  range_key = "tag"
+  tags = {
+    Application = "Example"
+    Environment = "Non-production::${upper(var.environment)}"
+    Owner       = "devops@example.org"
+    Role        = "DataSource"
+  }
+
+  global_secondary_index_list = [{
+    hash_key           = "convState"
+    range_key          = null
+    name               = "convState-index"
+    non_key_attributes = []
+    projection_type    = "ALL"
+    read_capacity      = 0
+    write_capacity     = 0
+  }]
+
+  local_secondary_index_list = []
+
+  ttl_list = [{
+    attribute_name = "expirationTime"
+    enabled        = true
+  }]
+
+  providers = {
+    aws.us-west-2 = aws.us-west-2
+    aws.us-east-1 = aws.us-east-1
+  }
+}
+
+provider "aws" {
+  alias = "us-west-2"
+}
+
+provider "aws" {
+  alias = "us-east-1"
+}
+</code></pre>
+<section id="explanation" class="level4">
+<h4 class="anchored" data-anchor-id="explanation">Explanation:</h4>
+<pre><code>source      = "git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global"</code></pre>
+<p>Including remote DynamoDB module. When running terraform init first time it will be downloaded to the cache folder on your machine (typically .terraform).</p>
+<pre><code>environment = var.environment</code></pre>
+<p>Input variable defined in the module and passed from the parent module.</p>
+<pre><code>table_name  = "${upper(var.environment)}_ABC_TABLE"</code></pre>
+<p>Terraform includes few string manipulation functions, e.g.&nbsp;upper, lower or title.</p>
 <p>DynamoDB module input variables:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>attribute_list = [] 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>global_secondary_index_list = []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>local_secondary_index_list = []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ttl_list = []
-</span></span></code></pre></div><p>All above are defined as list of objects: <code>type = list(object({    }))</code> Using list allow to pass multiple objects and in some cases also allows optional paramaters. For example table might not define ttl but we cannot asign null to this variable so the way to express it is to pass empty list of object.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tags = {
-</span></span><span style="display:flex;"><span>    Application = &#34;Example&#34;
-</span></span><span style="display:flex;"><span>    Environment = &#34;Non-production::${upper(var.environment)}&#34;
-</span></span><span style="display:flex;"><span>    Owner       = &#34;devops@example.org&#34;
-</span></span><span style="display:flex;"><span>    Role        = &#34;DataSource&#34;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This is actually a single object which is mapped to <code>map(string)</code> in the module.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>provider &#34;aws&#34; {
-</span></span><span style="display:flex;"><span>  alias = &#34;us-west-2&#34;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>provider &#34;aws&#34; {
-</span></span><span style="display:flex;"><span>  alias = &#34;us-east-1&#34;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Unfortunately, this is redundant but necessary to pass providers around.</p>
+<pre><code>attribute_list = [] 
+
+global_secondary_index_list = []
+
+local_secondary_index_list = []
+
+ttl_list = []
+</code></pre>
+<p>All above are defined as list of objects: <code>type = list(object({    }))</code> Using list allow to pass multiple objects and in some cases also allows optional paramaters. For example table might not define ttl but we cannot asign null to this variable so the way to express it is to pass empty list of object.</p>
+<pre><code>tags = {
+    Application = "Example"
+    Environment = "Non-production::${upper(var.environment)}"
+    Owner       = "devops@example.org"
+    Role        = "DataSource"
+}
+</code></pre>
+<p>This is actually a single object which is mapped to <code>map(string)</code> in the module.</p>
+<pre><code>provider "aws" {
+  alias = "us-west-2"
+}
+
+provider "aws" {
+  alias = "us-east-1"
+}
+</code></pre>
+<p>Unfortunately, this is redundant but necessary to pass providers around.</p>
 <p><strong>variable.tf</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>variable &#34;environment&#34; {
-</span></span><span style="display:flex;"><span>  type = string
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-      </div>
+<pre><code>variable "environment" {
+  type = string
+}
+</code></pre>
 
 
-      <footer>
-        
+</section>
+</section>
+</section>
 
-
-        
-        
-        
-      </footer>
-    </article>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
       }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
     };
-  </script>
-  </section>
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
 
-      </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-      <p>No bits were harmed during creation of this page.</p>
-    
-    
-      
-        © 2022
-      
-       Mariusz Jurgielewicz 
-    
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-    
-  </section>
-</footer>
 
-    </main>
-
-    
-
-    
-
-  </body>
-
-</html>
+</body></html>

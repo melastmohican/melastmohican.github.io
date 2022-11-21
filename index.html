@@ -1,158 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
 
-    <meta name="author" content="Mariusz Jurgielewicz">
-    <meta name="description" content="melastmohican.github.io">
-    <meta name="keywords" content="blog,developer,personal">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="melastmohican.github.io"/>
-<meta name="twitter:description" content="melastmohican.github.io"/>
-
-    <meta property="og:title" content="melastmohican.github.io" />
-<meta property="og:description" content="melastmohican.github.io" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://melastmohican.github.io/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
+<title>melastmohican.github.io</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
 
-    
-      <base href="https://melastmohican.github.io/">
-    
-    <title>melastmohican.github.io</title>
 
-    
-      <link rel="canonical" href="https://melastmohican.github.io/">
-    
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-    
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
-    
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
 
-    
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
 
-    
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
 
-    
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/custom.css" />
-    
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 
-    
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-    
+<link rel="stylesheet" href="styles.css">
+</head>
 
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
+<body class="nav-fixed">
 
-    <link rel="alternate" type="application/rss+xml" href="https://melastmohican.github.io/index.xml" title="melastmohican.github.io" />
-    <meta name="generator" content="Hugo 0.105.0">
-  </head>
-
-  
-  
-  <body class="colorscheme-light">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://melastmohican.github.io/">
-      melastmohican.github.io
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">melastmohican.github.io</span>
     </a>
-    
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melastmohican"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://universeodon.com/@melastmohican"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/posts/">Blog</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/about/">About</a>
-          </li>
-        
-      
-      
-    </ul>
-    
-  </section>
-</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="adage">adage <span class="quarto-category-count">(1)</span></div><div class="category" data-category="automation">automation <span class="quarto-category-count">(3)</span></div><div class="category" data-category="awesome">awesome <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aws">aws <span class="quarto-category-count">(2)</span></div><div class="category" data-category="blogging">blogging <span class="quarto-category-count">(1)</span></div><div class="category" data-category="build">build <span class="quarto-category-count">(1)</span></div><div class="category" data-category="certificate">certificate <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cli">cli <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cloudformation">cloudformation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(5)</span></div><div class="category" data-category="dads">dads <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dart">dart <span class="quarto-category-count">(1)</span></div><div class="category" data-category="development">development <span class="quarto-category-count">(6)</span></div><div class="category" data-category="embedded">embedded <span class="quarto-category-count">(1)</span></div><div class="category" data-category="engineering">engineering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="esp32">esp32 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="feather">feather <span class="quarto-category-count">(1)</span></div><div class="category" data-category="generation">generation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="go">go <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hardware">hardware <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hugo">hugo <span class="quarto-category-count">(1)</span></div><div class="category" data-category="humor">humor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="infrastructure">infrastructure <span class="quarto-category-count">(2)</span></div><div class="category" data-category="internet">internet <span class="quarto-category-count">(1)</span></div><div class="category" data-category="java">java <span class="quarto-category-count">(3)</span></div><div class="category" data-category="jks">jks <span class="quarto-category-count">(1)</span></div><div class="category" data-category="jokes">jokes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kafka">kafka <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kotlin">kotlin <span class="quarto-category-count">(1)</span></div><div class="category" data-category="law">law <span class="quarto-category-count">(1)</span></div><div class="category" data-category="list">list <span class="quarto-category-count">(1)</span></div><div class="category" data-category="maven">maven <span class="quarto-category-count">(1)</span></div><div class="category" data-category="microcontroller">microcontroller <span class="quarto-category-count">(1)</span></div><div class="category" data-category="migration">migration <span class="quarto-category-count">(2)</span></div><div class="category" data-category="murphys">murphys <span class="quarto-category-count">(1)</span></div><div class="category" data-category="pem">pem <span class="quarto-category-count">(1)</span></div><div class="category" data-category="principle">principle <span class="quarto-category-count">(1)</span></div><div class="category" data-category="programmers">programmers <span class="quarto-category-count">(1)</span></div><div class="category" data-category="programming">programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="project">project <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="resource">resource <span class="quarto-category-count">(2)</span></div><div class="category" data-category="rust">rust <span class="quarto-category-count">(1)</span></div><div class="category" data-category="sensor">sensor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ssl">ssl <span class="quarto-category-count">(1)</span></div><div class="category" data-category="terraform">terraform <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tls">tls <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tool">tool <span class="quarto-category-count">(3)</span></div><div class="category" data-category="universe">universe <span class="quarto-category-count">(1)</span></div></div></div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">melastmohican.github.io</h1>
+</div>
 
 
-      <div class="content">
-        
-  <section class="container centered">
-  <div class="about">
+
+<div class="quarto-title-meta">
+
     
-      
-        <div class="avatar"><img src="https://melastmohican.github.io/images/avatar.png" alt="avatar"></div>
-      
-    
-    
-    <h1>Mariusz Jurgielewicz</h1>
-    <h2>Artifex Rerum Caducarum</h2>
-    
-    <ul>
-      
-        
-          <li>
-            <a href="https://github.com/melastmohican/" aria-label="Github"   >
-              <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://twitter.com/melastmohican/" aria-label="Twitter"   >
-              <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-    </ul>
+  
     
   </div>
-</section>
+  
+
+</header>
 
 
-      </div>
 
-      <footer class="footer">
-  <section class="container">
-    
-      <p>No bits were harmed during creation of this page.</p>
-    
-    
-      
-        © 2022
-      
-       Mariusz Jurgielewicz 
-    
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-    
-  </section>
-</footer>
 
-    </main>
 
-    
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
 
-    
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Date
+</th>
+<th>
+Title
+</th>
+<th>
+Author
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="quarto,blogging,hugo" data-listing-date-sort="1668931200000" data-listing-file-modified-sort="1668997479224" data-listing-reading-time-sort="4.21" data-listing-title-sort="Migrating my Hugo blog to Quarto" data-listing-filename-sort="index.md">
+<td class="listing-date">
+Nov 20, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/migrating-from-hugo-to-quarto/index.html" class="title">Migrating my Hugo blog to Quarto</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="1" data-categories="rust,esp32,microcontroller,embedded,hardware,sensor,feather" data-listing-date-sort="1668412800000" data-listing-file-modified-sort="1668985554560" data-listing-reading-time-sort="1.37" data-listing-title-sort="Rusty Feather" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Nov 14, 2022
+</td>
+<td class="listing-title">
+<a href="./posts/rusty_feather/index.html" class="title">Rusty Feather</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="2" data-categories="adage,law,murphys,engineering,universe,principle" data-listing-date-sort="1589958000000" data-listing-file-modified-sort="1668985531088" data-listing-reading-time-sort="6.6" data-listing-title-sort="Murphy's laws and other principles of disaster" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+May 20, 2020
+</td>
+<td class="listing-title">
+<a href="./posts/murphys-laws/index.html" class="title">Murphy’s laws and other principles of disaster</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="3" data-categories="infrastructure,code,development,aws,terraform,development,resource,tool,automation" data-listing-date-sort="1584774000000" data-listing-file-modified-sort="1668985569914" data-listing-reading-time-sort="5.78" data-listing-title-sort="Terraform Best Practice Guide for Developers" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Mar 21, 2020
+</td>
+<td class="listing-title">
+<a href="./posts/terraform_best_practice_guide_for_developers/index.html" class="title">Terraform Best Practice Guide for Developers</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="4" data-categories="code,development,java,kafka,certificate,ssl,tls,jks,pem" data-listing-date-sort="1584169200000" data-listing-file-modified-sort="1668985500650" data-listing-reading-time-sort="0.52" data-listing-title-sort="Convert Kafka JKS certificate to PEM" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Mar 14, 2020
+</td>
+<td class="listing-title">
+<a href="./posts/convert_kafka_jks_certificate_to_pem/index.html" class="title">Convert Kafka JKS certificate to PEM</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="5" data-categories="development,code,programming,migration,java,kotlin,go,dart" data-listing-date-sort="1584082800000" data-listing-file-modified-sort="1668985461847" data-listing-reading-time-sort="15.45" data-listing-title-sort="What new language should I learn as Java Developer" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Mar 13, 2020
+</td>
+<td class="listing-title">
+<a href="./posts/as-java-developer-what-language-learn/index.html" class="title">What new language should I learn as Java Developer</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="6" data-categories="list,awesome,internet" data-listing-date-sort="1583737200000" data-listing-file-modified-sort="1668985474010" data-listing-reading-time-sort="1.07" data-listing-title-sort="List of Awesome Lists" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Mar 9, 2020
+</td>
+<td class="listing-title">
+<a href="./posts/awesome-awesome-lists/index.html" class="title">List of Awesome Lists</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="7" data-categories="generation,code,development,maven,java,project,tool,automation,cli,build" data-listing-date-sort="1583481600000" data-listing-file-modified-sort="1668985512212" data-listing-reading-time-sort="5.145" data-listing-title-sort="Maven Archetypes Project Templating" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Mar 6, 2020
+</td>
+<td class="listing-title">
+<a href="./posts/maven-archetypes-project-templating/index.html" class="title">Maven Archetypes Project Templating</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="8" data-categories="infrastructure,code,development,aws,terraform,cloudformation,resource,tool,automation,migration" data-listing-date-sort="1583395200000" data-listing-file-modified-sort="1668985485440" data-listing-reading-time-sort="4.27" data-listing-title-sort="Migrating existing AWS infrastructure to new acount" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Mar 5, 2020
+</td>
+<td class="listing-title">
+<a href="./posts/aws-resource-migration/index.html" class="title">Migrating existing AWS infrastructure to new acount</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+<tr data-index="9" data-categories="jokes,dads,programmers,humor" data-listing-date-sort="1583395200000" data-listing-file-modified-sort="1668987068682" data-listing-reading-time-sort="34.58" data-listing-title-sort="Programmer's Jokes" data-listing-filename-sort="index.qmd">
+<td class="listing-date">
+Mar 5, 2020
+</td>
+<td class="listing-title">
+<a href="./posts/programmers-jokes/index.html" class="title">Programmer’s Jokes</a>
+</td>
+<td class="listing-author">
+Mariusz S. Jurgielewicz
+</td>
+</tr>
+</tbody>
 
-  </body>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
 
-</html>
+
+
+</body></html>
