@@ -1,0 +1,270 @@
+---
+title: "Terraform Best Practice Guide for Developers"
+subtitle: "Developer guide for Terraform configuration"
+date: "2020-03-21"
+categories: [infrastructure, code, development, aws, terraform, development,resource,tool,automation]
+---
+[Terraform](https://www.terraform.io/) is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.
+
+Terraform is controlled via a very easy to use the command-line interface (CLI). Terraform is only a single command-line application: terraform. This application then takes a subcommand such as "apply" or "plan".
+
+
+## Prerequisites
+
+### Install Terraform CLI
+Terraform must first be installed on your machine. Terraform is distributed as a binary package for all supported platforms and architectures.
+
+https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_darwin_amd64.zip 
+
+https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip
+
+https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_windows_amd64.zip
+
+Install Terraform by unzipping it and moving it to a directory included in your system's PATH.
+
+
+## Reusable Terraform modules
+Terraform uses this during the module installation step of terraform init to download the source code to a directory on local disk so that it can be used by other Terraform commands.
+
+The module installer supports installation from a number of different source types, as listed below.
+
+* Local paths
+* Terraform Registry
+* GitHub
+* Bitbucket
+* Generic Git, Mercurial repositories
+* HTTP URLs
+* S3 buckets
+* GCS buckets
+
+For example:
+
+```
+module "dynamodb" {
+  source      = "git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global"
+}
+```
+
+Terraform AWS DynamoDB module: https://github.com/melastmohican/tfmodule-aws-dynamodb-global
+
+
+## Code structure
+
+```
+tf
+│   .gitignore
+│   README.md
+│
+├───npe
+│   │   backend.tf
+│   │   main.tf
+│   │   provider.tf
+│   │
+│   └───env
+│           main.tf
+│           variables.tf
+│
+└───prd
+    │   backend.tf
+    │   main.tf
+    │   provider.tf
+    │
+    └───env
+            main.tf
+            variables.tf
+ 
+
+```
+
+### Separate state per account
+You can apply configuration separately in npe or prd folder and the state will be separated.
+
+
+### NPE folder
+**backend.tf**
+
+```
+terraform {
+  backend "s3" {
+    bucket = "melastmohican-terraform-states"
+    key    = "module_test/terraform.tfstate"
+    region = "us-west-2"
+  }
+}
+
+```
+
+**main.tf**
+
+You can structure your code in a folder in many ways. You can have multiple files that terraform would include in one big file.
+
+```
+module "dev" {
+  source = "./env"
+  environment = "dev"
+  providers = {
+    aws.us-west-2 = aws.us-west-2
+    aws.us-east-1 = aws.us-east-1
+  }
+}
+
+module "stg" {
+  source = "./env"
+  environment = "stg"
+  providers = {
+    aws.us-west-2 = aws.us-west-2
+    aws.us-east-1 = aws.us-east-1
+  }
+}
+
+```
+
+**provider.tf**
+
+```
+provider "aws" {
+  region                  = "us-west-2"
+  alias                   = "us-west-2"
+  shared_credentials_file = "$HOME/.aws/credentials"
+  profile                 = "default"
+}
+
+provider "aws" {
+  region                  = "us-east-1"
+  alias                   = "us-east-1"
+  shared_credentials_file = "$HOME/.aws/credentials"
+  profile                 = "default"
+}
+
+```
+Sample env module. It is where you create a module per resource. You can put all resources in one file or group them by resource type e.g.  dynamodb_tables.tf, s3_buckets.tf, etc
+
+**main.tf**
+
+```
+module "dynamodb" {
+  source      = "git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global"
+  environment = var.environment
+  table_name  = "${upper(var.environment)}_ABC_TABLE"
+  attribute_list = [
+    {
+      name = "convState"
+      type = "S"
+    },
+    {
+      name = "id"
+      type = "S"
+    },
+    {
+      name = "tag"
+      type = "S"
+    }
+  ]
+  hash_key  = "id"
+  range_key = "tag"
+  tags = {
+    Application = "Example"
+    Environment = "Non-production::${upper(var.environment)}"
+    Owner       = "devops@example.org"
+    Role        = "DataSource"
+  }
+
+  global_secondary_index_list = [{
+    hash_key           = "convState"
+    range_key          = null
+    name               = "convState-index"
+    non_key_attributes = []
+    projection_type    = "ALL"
+    read_capacity      = 0
+    write_capacity     = 0
+  }]
+
+  local_secondary_index_list = []
+
+  ttl_list = [{
+    attribute_name = "expirationTime"
+    enabled        = true
+  }]
+
+  providers = {
+    aws.us-west-2 = aws.us-west-2
+    aws.us-east-1 = aws.us-east-1
+  }
+}
+
+provider "aws" {
+  alias = "us-west-2"
+}
+
+provider "aws" {
+  alias = "us-east-1"
+}
+
+```
+
+#### Explanation:
+
+```
+source      = "git::https://github.com/melastmohican/tfmodule-aws-dynamodb-global"
+```
+Including remote DynamoDB module. When running terraform init first time it will be downloaded to the cache folder on your machine (typically .terraform).
+
+```
+environment = var.environment
+```
+Input variable defined in the module and passed from the parent module.
+
+```
+table_name  = "${upper(var.environment)}_ABC_TABLE"
+```
+
+Terraform includes few string manipulation functions, e.g. upper, lower or title.
+
+
+DynamoDB module input variables:
+```
+attribute_list = [] 
+
+global_secondary_index_list = []
+
+local_secondary_index_list = []
+
+ttl_list = []
+
+```
+
+All above are defined as list of objects: `type = list(object({    }))` Using list allow to pass multiple objects and in some cases also allows optional paramaters. For example table might not define ttl but we cannot asign null to this variable so the way to express it is to pass empty list of object.
+
+```
+tags = {
+    Application = "Example"
+    Environment = "Non-production::${upper(var.environment)}"
+    Owner       = "devops@example.org"
+    Role        = "DataSource"
+}
+
+```
+This is actually a single object which is mapped to `map(string)` in the module.
+
+```
+provider "aws" {
+  alias = "us-west-2"
+}
+
+provider "aws" {
+  alias = "us-east-1"
+}
+
+```
+Unfortunately, this is redundant but necessary to pass providers around.
+
+ 
+
+**variable.tf**
+
+```
+variable "environment" {
+  type = string
+}
+
+```

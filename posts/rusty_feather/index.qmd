@@ -1,0 +1,16 @@
+---
+title: "Rusty Feather"
+subtitle: "Rust on ESP with ESP32-C3-DevKit-RUST-1"
+date: "2022-11-14"
+categories: [rust,esp32,microcontroller,embedded,hardware,sensor,feather]
+---
+Recently I stumbled upon info about using Rust language on embedded systems including microcontrollers. I searched for some tutorials and online trainings and it seems like you need specific hardware usually. Getting [STM32F3DISCOVERY](https://docs.rust-embedded.org/book/intro/hardware.html) or [nRF52840 DK](https://embedded-trainings.ferrous-systems.com/hardware.html) is not practical because I will have limited use for these boards after completing training.  I was almost willing to get [micro:bit](https://docs.rust-embedded.org/discovery/microbit/02-requirements/index.html) when I found out that Ferrous Systems and Espressif’s [announced](https://www.espressif.com/en/news/ESP_RUST_training) _**Rust Training on ESP32**_.
+## ESP Rust Board
+It is officially called **ESP32-C3-DevKit-RUST-1** if you want to search for it. The board is based on successful ESP32-C3-MINI-1 module and has 6DoF IMU (ICM-42670-P), a temperature and humidity sensor (SHTC3), a Li-Ion battery charger, and a Type-C USB in familiar Adafruit Feather format. It is pretty close to [Adafruit ESP32-S2 Feather with BME280 Sensor](https://www.adafruit.com/product/5303) minus Stemma connector but with IMU sensor instead.
+![ESP32-C3-DevKit-RUST-1](https://raw.githubusercontent.com/esp-rs/esp-rust-board/master/assets/rust_board_v1.2_diagram.png)
+## Rust on ESP Community
+It seems like Espressif has pretty well organized [community](https://github.com/esp-rs) on Github. You can start exploring from _**Rust on ESP**_  [book](https://esp-rs.github.io/book/introduction.html).  Eventually, I was able to follow 'Embedded Rust on Espressif' [training](https://ferrous-systems.com/blog/announce-esp-training/) available as a [book](https://espressif-trainings.ferrous-systems.com/) or Github [repo](https://github.com/ferrous-systems/espressif-trainings). If you follow the training alone you would notice that problems you encounter are usually reported in issues section of the repo. Rust on ESP in pretty much WIP so sometimes Google is you friend since others might have solved the same problem.
+
+## Conclusion
+I am new to Rust Embedded so with minimal investment I was able to get a taste of development ecosystem which is still growing and evolving. It is impressive how easy to use it is so far. Hardware needed for training should also be compatible with my collection and reusable in other projects.
+![Blinky](esp-rust-board.gif){fig-align="center"}

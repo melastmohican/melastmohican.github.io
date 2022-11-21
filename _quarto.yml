@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "melastmohican.github.io"
+  site-url: https://melastmohican.github.io
+  description: "This is Melastmohican's personal Blog."
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/melastmohican
+      - icon: mastodon
+        href: https://universeodon.com/@melastmohican
+format:
+  html:
+    theme: flatly
+    css: styles.css
+
+
+

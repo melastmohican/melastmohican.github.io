@@ -1,0 +1,19 @@
+---
+title: "About"
+image: avatar.png
+about:
+  template: jolla
+  links:
+    - icon: mastodon
+      text: Mastodon
+      href: https://universeodon.com/@melastmohican
+    - icon: github
+      text: Github
+      href: https://github.com/melastmohican
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/msjurgie/
+
+---
+
+Artifex Rerum Caducarum

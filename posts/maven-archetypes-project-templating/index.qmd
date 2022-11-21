@@ -1,0 +1,118 @@
+---
+title: "Maven Archetypes Project Templating"
+description: "Archetype is a Maven project templating toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. Archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates. Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed by your project or organization."
+date: "2020-03-06"
+categories: [generation, code, development, maven, java, project,tool,automation,cli,build]
+---
+## Intro
+I am developer and I like [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use [Spring Initializr](https://start.spring.io/) to boostrap your new application or even better without leaving the shell [Spring Boot CLI](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#cli-init).  You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files? Wouldn't be nice to have project template and generate new one by answersing few simple questions? Project generation (scaffolding) was made popular by the Ruby on Rails framework and now we got many generators included in popular frameworks or standalone but if you are already using Maven as you your build tool don't look any further.
+
+## Maven Archetypes
+Archetype is a Maven project templating toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. Archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates. Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed by your project or organization. 
+
+Maven provides several archetype [artifacts](https://maven.apache.org/archetypes/index.html). 
+
+### Creating a Maven Archetype
+Creating archetype from scratch is possible but I would recomend pick some existing project and generate archetype from it.
+```
+mvn archetype:create-from-project
+```
+
+Generated source code can then be found under the target/generated-sources/archetype directory. When you type `mvn install` in this directory it will install archetype in our local Maven repository (${HOME}/.m2/repository). When archetype is used to generate new project it would create a copy of base project which is not particularly useful. When you start parametrizing your archetype things are getting more interesting.
+
+#### Dynamic content
+Maven Archetypes use Apache Velocity Engine for incorporating the dynamic content in genereted files. Any file in archetype resources is template but some files need to be escaped because they charcters are used by Velocity. For example XML, Java or Groovy files might use similar characters. You have to define special variable to escape them:
+```
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+```
+Example from Groovy Script or Jenkins config:
+```
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+${symbol_pound}!groovy
+```
+
+You can also apply variable substitution to file names. To inject a property into a file name, surround the property erty name with "__". 
+```
+archetype-root/src/main/resources/archetype-resources/src/main/java/__library-name__.java
+```
+
+#### Defining additional properties
+The main properties that are used by the Velocity engine during a project's file generation are groupId, artifactId, version and package. It is possible to define additional properties that must be valued before the file generation. These additional properties can be provided with default values, which enable not to ask the user for there values. Additional properties are defined in the `/src/main/resources/META-INF/maven/archetype-metadata.xml` file with:
+```
+<archetype-descriptor name="basic">
+  <requiredProperties>
+    <requiredProperty key="property-with-default">
+      <defaultValue>default-value</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="property-without-default"/>
+  </requiredProperties>
+...
+</archetype-descriptor>
+```
+
+#### Defining specific filesets
+The filesets contained in the `/src/main/resources/META-INF/maven/archetype-metadata.xml` file defines the way the project's files located in the JAR file are used by the Archetype Plugin to generate a project. Filesets must define the directory where the files will be searched for which is also the directory where the project's files will be generated.This provide a way to describe a large set of files to be selected for the generation process. Filesets can be filtered, which means the selected files will be used as Velocity templates. A fileset is defined in the archetype-metadata.xml with this fragment:
+```
+<fileSets>
+    <fileSet filtered="true" packaged="true">
+      <directory>src/test/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+      <excludes>
+        <exclude>AllTest.java</exclude>
+      </excludes>
+    </fileSet>
+  </fileSets>
+```
+
+#### Sample archetype directory structure:
+```
+archetype-root
+└── src
+    └── main
+        └── resources
+            ├── META-INF
+            │   └── maven
+            └── archetype-resources
+                └── src
+                    └── main
+                        ├── java
+                        │   └── __packageInPathFormat__
+                        │       └── __artifactPackage__
+                        │           ├── config
+                        │           ├── model
+                        │           └── rest
+                        └── resources
+                            └── config
+```
+
+### Installing the Archetype
+You can install the archetype by invoking this command:
+```sh
+mvn install
+```
+### Create a project using archetype
+You can create a Maven project through the generate goal and existing archetype.
+```sh
+mvn archetype:generate -DarchetypeGroupId=org.example -DarchetypeArtifactId=msg-archetype-spring-boot2-quickstart -DarchetypeVersion=0.1.0-SNAPSHOT  -DgroupId=org.example  -DartifactId=msg-v1-test-rest
+```
+
+### Run the project
+```sh
+$ mvn spring-boot:run
+```
+
+### Test on the browser
+
+```sh
+http://localhost:8080/v1/test/status
+```
+
+Full list of available archetypes can be generated using `mvn archetype:generate` :
+
+{{< gist melastmohican c13102eb7c7161edebf34269c57e0597 >}}

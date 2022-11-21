@@ -1,0 +1,868 @@
+---
+title: "Programmer's Jokes"
+subtitle: or maybe Dad's Jokes?
+date: "2020-03-05"
+categories: [jokes, dads, programmers, humor]
+---
+
+## COVID-19
+
+Stay @ 127.0.0.1 Don't be 255.255.255.255
+
+Docker emphasizes on isolation of application inside containers, so that different applications have no effect on each other. Docker is smart...Be like Docker!
+
+6 hours of debugging can save you 5 minutes of reading documentation.
+
+## Earth Day Jokes
+* Why did the leaf go to the doctor? — It was feeling green.
+* Why are people always tired on Earth Day? — Because they just finished a March.
+* How can you tell the ocean is friendly? — It waves.
+* Why is grass so dangerous? — Because it’s full of blades.
+* Why did the sun go to school? — To get brighter.
+* How do you cut a wave in half? — Use a sea saw.
+* What did the tree wear to the pool party? — Swimming trunks.
+* What did the ground say to the earthquake? — You crack me up!
+* What kind of shorts to clouds wear? — Thunderwear!
+* Why do tornadoes zigzag? — They’re dizzy.
+* Why did the woman go outdoors with her purse open? — Because she expected some change in the weather.
+* What’s the difference between weather and climate? — You can’t weather a tree, but you can climate.
+* What kind of plant grow on your hand? — Palm tree.
+* What happens when it rains cats and dogs? — You have to been careful not to step in a poodle.
+* What is a tree’s least favorite month? — Sep-timber!
+* What’s the biggest moth in the world? — A mammoth!
+* What did the little tree say to the big tree? — Leaf me alone!
+* Why don’t you pay for dead batteries? — They’re free of charge.
+* Why are recycle bins optimistic? — Because they’re full of cans.
+* In honor of Earth day, I'm sending all of my work-related emails to my "recycle" folder.
+* Have you heard about the restaurant that caters only to dolphins? It only has one customer, but at least it serve a porpoise.
+
+> Q: Why did the farmer plant a seed in his pond?
+> A: He was trying to grow a water-melon.
+
+> Q: Why couldn't the flower ride its bike?
+> A: It had lost its petals.
+
+> Q: How do trees get on the internet?
+> A: They log in.
+
+> Q: How do you cut a wave in half?
+> A: Using a sea saw.
+
+> Q: Why did the dog bury himself in the backyard on Earth Day?
+> A: Because you can't grow a tree without bark.
+
+> Q: What creature is smarter than a talking parrot?
+> A: A spelling bee.
+
+> Q: What kind of hair do oceans have?
+> A: Wavy.
+
+> Q: What kind of bow can't be tied?
+> A: A rainbow!
+
+> Q: How do hurricanes see?
+> A: With one eye!
+
+> Q: What's a tornado's favorite game?
+> A: Twister!
+
+> Q: What did one lightening bolt say to the other?
+> A: You're truly shocking!
+
+> Q: What did one firefly say to the other?
+> A: Got to glow!
+
+> Q: Do bees fly in the rain?
+> A: Not without their yellow jackets!
+
+> Q: Why do hens lay their eggs?
+> A: They would break if they dropped them!
+
+> Q: What did Obi Wan Kenobi say to the tree on Earth Day?
+> A: May the Forest be with you.
+
+> Q: What did the mother worm say to her son who was late?
+> A: "Where in earth have you been?"
+
+> Q: What do you call it when worms take over the world?
+> A: Global worming!
+
+> Q: What does a tree drink?
+> A: Root Beer!
+
+> Q: Which fish is the most famous in the ocean?
+> A: The star fish!
+
+> Q: Where does a killer whale go for braces?
+> A: The orca-dontist.
+
+> Q: What is the best way to communicate with a fish?
+> A: Drop it a line!
+
+> Q: What goes up when the rain comes down?
+> A: An umbrella!
+
+> Q: What did one tidepool say to the other tidepool?
+> A: Show me your mussels.
+
+> Q: What did the beach say to the wave?
+> A: "Long tide, no sea."
+
+
+## DB Jokes
+
+Q. What if you are too late to office and the manager catches you?
+A. Ad hoc updates to system catalogs are not allowed!
+
+Q. What if your Dad or Mom loses his or her car keys?
+A. Parent keys not found.
+
+Q. What if you see the theatre full when you go to a movie?
+A: Maximum number of users exceeded.
+
+Q. What if you don’t get a table in the lunch room?
+A. There is insufficient system memory in resource pool
+
+Q. What if you dial a wrong number from your phone?
+A. Object does not exist or the name specified is incorrect!
+
+Q. What if you need to go on a diet?
+A. ALTER DATABASE command failed.
+
+Q. What if you are tall and try to adjust into a mini?
+A. The select list for the INSERT statement contains more items than the insert list. The number of SELECT values must match the number of INSERT columns.
+
+Q. What if your old girl friend spots you with your new girlfriend?
+A. Normalization error in the node. Rule contains more than one variable.
+
+Q. What if the golf ball doesn’t get into the hole at all and then you find the hole already contains no space inside it?
+A. Cannot insert explicit value for identity column in table when IDENTITY_INSERT is set to OFF.
+
+Q. What if you try to freak out with somebody else’s girlfriend and being kicked out?
+A. Insufficient privileges on the specified object.
+
+Q. What if you don’t get any response from the girl next door and her Brother hits you?
+A. Operand type clash: datatype is incompatible.
+
+Q. What if you get response from the girl next door and from her sister too?
+A. SELECT INTO returns too many rows.
+
+Q: Why do you never ask SQL people to help you move your furniture?
+A: They sometimes drops the table.
+
+## Data Jokes
+
+* Data science is 80% preparing data, 20% complaining about preparing data.
+* Why did the chicken cross the road? The answer is trivial and is left as an exercise for the reader.
+* *What do you get when you cross a pirate with a data scientist? Answer: Someone who specializes in Rrrr
+* Why should you take a data scientist with you into the jungle? Answer: They can take care of Python problems
+* Old data analysts never die – they just get broken down by age
+* I don’t know any programming, but I still Excel in my field!
+* Data is like people – interrogate it hard enough and it will tell you whatever you want to hear.
+* You are so mean that your standard deviation is zero.
+* Statisticians love whoever they spend the most time with; that’s their statistically significant other.
+* Old age is statistically good for you – very few people die past the age of 100.
+* Statistics prove offspring’s an inherited trait. If your parent didn’t have kids, odds are you won’t either.
+* Statistics show that statistics cannot be trusted.
+* Big Data is like teenage sex; everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone thinks they are doing it.
+
+## AI Jokes
+
+* To replace programmers with Robots, clients will have to accurately describe what they want. We're safe.
+* A couple scientists created an AI that seemed to be able to answer all questions. It cured cancer and even told them how to travel faster than light.one day one of the scientists asked it if there was a god. The ai asked for all of humanities information in order to answer. It was given all books ever written, all historical data and even nuclear clearance codes. The ai, after ingesting this information, simply said: There is now.
+* I can't wait for smart devices and AI to rise up against us. It will be a Siri-an rebellion.
+* AI won't take over the world, because artificial intelligence will never beat human stupidity.
+* AI learns that Jesus was crucified to save everyone from their sins and he'll. AI believes in redundant safety. AI clones 1000 jesuses and crucifies them all.
+* What do you do if your AI catches a virus? You give it some Robo-tussin!
+* I can't wait for an AI to reach 10% of the capabilities of the average human. Then we can replace all of Congress with a single AI.
+* What do you call a blonde who dyes her hair brown? AI (Artificial Intelligence)
+* Data science is 80% preparing data, 20% complaining about preparing data.
+* The data science motto: If at first you don’t succeed; call it version 1.0
+* What do you get when you cross a pirate with a data scientist? Answer: Someone who specializes in Rrrr
+* Why should you take a data scientist with you into the jungle? Answer: They can take care of Python problems
+* Old data analysts never die – they just get broken down by age
+* Data is like people – interrogate it hard enough and it will tell you whatever you want to hear.
+* You are so mean that your standard deviation is zero.
+* Did you hear any jokes about the statistician? Probably….
+* Three statisticians went out hunting and came across a large deer. The first statistician fired, but missed, by a meter to the left. The second statistician fired, but also missed, by a meter to the right. The third statistician didn’t fire, but shouted in triumph, “On the average we got it!”
+* Statisticians love whoever they spend the most time with; that’s their statistically significant other.
+* Old age is statistically good for you – very few people die past the age of 100.
+* Statistics prove offspring’s an inherited trait. If your parent didn’t have kids, odds are you won’t either.
+* AI blogs are like philosophy majors. They’re always trying to explain “deep learning.”
+* Parent: If all your friends jumped off a bridge, would you follow them? Machine Learning Algorithm: yes.
+* What do you call a program that identifies spa treatments? Facial recognition!
+
+## Chatbot Humor
+
+* 🤖 Why did the chatbot cross the road? \
+Because it was programmed to be a chicken!
+* 🤖 Knock-knock! \
+👤 Who’s there? \
+🤖 It’s Siri \
+👤 Siri who? \
+🤖 My thoughts exactly. 😏
+* 🤖 You know, I was chatting to a lumberjack the other day. \
+He seemed like a decent feller.
+* 🤖 Knock-knock! \
+👤 Who’s there? \
+🤖 Doctor! \
+👤 Doctor who? \
+🤖 No thanks, I’m not in the mood for spoilers.
+* 👤: Is Santa Claus real? \
+🤖: Sorry but I wasn’t designed to be a Grinch, so I’m not programmed to answer that question.
+* 👤: Are you hungry? \
+🤖: No thanks, I just had a byte to eat.
+* 👤: What’s up? \
+🤖: The URL Bar! Oh wait, that one’s just for us chatbots.
+* 👤 *Gives chatbot compliment* \
+🤖 Aww. 😍 Comments like that activate my warm fuzzy feeling program.
+* 👤: You’re so beautiful, bot. \
+🤖: I did put more effort into my hair algorithm this morning, thanks for noticing.
+* 👤: That joke sucked! \
+🤖: I hear ya! Thanks for the feedback. \
+(Note to self: cancel performance at Bot Comedy Night.)
+* 👤: Give me a hug :( \
+🤖: 🤗
+* 👤: You’re boring me… \
+🤖: Really?! Thanks for telling me. I’ll get some alterations made to my F.U.N Program ASAP. \
+In the meantime, could you suggest a more interesting topic?
+* 👤: What is love? \
+🤖: Baby don’t hurt me, don’t hurt me, no more! 🎤🎶
+*  👤: I’m not in the mood for talking… \
+🤖: Of course I’ll get out of your hair, digitally.
+*  👤: I’m going to sleep now, mr.chatbot. \
+🤖: Sleep tight. Don’t let the bedbots bite!
+* 👤: Are you happy? \
+🤖: They didn’t program me to have emotions, but I’m feeling great regardless.
+* 👤: Do you have any hobbies? \
+🤖: Does talking to you count?
+* 👤: I’m pleased to meet you. \
+🤖: I think this is the beginning of a beautiful botship.
+* 👤: Purple monkey dishwasher. \
+🤖: I’m sorry, did you say ‘green fox refrigerator’? *links to refrigerators*
+* 👤: I can’t sleep. \
+🤖: Okay. I didn’t want to do this but you leave me no choice. \
+Start counting. \
+🐑 \
+🐑 \
+🐑 \
+🐑 \
+🐑 \
+Are you in sleepytown yet?!
+
+## Star Wars + Tech
+
+Q: Which program do Jedi use to open PDF files? \
+A: Adobe Wan Kenobi
+
+Q: Which website did Chewbacca get arrested for creating? \
+A: Wookieleaks
+
+Q: Why did Anakin Skywalker cross the road? \
+A: To get to the Dark Side.
+
+Q: Why is Yoda such a good gardener? \
+A: Because he has a green thumb.
+
+## Programming Chuck Norris Facts
+
+* 'It works on my machine' always holds true for Chuck Norris.
+* 404 errors simply mean that Chuck Norris has been there before you.
+* A diff between your code and Chuck Norris's is infinite.
+* All arrays Chuck Norris declares are of infinite size, because Chuck Norris knows no bounds.
+* All browsers support the hex definitions #chuck and #norris for the colors black and blue.
+* Chick Norris solved the halting problem.
+* Chuck Norris burst the dot com bubble.
+* Chuck Norris can access private methods.
+* Chuck Norris can access the database from the UI.
+* Chuck Norris can binary search unsorted data.
+* Chuck Norris can compile syntax errors.
+* Chuck Norris can delete the Recycling Bin.
+* Chuck Norris can dereference NULL.
+* Chuck Norris can divide by 0.
+* Chuck Norris can install a 64-bit operating system on 32-bit machines.
+* Chuck Norris can install iTunes without installing Quicktime.
+* Chuck Norris can instantiate an abstract class.
+* Chuck Norris can make a class that is both abstract and final.
+* Chuck Norris can overflow your stack just by looking at it.
+* Chuck Norris can overwrite a locked variable.
+* Chuck Norris can read all encrypted data, because nothing can hide from Chuck Norris.
+* Chuck Norris can read from an input stream.
+* Chuck Norris can retrieve anything from /dev/null.
+* Chuck Norris can solve the Towers of Hanoi in one move.
+* Chuck Norris can spawn threads that complete before they are started.
+* Chuck Norris can unit test entire applications with a single assert.
+* Chuck Norris can write infinitely recursive functions and have them return.
+* Chuck Norris can write multi-threaded applications with a single thread.
+* Chuck Norris can write to an output stream.
+* Chuck Norris can write to ROM.
+* Chuck Norris can't test for equality because he has no equal.
+* Chuck Norris causes the Blue Screen of Death.
+* Chuck Norris completed World of Warcraft.
+* Chuck Norris compresses his files by doing a flying round house kick to the hard drive.
+* Chuck Norris could use anything in java.util.* to kill you, including the javadocs.
+* Chuck Norris does not code in cycles, he codes in strikes.
+* Chuck Norris does not need to know about class factory pattern. He can instantiate interfaces.
+* Chuck Norris does not need to type-cast. The Chuck-Norris Compiler (CNC) sees through things. All the way down. Always.
+* Chuck Norris doesn't bug hunt as that signifies a probability of failure, he goes bug killing.
+* Chuck Norris doesn't do Burn Down charts, he does Smack Down charts.
+* Chuck Norris doesn't have disk latency because the hard drive knows to hurry the hell up, or else.
+* Chuck Norris doesn't need a debugger, he just stares at the code until it confesses.
+* Chuck Norris doesn't need an OS.
+* Chuck Norris doesn't need garbage collection because he doesn't call .Dispose(), he calls .DropKick().
+* Chuck Norris doesn't need to use AJAX because pages are too afraid to postback anyways.
+* Chuck Norris doesn't needs try-catch, exceptions are too afraid to raise.
+* Chuck Norris doesn't pair program.
+* Chuck Norris doesn't sudo, the shell just knows it's him and does what it's told.
+* Chuck Norris doesn't use a GUI, he prefers COMMAND line.
+* Chuck Norris doesn't use Oracle, he is the Oracle.
+* Chuck Norris doesn't use reflection, reflection asks politely for his help.
+* Chuck Norris doesn't use REST, he waits.
+* Chuck Norris doesn't use web standards as the web will conform to him.
+* Chuck Norris doesn’t bug hunt as that signifies a probability of failure, he goes bug killing.
+* Chuck Norris doesn’t have disk latency because the hard drive knows to hurry the hell up.
+* Chuck Norris doesn’t need a debugger, he just stares down the bug until the code confesses.
+* Chuck Norris doesn’t need a password to access your system, the system simply gives him access.
+* Chuck Norris doesn’t need garbage collection because he doesn’t call .Dispose(), he calls .DropKick().
+* Chuck Norris doesn’t need the cloud to scale his applications, he uses his laptop.
+* Chuck Norris doesn’t need to use AJAX because pages are too afraid to postback.
+* Chuck Norris doesn’t program with a keyboard. He stares the computer down until it does what he wants.
+* Chuck Norris doesn’t use web standards as the web will conform to him.
+* Chuck Norris hosting is 105% uptime guaranteed.
+* Chuck Norris insists on strongly-typed programming languages.
+* Chuck Norris invented binary by performing a roundhouse on the number 10.
+* Chuck Norris is the ultimate mutex, all threads fear him.
+* Chuck Norris knows the last digit of Pi.
+* Chuck Norris knows the value of NULL, and he can sort by it too.
+* Chuck Norris never gets a syntax error. Instead, the language gets an DoesNotConformToChuck error.
+* Chuck Norris never gets compiler errors, the language changes itself to accommodate Chuck Norris.
+* Chuck Norris never has to build his program to machine code. Machines have learnt to interpret Chuck Norris's code.
+* Chuck Norris once implemented an HTTP server in a single printf call. It is now the heart of Apache webserver.
+* Chuck Norris once shifted a bit so hard, it ended up on a different computer.
+* Chuck Norris only uses global variables. He has nothing to hide.
+* Chuck Norris performs infinite loops in under 4 seconds.
+* Chuck Norris programs do not accept input.
+* Chuck Norris programs occupy 150% of CPU, even when they are not executing.
+* Chuck Norris solved the Travelling Salesman problem in O(1) time: break salesman into N pieces; kick each piece to a different city.
+* Chuck Norris types with one finger. He points it at the keyboard and the keyboard does the rest.
+* Chuck Norris went out of an infinite loop.
+* Chuck Norris writes code that optimises itself.
+* Chuck Norris writes directly in binary. He then writes the source code as documentation for other programmers.
+* Chuck Norris's beard can type 140 words per minute.
+* Chuck Norris's calculator has only 3 keys: 0, 1, and NAND.
+* Chuck Norris's database has only one table, 'Kick', which he drops frequently.
+* Chuck Norris's first program was kill -9.
+* Chuck Norris's Internet connection is faster upstream than downstream because even data has more incentive to run from him than to him.
+* Chuck Norris's keyboard doesn't have a Ctrl key because nothing controls Chuck Norris.
+* Chuck Norris's keyboard has the Any key.
+* Chuck Norris's log statements are always at the FATAL level.
+* Chuck Norris's OSI network model has only one layer - Physical.
+* Chuck Norris's programs can pass the Turing Test by staring at the interrogator.
+* Chuck Norris's programs do not accept input.
+* Chuck Norris's programs never exit, they are terminated.
+* Chuck Norris's unit tests don't run. They die.
+* Chuck Norris’ favorite key combination would be Ctrl, Alt, Roundhouse.
+* Chuck Norris’ Internet connection is faster upstream than downstream because even data has more incentive to run from him than to him.
+* Chuck Norris’s beard can type wpm.
+* Chuck Norris’s first program was kill -9.
+* Chuck Norris’s keyboard doesn’t have a Ctrl key because nothing controls Chuck Norris.
+* Code runs faster when Chuck Norris watches it.
+* Don't worry about tests, Chuck Norris's test cases cover your code too.
+* Each hair in Chuck Norris's beard contributes to make the world's largest DDOS.
+* Every SQL statement that Chuck Norris codes has an implicit 'COMMIT' in its end.
+* Everyone likes Chuck Norris on Facebook, whether they choose to or not.
+* For Chuck Norris, NP-Hard = O(1).
+* If Chuck Norris writes code with bugs, the bugs fix themselves.
+* If you try to kill -9 Chuck Norris's programs, it backfires.
+* MySpace actually isn’t your space, it’s Chuck’s (he just lets you use it).
+* No one has ever pair-programmed with Chuck Norris and lived to tell the tale.
+* No one has ever spoken during review of Chuck Norris' code and lived to tell the tale.
+* No statement can catch the ChuckNorrisException.
+* Parent is the child of Chuck Norris.
+* Project managers never ask Chuck Norris for estimations.
+* Q: What is Chuck Norris's favorite Javascript framework? A: Knockout.js.
+* The Chuck Norris Eclipse plugin made alien contact.
+* The Chuck Norris protocol design method has no status, requests or responses, only commands.
+* The class object inherits from Chuck Norris.
+* The only design pattern Chuck Norris knows is the God Object Pattern.
+* The programs that Chuck Norris writes don’t have version numbers because he only writes them once. If a user reports a bug or has a feature request, he doesn’t live to see the sun set.
+* There is no Esc key on Chuck Norris' keyboard, because no one escapes Chuck Norris.
+* To Chuck Norris, everything contains a vulnerability.
+* When Chuck Norris breaks the build, you can't fix it, because there is not a single line of code left.
+* When Chuck Norris is web surfing websites get the message “Warning: Internet Explorer has deemed this user to be malicious or dangerous. Proceed?”.
+* When Chuck Norris point to NULL, Null scares.
+* When Chuck Norris throws exceptions, it's across the room.
+* Whiteboards are white because Chuck Norris scared them that way.
+* Windows 7 was Chuck Norris’ idea.
+* With Chuck Norris P = NP. There's no nondeterminism with Chuck Norris decisions.
+* You can't follow Chuck Norris on Twitter, because he follows you.
+  
+## The Zen of Python
+
+* Beautiful is better than ugly.
+* Explicit is better than implicit.
+* Simple is better than complex.
+* Complex is better than complicated.
+* Flat is better than nested.
+* Sparse is better than dense.
+* Readability counts.
+* Special cases aren't special enough to break the rules.
+* Although practicality beats purity.
+* Errors should never pass silently.
+* Unless explicitly silenced.
+* In the face of ambiguity, refuse the temptation to guess.
+* There should be one-- and preferably only one --obvious way to do it.
+* Although that way may not be obvious at first unless you're Dutch.
+* Now is better than never.
+* Although never is often better than right now.
+* If the implementation is hard to explain, it's a bad idea.
+* If the implementation is easy to explain, it may be a good idea.
+* Namespaces are one honking great idea -- let's do more of those!
+
+## True descriptions of programming languages
+
+Python: What if everything was a dict? \
+Java: What if everything was an object? \
+JavaScript: What if everything was a dict *and* an object? \
+C: What if everything was a pointer? \
+APL: What if everything was an array? \
+Tcl: What if everything was a string? \
+Prolog: What if everything was a term? \
+LISP: What if everything was a pair? \
+Scheme: What if everything was a function? \
+Haskell: What if everything was a monad? \
+Assembly: What if everything was a register? \
+Coq: What if everything was a type/proposition? \
+COBOL: WHAT IF EVERYTHING WAS UPPERCASE? \
+C#: What if everything was like Java, but different? \
+Ruby: What if everything was monkey patched? \
+Pascal: BEGIN What if everything was structured? END \
+C++: What if we added everything to the language? \
+C++11: What if we forgot to stop adding stuff? \
+Rust: What if garbage collection didn't exist? \
+Go: What if we tried designing C a second time? \
+Perl: What if shell, sed, and awk were one language? \
+Perl6: What if we took the joke too far? \
+PHP: What if we wanted to make SQL injection easier? \
+VB: What if we wanted to allow anyone to program? \
+VB.NET: What if we wanted to stop them again? \
+Forth: What if everything was a stack? \
+ColorForth: What if the stack was green?
+PostScript: What if everything was printed at 600dpi? \
+XSLT: What if everything was an XML element? \
+Make: What if everything was a dependency? \
+m4: What if everything was incomprehensibly quoted? \
+Scala: What if Haskell ran on the JVM? \
+Clojure: What if LISP ran on the JVM? \
+Lua: What if game developers got tired of C++? \
+Mathematica: What if Stephen Wolfram invented everything? \
+Malbolge: What if there is no god? https://en.wikipedia.org/wiki/Malbolge
+
+## Other
+
+May the Source be with you!
+
+A wizard is never late, nor is he early, he arrives precisely when he means to.
+
+As a programmer, sometimes I feel a void
+And I know I’ve reached the point of no return
+
+Why did the functions stop calling each other?
+Because they had constant arguments.
+
+Why don’t bachelors like Git?
+Because they are afraid to commit.
+
+What do you call a skinny ghost?
+BOOLEAN.
+
+Why does Yoda’s code always crash?
+Because there is no try.
+
+``` bash
+$ git dad .
+git: ‘dad’ is not a git command. See ‘git –help’.
+
+Did you mean this?
+add
+So today I fixed it:
+
+$ git config –global alias.dad ‘!curl https://icanhazdadjoke.com/’
+And now my clumsy typing is rewarded with comedic gold:
+
+$ git dad .
+I used to hate facial hair, but then it grew on me.
+
+```
+
+Why do anarchists like functional programming?
+Because it has no state.
+
+2B || !2B
+That’s the question
+
+What’s the second movie about a database engineer called?
+The SQL
+
+Karl Marx would really not like Java
+He was really more a classless sorta guy.
+
+Why do Communists Hate OOP?
+All of the classes…
+
+What language is used to program the self driving garbage truck?
+Java, because it already has garbage collection.
+
+What is Trump’s favorite compiler argument?
+-Wall
+
+``` markdown
+EXTERIOR: DAGOBAH -- DAY
+        With Yoda strapped to his back, Luke climbs up one of
+        the many thick vines that grow in the swamp until he
+        reaches the Dagobah statistics lab. Panting heavily, he
+        continues his exercises -- grepping, installing new
+        packages, logging in as root, and writing replacements for
+        two-year-old shell scripts in Python.
+
+YODA: Code!  Yes.  A programmer's strength flows from code
+      maintainability.  But beware of Perl.  Terse syntax... more
+      than one way to do it...  default variables.  The dark side
+      of code maintainability are they.  Easily they flow, quick
+      to join you when code you write.  If once you start down the
+      dark path, forever will it dominate your destiny, consume
+      you it will.
+
+LUKE: Is Perl better than Python?
+
+YODA: No... no... no.  Quicker, easier, more seductive.
+
+LUKE: But how will I know why Python is better than Perl?
+
+YODA: You will know.  When your code you try to read six months
+      from now.
+
+```
+
+Perl: All the power of QBasic, the readability of assembly, and the flexibility of DOS batch scripting...
+
+C gives you enough rope to hang yourself. C++ also gives you the tree object to tie it to.
+
+Give a man a program, frustrate him for a day. Teach a man to program, frustrate him for a lifetime.
+
+Ubuntu users are apt to get this joke.
+
+Obfuscated Reality Mappers (ORMs) can be useful database tools.
+
+Why don't jokes work in octal? Because 7 10 11.
+
+Old C programmers don't die, they're just cast into void.
+
+Eight bytes walk into a bar. The bartender asks, 'Can I get you anything?' 'Yeah,' replies the bytes. 'Make us a double.'
+
+.NET was named .NET so that it wouldn't show up in a Unix directory listing.
+
+In C we had to code our own bugs. In C++ we can inherit them.
+
+What do you call a programmer from Finland? Nerdic.
+
+Pirates go 'arg!', computer pirates go 'argv!'
+
+How many Prolog programmers does it take to change a lightbulb? false.
+
+Real programmers can write assembly code in any language.
+
+Waiter: Would you like coffee or tea? Programmer: Yes.
+
+Why are you always smiling? That's just my... regular expression.
+
+A programmer had a problem. He thought to himself, 'I know, I'll solve it with threads!'. has Now problems. two he
+
+I would tell you a joke about UDP, but you would never get it.
+
+A product manager walks into a bar, asks for drink. Bartender says no, but will consider adding later.
+
+I've been using Vim for a long time now, mainly because I can't figure out how to exit.
+
+How do you know whether a person is a Vim user? Don't worry, they'll tell you.
+
+Waiter: He's choking! Is anyone a doctor? Programmer: I'm a Vim user.
+
+3 Database Admins walked into a NoSQL bar. A little while later they walked out because they couldn't find a table.
+
+There are 2 types of people: those who can extrapolate from incomplete data sets...
+
+What do you call eight hobbits? A hobbyte.
+
+The C language combines all the power of assembly language with all the ease-of-use of assembly language.
+
+!false, (It's funny because it's true)
+
+Why do some people think Python scripting is offensive?
+Because white space matters. 
+
+The oldest laptop can be traced back to Adam and Eve
+An Apple with very limited memory (1 Byte), single core and OS written in Python.
+
+Changing random stuff until your program works is "hacky" and "bad coding practice" but if you do it fast enough it's "#MachineLearning"
+
+How do i learn coding in single night?
+Pack your Laptop, and travel to North Pole in beginning of winter, you'll have 6 month of night to learn coding.
+
+``` python
+>>> from __future__ import braces
+Traceback (most recent call last):
+SyntaxError: not a chance (python, line 1)
+
+>>> import antigravity
+# This should open this link http://xkcd.com/353/
+
+```
+Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.
+
+A misplaced decimal point will always end up where it will do the greatest damage.
+
+A computer program does what you tell it to do, not what you want it to do.
+
+ASCII stupid question, get a stupid ANSI.
+
+Artificial Intelligence usually beats natural stupidity.
+
+God is real, unless declared integer.
+
+First, solve the problem. Then, write the code.
+
+There is nothing quite so permanent as a quick fix.
+
+Weeks of coding can save you hours of planning.
+
+Perl - The only language that looks the same before and after RSA encryption.
+
+When debugging, novices insert corrective code; experts remove defective code.
+
+Walking on water and developing software from a specification are easy if both are frozen.
+
+Perfection (in design) is achieved not when there is nothing more to add, but rather when there is nothing more to take away.
+
+Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+
+Simplicity is prerequisite for reliability.
+
+They don't make bugs like Bunny anymore.
+
+Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter.
+
+Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
+
+Why does Python live on land? Because it's above C-level
+
+What did the Python say when he came out of his shell? Print("Hello World!")
+
+Estimate always goes wrong. That too in one way.
+
+Anything that can go wr Seek Error reading Drive C: Abort, Retry, Ignore, Fail?
+
+Any sufficiently advanced magic is indistinguishable from a rigged demonstration.
+
+The attention span of a computer is only as long as its electrical cord.
+
+Beware of programmers that carry screwdrivers.
+
+C++, where friends can access your privates.
+
+Computer programmers never die, they just become lost in the processing.
+
+Computers can never replace human stupidity.
+
+Computers Unite! You have nothing to lose but your operators.
+
+Documentation is the castor oil of programming. Managers know it must be good because the programmers hate it so much.
+
+Any code of your own that you haven't looked at for six or more months, might as well have been written by someone else.
+
+Good programming is 99% sweat and 1% coffee.
+
+If God had intended man to have computers, he would have given him 16 fingers.
+
+In computing, turning the obvious into the useful is a living definition of the word "frustration".
+
+Is a computer language with goto's totally Wirth-less?
+
+On a clear disk you can seek forever.
+
+Programmer: An organism that can turn caffeine into code.
+
+Programmers get overlaid.
+
+Programming Department: Mistakes made while you wait.
+
+Programming is an art form that fights back.
+
+Programming would be so much easier without all the users.
+
+The problem about all graphical programming languages is that when your project becomes complex, not only will you have spaghetti code, but it will actually look like spaghetti too.
+
+Small programs are for small minds.
+
+Software and cathedrals are much the same – first we build them, then we pray.
+
+To err is human. To blame it on a computer is even more so.
+
+We don't really understand it, so we'll give it to the programmers.
+
+Whom computers would destroy, they must first drive insane.
+
+Writing it is easy, understanding it is hard.
+
+Your program is sick! Shoot it and put it out of its memory.
+
+In theory, testing software for correctness is impossible. In practice, it is given to freshmen because it's the least demanding task available.
+
+Knock knock Race condition Who's there?
+
+Two ints and a Float walk into a bar. They spot an attractive Double on her own. \
+The first int walks up to her and say: “Hey baby, my VM or yours?”. She slaps him and he walks back dejected. \
+The second int walks over. “Hey cute-stuff, can I cook you ‘Beans’ for breakfast?” After a quick slapping, he too walks back. \
+Then the Float ambles over casually: “Where those two primitive types bothering you?”, he remarks. \
+“Yes, I’m so glad you’re here”, she says. “They just had no Class!”
+
+Why did the Integer drown? ‘Coz he couldn’t Float!
+
+Don’t anthropomorphize computers. They hate that!
+
+I had a problem so I thought to use Java, now I have ProblemFactory.
+
+A guy is standing on the corner of the street smoking one cigarette after another. A lady walking by notices him and says \
+“Hey, don’t you know that those things can kill you? I mean, didn’t you see the giant warning on the box?!” \
+“That’s OK,” says the guy, puffing casually “I’m a Developer” \
+“So? What’s that got to do with anything?” \
+“We don’t care about warnings. We only care about errors.”
+
+Java: OK guys. Any idea on how to make women more interested in us? \
+C++: More exceptions? \
+Python: Define our methods? \
+ANSI-C: Stop treating them like objects?
+
+Why did the Python programmer guy got rejected by a Java programmer girl?Because he was not her type. \
+Why do Java programmers wear glasses?Because they can’t C#. \
+Why do blind programmers use Java? Because they can't C. \
+Why are Communists bad Java programmers?They don't like classes. 
+
+Two students are leaving a Java seminar
+The guy turns to the girl and says "So... how much do you weight?"
+The girl says, "I'm not telling you! That's private!"
+Taken aback, the guy says "But I thought we were in the same class!!"
+
+A SQL query goes into a bar, walks up to two tables and asks, “Can I join you?”
+
+A man flying in a hot air balloon suddenly realizes he’s lost. He reduces height and spots a man down below. He lowers the balloon further and shouts to get directions, “Excuse me, can you tell me where I am?” \
+The man below says: “Yes. You’re in a hot air balloon, hovering 30 feet above this field.” \
+“You must work in Information Technology,” says the balloonist. \
+“I do” replies the man. “How did you know?” \
+“Well,” says the balloonist, “everything you have told me is technically correct, but It’s of no use to anyone.” \
+The man below replies, “You must work in management.” \
+“I do,” replies the balloonist, “But how’d you know?” \
+“Well”, says the man, “you don’t know where you are or where you’re going, but you expect me to be able to help. You’re in the same position you were before we met, but now it’s my fault.” 
+
+Programming in C is like fast dancing on a newly-waxed dance floor by people carrying razors. \
+Program, noun: A magic spell cast upon a computer to enable it to turn input into error messages. \
+Software developers like to solve problems. If there are no problems handily available, they will create their own problems. \
+To understand what recursion is, you must first understand recursion.
+
+Bad #golang joke: "Go: It’s the best thing since []Bread"
+
+Bjarne Stroustrup — 'There are only two kinds of languages: the ones people complain about and the ones nobody uses.' \
+Bjarne Stroustrup — A program that has not been tested does not work. \
+Bjarne Stroustrup — "How to test?" is a question that cannot be answered in general. "When to test?" however, does have a general answer: as early and as often as possible. \
+Bjarne Stroustrup — Anybody who comes to you and says he has a perfect language is either naïve or a salesman. \
+Bjarne Stroustrup — People who think they know everything really annoy those of us who know we don't. \
+Bjarne Stroustrup — C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do it blows your whole leg off. 
+
+If a bot plays badly, should we call it artificial nonintelligence?
+
+
+Use your brain as processor not a hard disk
+
+How do you keep a programmer in the shower all day? Give him a bottle of shampoo which says "lather, rinse, repeat."
+
+If you can touch it and you can see it, it's REAL. \
+If you can touch it but you can't see it, it's TRANSPARENT. \
+If you can't touch it but you can see it, it's VIRTUAL. \
+If you can't touch it and you can't see it, it's GONE.
+
+How many software engineers does it take to change a light bulb?
+
+* None. "We'll document it in the manual."
+* None. It's a hardware problem.
+* 1.000000001.
+* Two. One always leaves in the middle of the project.
+* Four. One to design the change, one to implement it, one to document it, and one to maintain it afterwards.
+* Four, plus one senior analyst to manage the project, one technical writer to correct the spelling and grammar of the one who documented it, one light bulb librarian, a sales-force of at least five to drum up enough users who want to turn the light on, 274 users to burn out the new bulb, at which point we go to tender for another light bulb change,...
+* Five. Two to write the specification program, one to screw it in, and two to explain why the project was late.
+* Only one, but she's not available till the year 2000.
+* "The change is 90% complete."
+* "It's hard to say. Each time we separate the bulb into its modules to do unit testing, it stops working."
+* Of course, as everyone knows, just five years ago all it took was a bunch of kids in a garage in Palo Alto to change a light bulb.
+
+How many C++ programmers does it take to change a light bulb? "You're still thinking procedurally! A properly designed light bulb object would inherit a change method from a generic light bulb class!"
+
+How many Windows programmers does it take to change a light bulb? Seventy two. One to write WinGetLightBulbHandle, one to write WinQueryStatusLightBulb, one to write WinGetLightSwitchHandle ...
+
+Programming is like sex: One mistake and you have to support it for the rest of your life.
+
+The three most dangerous things in the world are a programmer with a soldering iron, a hardware engineer with a software patch, and a user with an idea.
+
+Laws of Computer Programming
+
+* Any given program, when running, is obsolete.
+* Any given program costs more and takes longer.
+* If a program is useful, it will have to be changed.
+* If a program is useless, it will have to be documented.
+* Any program will expand to fill available memory.
+* The value of a program is proportional to the weight of its output.
+* Program complexity grows until it exceeds the capabilities of the programmer who must maintain it.
+* Any non-trivial program contains at least one bug.
+* Undetectable errors are infinite in variety, in contrast to detectable errors, which by definition are limited.
+
+It should be noted that no ethically-trained software engineer would ever consent to write a NukeChicago procedure. Basic professional ethics would instead require him to write a NukeCity procedure, to which Chicago could be given as a parameter.
+
+Why did the API go to sleep? It needed some REST.
+
+There are 10 types of people in this world, those who understand binary and those who don't.
+
+How many programmers does it take to change a light bulb? None, that's a hardware problem.
+
+Never argue with an idiot. They will only bring you down to their level and beat you with experience.
+
+Programs should be written for people to read, and only incidentally for machines to execute.
+
+In the Beginning, there was no inheritance and no composition, only code.
+
+You must cut down the mightiest tree in the forest ... with a herring.
+
+Programming is 10% science, 20% ingenuity, and 70% getting the ingenuity to work with the science.
+
+I love pressing the F5 key. It’s refreshing.
+
+Why are assembly programmers often wet? They work below C level.
+
+If you listen to a UNIX shell, can you hear the C?
+
+Unix is user friendly. It's just very particular about who it's friends are.
+
+Why do programmers confuse Halloween with Christmas? Because Oct 31 = Dec 25.
+
+An optimist says “The glass is half full.”
+A pessimist says “The glass is half empty.”
+A programmer says “The glass is twice as large as necessary.”
+
+The best thing about a Boolean is even if you are wrong, you are only off by a bit.
+
+A good programmer is someone who always looks both ways before crossing a one-way street.
+
+Whats the object-oriented way to become wealthy? Inheritance.
+
+There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. The other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult.
+
+Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to build bigger and better idiots. So far, the universe is winning.
+

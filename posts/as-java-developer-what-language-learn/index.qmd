@@ -1,0 +1,341 @@
+---
+title: "What new language should I learn as Java Developer"
+subtitle: "If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone"
+date: "2020-03-13"
+categories: [development, code, programming, migration, java, kotlin, go, dart]
+---
+
+If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant. We switched to a different OpenJDK vendor and we are using [Amazon Correto](https://aws.amazon.com/corretto/) now. We also migrated all ouf our microservices from Java 8 to 11 for a different reason which I might mention later.
+
+I am constantly looking at new programming languages because I am just curious what's out there. But I am not a person who would jump on any new "shining thing".  I want to learn something I can practically apply in my current job. I have been using many different langugages during my career. I think order would be: Pascal, C, Basic, C++, C#, Java, Groovy. On the top of that some Data-oriented/Declarative languages: SQL, dBase, Clipper, SPARQL, XSLT. When started doing web development I was exposed to XML-based languages: XPath and XQuery.
+
+Ideally mew language should well support what I am doing now, have mature frameworks to work with and works multiple platforms.
+
+# My current development stack
+1. Java
+2. Spring Boot (microservice framework)
+3. AWS
+4. Kafka/Kafka Streams (Spring Cloud Stream)
+5. RESTful API microservices (Swagger support, Webhooks)
+6. Distributed tracing and monitoring (AWS X-Ray, Prometheus)
+7. Logging (Splunk)
+8. NodeJS for accessing some APIs 
+9. Angular for frontend
+10. Docker
+11. Kubernetes
+
+So if new language can replace these with mature equivalents then I would consider it.
+
+# Kotlin
+Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference. Kotlin is designed to interoperate fully with Java, and the JVM version of its standard library depends on the Java Class Library, but type inference allows its syntax to be more concise. Kotlin mainly targets the JVM, but also compiles to JavaScript or native code.
+
+## Language
+Pretty much I just replace #1 in my stack and everything is the same. I might even try to write some frontend code in Kotlin but it is probably not worth it. Migration could gradual but I am not fully sure if running on JVM exposes us to Oracle licensing threat. Other issue I see is Docker container size which most likely will not improve. 
+### Reversed type declaration
+In the C-family of programming languages, we have the standard way of declaring types of things. Shortly, first goes a type, then goes a typed thing (variable, fields, method, and so on). 
+``` Java
+int inc(int i) {
+    return i + 1;
+}
+```
+All of the languages supporting type inference, which means the type is an optional part of the declaration in those languages because they're smart enough to fill it in themselves when you provide an initialization expression that has an easily-determined type. That matters because putting the optional parts of an expression farther to the right reduces parsing ambiguity, and increases consistency between the expressions that do use that part and the ones that don't. It's just simpler to parse a declaration when you know the var keyword and the variable name are both mandatory before you get to the optional stuff. 
+
+Reversed notation in Kotlin:
+``` Kotlin
+fun inc(i: Int): Int {
+    return i + 1
+}
+```
+### Null Safe
+By default, all types of variables are non-null able (i.e. we can’t assign null values to any type of variables/objects). If we try to assign or return null values, Kotlin code will fail during compile-time.
+### Extension Functions
+Kotlin provides the ability to extend a class with new functionality without having to inherit from the class or use design patterns such as Decorator. This is done via special declarations called extensions. For example, you can write new functions for a class from a third-party library that you can't modify. Such functions are available for calling in the usual way as if they were methods of the original class. 
+### Coroutines 
+Coroutines are light-weight threads. Coroutines are a great way to write asynchronous code that is perfectly readable and maintainable. They are sort of tasks that the actual threads can execute. A thread can stop executing a coroutine at some specific “suspension points”, and go do some other work. It can resume executing the coroutine later on, or another thread could even take over.
+### Data Classes
+Classes which need to hold data we can declare a class with keyword “data” in the class definition then the compiler will take care of all of this work such as creating constructors, getter, setter methods for different fields. No Lombok required.
+### Smart casts
+Smart casts will handle these casting checks with keyword “is-checks” which will check for immutable values and performs implicit casting.
+### Type inference
+ We don’t need to specify the type of each variable explicitly based on assignment it will handle. If we want to specify explicitly we can do.
+### Functional Programming
+Kotlin functions are first-class, which means that they can be stored in variables and data structures, passed as arguments to and returned from other higher-order functions. You can operate with functions in any way that is possible for other non-function values.
+
+## Microservice framework
+Kotlin is natively supported, you can use [Spring Initializr](https://start.spring.io/) to boostrap your applications.
+
+## AWS
+Same AWS SDK can be used. We will have access to same services. You can create Lambdas in Kotlin since it is packaged to same bytecode and jar format.
+
+[Using Kotlin in a Serverless Architecture with AWS Lambda](https://medium.com/tech-travelstart/using-kotlin-in-a-serverless-architecture-with-aws-lambda-part-1-setting-up-the-project-87033790e2f4)
+
+## Kafka
+Anything available in Spring Framework can be used. Should be no problems with Kafka Streams.
+
+## RESTful API services
+No problems with String Framework components. Kotlin supports annotations so "@EnableSwagger2" should work.
+
+## Tracing and Monitoring
+Should be as easy as using Spring Acturator and X-Ray annotations
+
+## Logging
+No change here
+
+## NodeJS
+No replacement here.
+
+## Frontend
+Most likely no replacment here. I could try to write front in Kotlin just for fun.
+[Getting Started With Kotlin-React](https://medium.com/@ralf.stuckert/getting-started-with-kotlin-react-c5f3b079a8bf)
+[Building Web Applications with Kotlin and TypeScript](https://medium.com/javascript-in-plain-english/building-applications-with-kotlin-and-typescript-8a165e76252c)
+
+## Docker
+No gain in container size.
+
+## Kubernetes
+No difference.
+
+
+# Go
+Go is a statically typed, compiled programming language. Go is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency.
+
+## Language
+### Built-in types
+Strings are provided by the language; a string behaves like a slice of bytes, but is immutable.
+Hash tables are provided by the language. They are called maps.
+### Pointers and references
+Go offers pointers to values of all types, not just objects and arrays. For any type T, there is a corresponding pointer type *T, denoting pointers to values of type T.
+Arrays in Go are values. When an array is used as a function parameter, the function receives a copy of the array, not a pointer to it. However, in practice functions often use slices for parameters; slices are references to underlying arrays.
+Certain types (maps, slices, and channels) are passed by reference, not by value. That is, passing a map to a function does not copy the map; if the function changes the map, the change will be seen by the caller. In Java terms, one can think of this as being a reference to the map.
+### Error handling
+Instead of exceptions, Go uses errors to signify events such as end-of-file, and run-time panics for run-time errors such as attempting to index an array out of bounds.
+### Object-oriented programming
+Go does not have classes with constructors. Instead of instance methods, a class inheritance hierarchy, and dynamic method lookup, Go provides structs and interfaces.
+Go allows methods on any type; no boxing is required. The method receiver, which corresponds to this in Java, can be a direct value or a pointer.
+Go provides two access levels, analogous to Java’s public and package-private. Top-level declarations are public if their names start with an upper-case letter, otherwise they are package-private.
+### Functional programming
+Functions in Go are first class citizens. Function values can be used and passed around just like other values and function literals may refer to variables defined in a enclosing function.
+### Concurrency
+Separate threads of execution, goroutines, and communication channels between them, channels, are provided by the language.
+### Omitted features
+Go does not support implicit type conversion. Operations that mix different types require an explicit conversion. Instead Go offers Untyped numeric constants with no limits.
+Go does not support function overloading. Functions and methods in the same scope must have unique names. Go has some built-in generic data types, such as slices and maps, and generic functions, such as append and copy. However, there is no mechanism for writing your own generic functions. 
+
+## Microservice framework
+No single framework/package to do everything. You have to pick your components and mix & match them. Built-in http server is probably good enough but you need to pick web frameworks, router, middleware, data layer,etc.
+## AWS
+Official [AWS SDK](https://aws.amazon.com/sdk-for-go/) supports Go.
+## Kafka
+I would need to evaluate at least 3 most popular libraries: \
+[Confluent's Apache Kafka Golang client](https://github.com/confluentinc/confluent-kafka-go) \
+[Segmentio kafka-go](https://github.com/segmentio/kafka-go) \
+[Shopify Sarama](https://github.com/Shopify/sarama)
+
+Kafka Streams are not [supported](https://github.com/confluentinc/confluent-kafka-go/issues/181).
+
+## RESTful API services
+Many options for building RESTful API would required to do evaluation and experimenting.
+[Swagger support](https://github.com/go-swagger/go-swagger)
+
+## Tracing and Monitoring
+[AWS X-Ray SDK for the Go](https://github.com/aws/aws-xray-sdk-go) \
+[Prometheus](https://prometheus.io/docs/guides/go-application/)
+
+## Logging
+Too many choices to mention :-)
+
+## NodeJS
+If project written in NodeJS is not depending on third party SDK we could replace it with Go microservice.
+
+## Angular
+No change. Go is not frontend development language.
+
+## Docker
+Docker is written in Go. Expecting pretty small container images comparing to JVM.
+
+## Kubernetes
+Kubernetes is written in Go. Lots of tools are written in Go.
+
+# Dart
+Dart is a client-optimized programming language for apps on multiple platforms. It is developed by Google and is used to build mobile, desktop, server, and web applications.Dart is an object-oriented, class-based, garbage-collected language with C-style syntax. Dart can compile to either native code or JavaScript. It supports interfaces, mixins, abstract classes, reified generics, and type inference.
+
+Orginally Dart was meant as a replacement for JavaScript in browsers; it also had its own virtual machine (VM) for running native applications in the Chrome browser. Whatever Google’s intentions were, frontend developers still preferred to stick with JavaScript. In the news Google launched Dart as a JavaScript killer but none of browser developers added support. All modern browsers can execute Dart code that's been compiled to JavaScript. It could mean end of the road for Dart language but it was brought back to life by sudden popularity of Flutter, Google’s UI framework for building native interfaces in iOS and Android. Cross-Platform App Development was always dream hard to achieve. There were many attempts in the past Apache Cordova, Xamarin, Ionic, Adobe PhoneGap and recently React Native or Kotlin Native. Flutter is able to support glitch-free, jank-free graphics at the native speed of mobile device thanks to engine, written primarily in C++ that provides low-level rendering support using Google's Skia graphics library. Flutter code is powered by the Dart platform, which enables compilation to native 32-bit and 64-bit ARM code for iOS and Android. Also Google’s Fuchsia which eventually replace Android is also built with Dart.
+
+## Language
+Java and Dart don’t differ that much when it comes to their syntax. But Dart tends to be focused more on having a shorter code. 
+
+### Concurrency
+Dart is a single threaded programming language. So if any piece of code blocks the execution of the program, the program practically freezes. To avoid this Dart makes use of asynchronous operations which let your program run without getting blocked. Dart makes use of isolates as a concurrency and security unit when structuring applications. Dart libraries are full of functions that return Future or Stream objects. These functions are asynchronous: they return after setting up a possibly time-consuming operation (such as I/O), without waiting for that operation to complete.
+
+### Performance
+Dart Is a compiled language, thus it performs way better than Java. Dart code can be AOT-compiled into machine code.
+
+### Method cascades
+Cascaded method invocation originates in Smalltalk. The motivation is to make it easier to write more fluent interfaces. Fluent interfaces rely on method chaining.
+```
+myTable
+  ..add("one");
+  ..add("two");
+  ..add("three");
+```
+The ".." (cascaded method invocation operation) syntax invokes a method (or setter or getter) but discards the result, and returns the original receiver instead. 
+
+### Collection literals
+Collection literals are a syntactic expression form that evaluates to an aggregate type, such as an array, List, or Map.
+```
+void main() {
+    print([1, 2, 3, 4]);
+    print({1: 'one', 2: 'two', 3: 'three'});
+}
+```
+### Generics
+Dart supports generic types, like List<int> (a list of integers) or List<dynamic> (a list of objects of any type).
+
+### Functions
+Dart is a true object-oriented language, so even functions are objects and have a type, Function. This means that functions can be assigned to variables or passed as arguments to other functions. You can also call an instance of a Dart class as if it were a function.
+
+### Anonymous functions
+Most functions are named, such as main() or printElement(). You can also create a nameless function called an anonymous function, or sometimes a lambda or closure. You might assign an anonymous function to a variable so that, for example, you can add or remove it from a collection.
+
+### No Primitives
+Everything you can place in a variable is an object, and every object is an instance of a class. Even numbers, functions, and null are objects. All objects inherit from the Object class.
+
+### Mixins
+Mixins are a way of reusing a class’s code in multiple class hierarchies. To implement a mixin, create a class that extends Object and declares no constructors. Unless you want your mixin to be usable as a regular class, use the mixin keyword instead of class.
+
+### Parmeters
+Named parameters, optional parameters, defaults;
+
+### Properties
+Properties — no need to write “get” methods everywhere
+ 
+### Type inference
+Type inference with strong mode — just write “var” for local
+
+### String interpolation
+String interpolation, several types of string literal; A Dart string is a sequence of UTF-16 code units. You can use either single or double quotes to create a string. You can put the value of an expression inside a string by using ${expression}. If the expression is an identifier, you can skip the {}. To get the string corresponding to an object. You can have multi-line strings.
+
+## Generators
+When you need to lazily produce a sequence of values, consider using a generator function. Dart has built-in support for two kinds of generator functions:
+* Synchronous generator: Returns an Iterable object.
+* Asynchronous generator: Returns a Stream object.
+
+## Microservice framework
+There are quite a few candidates that are mature enough but [Aqueduct](https://aqueduct.io/) seems the closest thing. It is a fully-featured server-side framework, with an ORM, database migration tools, OAuth 2.0 implementation, automatic OpenAPI specification generation and multi-threading support.
+
+## AWS
+Dart is not supported by AWS officially. One [AWS Client](https://github.com/agilord/aws_client) I could find looks more like generated from API than mature library.
+
+## Kafka
+Dart Kafka client does not appear on Confluent [list](https://docs.confluent.io/current/clients/index.html) of official clients. [Dart Kafka](https://github.com/dart-kafka/kafka) library is not listed on [cummunity page](https://github.com/confluentinc/examples/blob/5.4.1-post/clients/cloud/README.md) either.
+
+## RESTful API services
+It seems like Aqueduct mentioned above can handle API requests and it could generate OpenAPI 3.0 documentation.
+
+## Tracing and Monitoring
+Most like not chance to find any AWS X-Ray client. Dart implementation of the Prometheus client library can be [found](https://github.com/Fox32/prometheus_client).
+
+## Logging
+At least A Dart package for debug and error logging comes with the platform.
+
+## NodeJS
+If project written in NodeJS is not depending on third party SDK we could replace it with Dart microservice. Technically Dart Js Interop can call Javascript libraries, but I do not know if this applies to NOde modules. So until this is working we cannot get rid of the one special Node SDK module.
+
+## Angular
+On the frontend development side Art shines. There are two possibilities here: [Angular Dart](https://angulardart.dev/) - fully supported version of Angular with Typescript replaced by Dart or [Flutter](https://flutter.dev/) - same cross-platform mobile development platform now added two more targets: Web and Desktop.
+
+## Docker
+Since you can compile Dart to native code it could be pretty small. I have seen attempts of making containers as small as the ones written in Go or Rust.
+
+## Kubernetes
+As any other containerized application server side Dart microservices can be deployed to Kubernetes. I could even find Dart definitions for [Kubernetes objects](https://github.com/stablekernel/dart-kubernetes) so it could be possible to write your K8s client :-)
+
+# Sample code
+
+## Factorial in Java
+
+``` Java
+class Factorial {
+
+    public static long factorial(int n) {
+        long fact = 1;
+        for (int i = 1; i <= n; i++)
+            fact = fact * i;
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+        System.out.println("The Factorial of " + n + " is " + factorial(n));
+    }
+}
+```
+
+## Factorial in Kotlin
+```
+fun fact(n: Int) = when {
+    n < 0 -> throw IllegalArgumentException("negative numbers not allowed")
+    else  -> {
+        var ans = 1L
+        for (i in 2..n) ans *= i
+        ans
+    }
+}
+ 
+fun main(args: Array<String>) {
+    val n = 20
+    println("$n! = " + fact(n))
+
+}
+
+```
+## Factorial in Go
+```
+package main
+ 
+import (
+    "fmt"
+    "math/big"
+)
+ 
+func main() {
+    fmt.Println(factorial(800))
+}
+ 
+func factorial(n int64) *big.Int {
+    if n < 0 {
+        return nil
+    }
+    r := big.NewInt(1)
+    var f big.Int
+    for i := int64(2); i <= n; i++ {
+        r.Mul(r, f.SetInt64(i))
+    }
+    return r
+}
+
+```
+
+## Factorial in Dart
+```
+int fact(int n) {
+  if(n<0) {
+    throw new IllegalArgumentException('Argument less than 0');
+  }
+  int res=1;
+  for(int i=1;i<=n;i++) {
+    res*=i;
+  }
+  return res;
+}
+ 
+main() {
+  print(fact(10));
+  print(fact(-1));
+}
+
+```
+
+# Conclusion
+
+I cannot tell which language is clear winner. Any of them could be a niche player but would not entirely replace Java with current stack. With Kotlin risk is minimal but gains would be purely aesthetical. If I can convince others that it is better version of Java we could have next service started in Kotlin. We already run a lot of microservices and having huge container images it too costly we might gradually switch to Go. Dart could be a winner if we start our next Angular project with it. There will be no one fits all replacement for now.

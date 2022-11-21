@@ -1,0 +1,220 @@
+---
+title: "List of Awesome Lists"
+subtitle: "All Awesome lists I found on internet"
+date: "2020-03-09"
+categories: [list, awesome, internet]
+---
+
+## Awesome
+
+*Awesome lists about all kinds of interesting topics*
+  
+[Awesome](https://github.com/sindresorhus/awesome)
+
+## AWS
+
+*Amazon Web Services Awesome Lists*
+
+[Awesome CloudFormation](https://github.com/aws-cloudformation/awesome-cloudformation) \
+[JeffRMoore/awesome-cloudformation](https://github.com/JeffRMoore/awesome-cloudformation) \
+[adamchainz/awesome-cloudformation](https://github.com/adamchainz/awesome-cloudformation) \
+[donnemartin/awesome-aws](https://github.com/donnemartin/awesome-aws) \
+[Awesome AWS Amplify](https://github.com/dabit3/awesome-aws-amplify)
+
+## Bash
+
+*Bash Awesome Lists*
+
+[Awesome Bash](https://awesomeopensource.com/project/awesome-lists/awesome-bash) \
+[awesome-lists/awesome-bash](https://github.com/awesome-lists/awesome-bash) \
+[Awesome Bash Commands](https://github.com/joseluisq/awesome-bash-commands) \
+[Awesome Shell](https://github.com/alebcay/awesome-shell) \
+[uhub/awesome-shell](https://github.com/uhub/awesome-shell) \
+[Awesome dotfiles](https://github.com/webpro/awesome-dotfiles)
+
+## Cheat Sheets
+
+*Cheat Sheets Lists*
+
+[Cheatography](https://cheatography.com/) \
+[Awesome-Cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets) \
+[Awesome Cheatsheet](https://github.com/detailyang/awesome-cheatsheet)
+
+## Cloud Native
+
+*Cloud Native Lists*
+
+[Awesome Cloud Native](https://github.com/rootsongjc/awesome-cloud-native)
+
+## CSV
+
+*CSV Awesome Lists*
+
+[Awesome CSV](https://github.com/secretGeek/AwesomeCSV)
+
+## Dart
+
+*Dart Language Awesome Lists*
+
+[Awesome Dart](https://github.com/yissachar/awesome-dart) \
+[Awesome Angel](https://github.com/angel-dart/awesome-angel) \
+[Awesome Flutter](https://github.com/Solido/awesome-flutter)
+
+## Design Patterns
+
+*Design Patterns Awesome Lists*
+
+[Awesome Software Design Patterns](https://github.com/DovAmir/awesome-design-patterns) \
+[Awesome design patterns](https://github.com/Xamarui/awesome-design-patterns)
+
+
+## Docker
+
+*Docker Awesome Lists*
+
+[Awesome Docker](https://awesome-docker.netlify.com/) \
+[veggiemonk/awesome-docker](https://github.com/veggiemonk/awesome-docker) \
+[devopstrainingblr/awesome-docker](https://github.com/devopstrainingblr/awesome-docker)
+
+## Git
+
+*Git Awesome Lists*
+
+[Awesome Git](https://github.com/dictcp/awesome-git)
+
+## Golang
+
+*Go Language Awesome Lists*
+
+[Awesome Go](https://awesome-go.com/) \
+[avelino/awesome-go](https://github.com/avelino/awesome-go) \
+[uhub/awesome-go](https://github.com/uhub/awesome-go) \
+[Awesome Go Storage](https://github.com/gostor/awesome-go-storage)
+
+## Groovy
+
+*Groovy Language Awesome Lists*
+
+[Awesome Groovy](https://github.com/kdabir/awesome-groovy) \
+[paulk-asert/awesome-groovy](https://github.com/paulk-asert/awesome-groovy)
+
+## Hugo
+
+*Hugo Awesome Lists*
+
+[Awesome Hugo](https://github.com/budparr/awesome-hugo) \
+[cnych/awesome-hugo](https://github.com/cnych/awesome-hugo)
+
+## Java
+
+*Java Language Awesome Lists*
+
+[Awesome Java](https://java-lang.github.io/awesome-java/) \
+[akullpp/awesome-java](https://github.com/akullpp/awesome-java) \
+[uhub/awesome-java](https://github.com/uhub/awesome-java) \
+[Awesome JVM](https://github.com/deephacks/awesome-jvm)
+
+## JSON
+
+*JSON Awesome Lists*
+
+[Awesome JSON](https://github.com/burningtree/awesome-json)
+
+## Kafka
+
+*Apache Kafka Awesome Lists*
+
+[infoslack/awesome-kafka](https://github.com/infoslack/awesome-kafka) \
+[dharmeshkakadia/awesome-kafka](https://github.com/dharmeshkakadia/awesome-kafka) \
+[semantalytics/awesome-kafka](https://github.com/semantalytics/awesome-kafka) \
+[monksy/awesome-kafka](https://github.com/monksy/awesome-kafka)
+
+
+## Kotlin
+
+*Kotlin Language Awesome Lists*
+
+[Awesome Kotlin](https://github.com/KotlinBy/awesome-kotlin) \
+[mcxiaoke/awesome-kotlin](https://github.com/mcxiaoke/awesome-kotlin)
+
+## Kubernetes
+
+*Kubernetes Awesome Lists*
+
+[Awesome Kubernetes](https://awesome-kubernetes.readthedocs.io/) \
+[Kubernetes Handbook Awesome Kubernetes](https://jimmysong.io/kubernetes-handbook/appendix/awesome-kubernetes.html) \
+[ramitsurana/awesome-kubernetes](https://github.com/ramitsurana/awesome-kubernetes) \
+[jk8s/awesome-kubernetes](https://github.com/jk8s/awesome-kubernetes) \
+[Awesome Operators](https://github.com/operator-framework/awesome-operators) \
+[Kubetools](http://dockerlabs.collabnix.com/kubernetes/kubetools/)
+
+## macOS
+
+*macOS Awesome Lists*
+
+[Awesome macOS](https://github.com/iCHAIT/awesome-macOS)
+
+## Micronaut.io
+
+*Micronaut Framework Awesome Lists*
+
+[Awesome Micronaut](https://github.com/JonasHavers/awesome-micronaut)
+
+## Microservices
+
+*Microservices Awesome Lists*
+
+[Awesome Microservices](https://github.com/mfornos/awesome-microservices) \
+[Awesome Microservice](https://github.com/wanghaisheng/awesome-microservice)
+
+## Monorepo
+
+*Monorepo Awesome Lists*
+
+[Awesome Monorepo](https://github.com/korfuri/awesome-monorepo)
+
+## Powershell
+
+*Powershell Awesome Lists*
+
+[Awesome PowerShell](https://github.com/janikvonrotz/awesome-powershell)
+
+## REST
+
+*RESTful API Awesome Lists*
+
+[Awesome REST](https://github.com/marmelab/awesome-rest) \
+[Awesome API](https://github.com/Kikobeats/awesome-api) \
+[Public-APIs](https://github.com/n0shake/Public-APIs) \
+[Awesome Swagger](https://github.com/DragorWW/awesome-swagger) \
+[Awesomne OpenAPI ](https://github.com/APIs-guru/awesome-openapi3) \
+[Awesome Swagger Resources](https://github.com/yarax/awesome-swagger)
+[Awesome API Management Tools](https://github.com/mailtoharshit/Awesome-Api-Management-Tools)
+
+## Rust 
+
+*Rust Language Awesome Lists*
+
+[Awesome Rust](https://github.com/rust-unofficial/awesome-rust) \
+[Not-Yet-Awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust) \
+[rust-unofficial/awesome-rust](https://github.com/rust-unofficial/awesome-rust)
+
+## Spring Boot
+
+*Spring Boot Awesome Lists*
+
+[Awesome Spring Boot](https://awesomeopensource.com/project/stunstunstun/awesome-spring-boot) \
+[stunstunstun/awesome-spring-boot](https://github.com/stunstunstun/awesome-spring-boot) \
+[Awesome Sprin](https://github.com/peterhalasz/awesome-spring)
+
+## Terraform
+
+*Terraform Awesome Lists*
+
+[Awesome Terraform](https://github.com/shuaibiyy/awesome-terraform) \
+[Azure Terraform Resources](https://github.com/Azure/awesome-terraform)
+
+## Windows
+*Windows Awesome Lists*
+
+[Awesome Windows](https://github.com/Awesome-Windows/Awesome)

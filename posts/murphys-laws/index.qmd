@@ -1,0 +1,192 @@
+---
+title: "Murphy's laws and other principles of disaster"
+subtitle: "Murphy's law is a popular adage that states that things will go wrong in any given situation, if you give them a chance, or more commonly, whatever can go wrong, will go wrong."
+date: "2020-05-20"
+categories: [adage,law,murphys,engineering,universe,principle]
+---
+## Murphy's Laws
+* If anything can go wrong, it will.
+* If there is a possibility of several things going wrong, the one that will cause the most damage will be the first one to go wrong.
+* If anything just cannot go wrong, it will anyway.
+* If you perceive that there are four possible ways in which something can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop.
+* Left to themselves, things tend to go from bad to worse.
+* If everything seems to be going well, you have obviously overlooked something.
+* Nature always sides with the hidden flaw.
+* Mother nature is a bitch.
+
+## Zymurg's Seventh Exception to Murphy's Law
+When it rains, it pours.
+  
+## O'Toole's Commentary on Murphy's Laws
+Murphy was an optimist.
+
+## Murphy's Time-Action Quandary
+You never know how soon is too late.
+
+## Proof of Murphy's Law
+Murphy's Law cannot be proven, yet is correct, as when you try to prove Murphy's Law, you will see that the proof is incorrect. This is obviously due to Murphy's Law, therefore Murphy's Law is correct and proven.
+
+## Stewart's Corollary to Murphy's Law
+Murphy's Law may be delayed or suspended for an indefinite period of time, provided that such delay or suspension will result in a greater catastrophe at a later date.
+
+## André Weil's Law of Faculties
+First-rate people hire other first-rate people. Second-rate people hire third-rate people. Third-rate people hire fifth-rate people.
+
+## Berkowitz's Postulate
+A clean desk gives a sense of relief and a plan for impending disaster.
+
+## Biondi's Law
+If your project doesn't work, look for the part you didn't think was important.
+
+## Bove's Theorem
+The remaining work to finish in order to reach your goal increases as the deadline approaches.
+
+## Brien's First Law
+At some time in the life cycle of virtually every organization, its ability to succeed in spite of itself runs out.
+
+## Cropp's Law
+The amount of work done varies inversely with the amount of time spent in the office.
+
+## Dr. Samuelson's Reflection
+The real objective of a committee is not to reach a decision, but to avoid it.
+
+## Law of Holes
+* The first step in getting out of the hole your dug for yourself is to stop digging.
+* If a boss digs himself into a hole, all subordinates are expected to jump in with him.
+* If a subordinate digs a hole, never expect the boss to jump in with him.
+* If you expect to miss the holes others have left in your path to success, stop looking back at the ones you just climbed out of.
+
+## Fitz-Gibbon's Law
+Creativity varies inversely with the number of cooks involved with the broth.
+
+ ## Glasser's Corollary
+If, of the seven hours you spend at work, six hours and fifty-five minutes are spent working at your desk, and the rest of the time you throw the bull with your cubicle-mate, the time at which your supervisor will walk in and ask what you're doing can be determined to within five minutes.
+
+ ## Heller's Law
+The first myth of management is that it exists.
+
+
+## Ginsberg's Theorems
+You can't win.
+You can't break even.
+You can't even quit the game.
+
+## Forsyth's Second Corollary to Murphy's Laws
+Just when you see the light at the end of the tunnel, the roof caves in.
+
+## Weiler's Law
+Nothing is impossible for the man who doesn't have to do it himself.
+
+## The Laws of Computer Programming
+* Any given program, when running, is obsolete.
+* Any given program costs more and takes longer each time it is run.
+* If a program is useful, it will have to be changed.
+* If a program is useless, it will have to be documented.
+* Any given program will expand to fill all the available memory.
+* The value of a program is inversely proportional to the weight of its output.
+* Program complexity grows until it exceeds the capability of the programmer who must maintain it.
+
+## Pierce's Law
+In any computer system, the machine will always misinterpret, misconstrue, misprint, or not evaluate any math or subroutines or fail to print any output on at least the first run through.
+
+## Corollary to Pierce's Law
+When a compiler accepts a program without error on the first run, the program will not yield the desired output.
+
+## Addition to Murphy's Laws
+In nature, nothing is ever right. Therefore, if everything is going right ... something is wrong.
+
+## Brook's Law
+If at first you don't succeed, transform your data set!
+
+##  Grosch's Law
+Computing power increases as the square of the cost.
+
+## Golub's Laws of Computerdom
+* Fuzzy project objectives are used to avoid embarrassment of estimating the corresponding costs.
+* A carelessly planned project takes three times longer to complete than expected; a carefully planned project takes only twice as long.
+* The effort required to correct course increases geometrically with time.
+* Project teams detest weekly progress reporting because it so vividly manifests their lack of progress.
+
+## Osborn's Law
+Variables won't; constants aren't.
+
+## Gilb's Laws of Unreliability
+* Computers are unreliable, but humans are even more unreliable.
+* Any system that depends upon human reliability is unreliable.
+* Undetectable errors are infinite in variety, in contrast to detectable errors, which by definition are limited.
+* Investment in reliability will increase until it exceeds the probable cost of errors, or until someone insists on getting some useful work done.
+
+## Lubarsky's Law of Cybernetic Entomology
+There's always one more bug.
+
+## Troutman's Postulate
+* Profanity is the one language understood by all programmers.
+* Not until a program has been in production for six months will the most harmful error be discovered.
+* Job control cards that positively cannot be arranged in improper order will be.
+* Interchangeable tapes won't.
+* If the input editor has been designed to reject all bad input, an ingenious idiot will discover a method to get bad data past it.
+* If a test installation functions perfectly, all subsequent systems will malfunction.
+
+## Weinberg's Second Law
+If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization.
+
+## Gumperson's Law
+The probability of anything happening is in inverse ratio to its desirability.
+
+## Gummidge's Law
+The amount of expertise varies in inverse ratio to the number of statements understood by the general public.
+
+## Zymurgy's First Law of Evolving System Dynamics
+Once you open a can of worms, the only way to recan them is to use a larger can (old worms never die, they just worm their way into larger cans).
+
+## Harvard's Law, as Applied to Computers
+Under the most rigorously controlled conditions of pressure, temperature, volume, humidity and other variables, the computer will do as it damn well pleases.
+
+## Sattinger's Law
+It works better if you plug it in.
+
+## Jenkinson's Law
+It won't work.
+
+## Horner's Five Thumb Postulate
+Experience varies directly with equipment ruined.
+
+## Cheop's Law
+Nothing ever gets build on schedule or within budget.
+
+## Rule of Accuracy
+When working toward the solution of a problem, it always helps if you know the answer.
+
+## Pudder's Laws
+Anything that begins well ends badly.
+Anything that begins badly ends worse.
+
+## Westheimer's Rule
+To estimate the time it takes to do a task: estimate the time you think it should take, multiply by two and change the unit of measure to the next highest unit. Thus, we allocate two days for a one hour task.
+
+## Stockmayer's Theorem
+If it looks easy, it's tough. If it looks tough, it's damn near impossible.
+
+## Atwoods Corollary
+No books are lost by lending except those you particularly wanted to keep.
+
+## Johnson's Third Law
+If you miss one issue of any magazine, it will be the issue that contains the article, story or installment you were most anxious to read.
+
+## Corollary to Johnson's Third Law
+All of your friends either missed it, lost it or threw it out.
+
+## Harper's Magazine Law
+You never find the article until you replace it.
+
+## Brooke's Law
+Adding manpower to a late software makes it later.
+## Finagle's Fourth Law
+Once a job is fooled up, anything done to improve it will only make it worse.
+
+## Featherkile's Rule
+Whatever you did, that's what you planned.
+
+## Flap's Law
+Any inanimate object, regardless of its position, configuration or purpose, may be expected to perform at any time in a totally unexpected manner for reasons that are either entirely obscure or else completely mysterious.
+

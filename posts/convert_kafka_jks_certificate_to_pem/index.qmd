@@ -1,0 +1,24 @@
+---
+title: "Convert Kafka JKS certificate to PEM"
+subtitle: "Creating X509 certificates from JKS format"
+date: "2020-03-14"
+categories: [code, development, java, kafka,certificate,ssl,tls,jks,pem]
+---
+## Intro
+
+Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).
+
+Here are the commands to extract the Certificate Authority (CA) certificate:
+```
+$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12
+$ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem
+
+```
+
+You can then convert your client keystore to be usable from languages supporting .pem, with similar commands:
+
+```
+$ keytool -importkeystore -srckeystore dev.client.keystore.jks -destkeystore client.p12 -deststoretype PKCS12
+$ openssl pkcs12 -in client.p12 -nokeys -out client.cer.pem
+$ openssl pkcs12 -in client.p12 -nodes -nocerts -out client.key.pem
+```
