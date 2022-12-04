@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://melastmohican.github.io/posts/maven-archetypes-project-templating/index.html</loc>
-    <lastmod>2022-11-21T04:34:16.266Z</lastmod>
+    <loc>https://melastmohican.github.io/about.html</loc>
+    <lastmod>2022-12-04T07:13:16.201Z</lastmod>
   </url>
   <url>
-    <loc>https://melastmohican.github.io/posts/programmers-jokes/index.html</loc>
-    <lastmod>2022-11-21T04:34:18.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/index.html</loc>
-    <lastmod>2022-11-21T04:34:18.590Z</lastmod>
-  </url>
-  <url>
-    <loc>https://melastmohican.github.io/posts/migrating-from-hugo-to-quarto/index.html</loc>
-    <lastmod>2022-11-21T04:34:19.102Z</lastmod>
-  </url>
-  <url>
-    <loc>https://melastmohican.github.io/posts/rusty_feather/index.html</loc>
-    <lastmod>2022-11-21T04:34:19.494Z</lastmod>
-  </url>
-  <url>
-    <loc>https://melastmohican.github.io/posts/awesome-awesome-lists/index.html</loc>
-    <lastmod>2022-11-21T04:34:19.982Z</lastmod>
-  </url>
-  <url>
-    <loc>https://melastmohican.github.io/posts/murphys-laws/index.html</loc>
-    <lastmod>2022-11-21T04:34:20.610Z</lastmod>
-  </url>
-  <url>
-    <loc>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/index.html</loc>
-    <lastmod>2022-11-21T04:34:21.058Z</lastmod>
-  </url>
-  <url>
-    <loc>https://melastmohican.github.io/posts/aws-resource-migration/index.html</loc>
-    <lastmod>2022-11-21T04:34:21.478Z</lastmod>
+    <loc>https://melastmohican.github.io/posts/macos-defaults/index.html</loc>
+    <lastmod>2022-12-04T07:13:17.933Z</lastmod>
   </url>
   <url>
     <loc>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/index.html</loc>
-    <lastmod>2022-11-21T04:34:22.226Z</lastmod>
+    <lastmod>2022-12-04T07:13:18.521Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/aws-resource-migration/index.html</loc>
+    <lastmod>2022-12-04T07:13:18.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/migrating-from-hugo-to-quarto/index.html</loc>
+    <lastmod>2022-12-04T07:13:19.305Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/murphys-laws/index.html</loc>
+    <lastmod>2022-12-04T07:13:19.737Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/rusty_feather/index.html</loc>
+    <lastmod>2022-12-04T07:13:20.045Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/programmers-jokes/index.html</loc>
+    <lastmod>2022-12-04T07:13:21.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/awesome-awesome-lists/index.html</loc>
+    <lastmod>2022-12-04T07:13:21.469Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/index.html</loc>
+    <lastmod>2022-12-04T07:13:21.765Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/maven-archetypes-project-templating/index.html</loc>
+    <lastmod>2022-12-04T07:13:22.349Z</lastmod>
+  </url>
+  <url>
+    <loc>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/index.html</loc>
+    <lastmod>2022-12-04T07:13:22.729Z</lastmod>
   </url>
   <url>
     <loc>https://melastmohican.github.io/index.html</loc>
-    <lastmod>2022-11-21T04:34:22.754Z</lastmod>
-  </url>
-  <url>
-    <loc>https://melastmohican.github.io/about.html</loc>
-    <lastmod>2022-11-21T04:34:23.146Z</lastmod>
+    <lastmod>2022-12-04T07:13:23.109Z</lastmod>
   </url>
 </urlset>
