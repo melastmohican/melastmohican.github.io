@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Internet on melastmohican.github.io</title>
-    <link>https://melastmohican.github.io/categories/internet/</link>
-    <description>Recent content in Internet on melastmohican.github.io</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2020 09:51:44 -0800</lastBuildDate><atom:link href="https://melastmohican.github.io/categories/internet/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>List of Awesome Lists</title>
-      <link>https://melastmohican.github.io/posts/awesome-awesome-lists/</link>
-      <pubDate>Mon, 09 Mar 2020 09:51:44 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/awesome-awesome-lists/</guid>
-      <description>Awesome Awesome lists about all kinds of interesting topics
-Awesome
-AWS Amazon Web Services Awesome Lists
-Awesome CloudFormation JeffRMoore/awesome-cloudformation adamchainz/awesome-cloudformation donnemartin/awesome-aws Awesome AWS Amplify
-Bash Bash Awesome Lists
-Awesome Bash awesome-lists/awesome-bash Awesome Bash Commands Awesome Shell uhub/awesome-shell Awesome dotfiles
-Cheat Sheets Cheat Sheets Lists
-Cheatography Awesome-Cheatsheets Awesome Cheatsheet
-Cloud Native Cloud Native Lists
-Awesome Cloud Native
-CSV CSV Awesome Lists
-Awesome CSV
-Dart Dart Language Awesome Lists
-Awesome Dart Awesome Angel Awesome Flutter</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Internet on melastmohican.github.io</title>
+		<link>https://melastmohican.github.io/categories/internet/</link>
+		<description>Recent content in Internet on melastmohican.github.io</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 09 Mar 2020 09:51:44 -0800</lastBuildDate>
+		
+			<atom:link href="https://melastmohican.github.io/categories/internet/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>List of Awesome Lists</title>
+				<link>https://melastmohican.github.io/posts/awesome-awesome-lists/</link>
+				<pubDate>Mon, 09 Mar 2020 09:51:44 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/awesome-awesome-lists/</guid>
+				<description>&lt;h2 id=&#34;awesome&#34;&gt;&#xA;  Awesome&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#awesome&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Awesome lists about all kinds of interesting topics&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/sindresorhus/awesome&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;aws&#34;&gt;&#xA;  AWS&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#aws&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Amazon Web Services Awesome Lists&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/aws-cloudformation/awesome-cloudformation&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome CloudFormation&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/JeffRMoore/awesome-cloudformation&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JeffRMoore/awesome-cloudformation&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/adamchainz/awesome-cloudformation&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;adamchainz/awesome-cloudformation&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/donnemartin/awesome-aws&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;donnemartin/awesome-aws&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/dabit3/awesome-aws-amplify&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome AWS Amplify&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;bash&#34;&gt;&#xA;  Bash&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#bash&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Bash Awesome Lists&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://awesomeopensource.com/project/awesome-lists/awesome-bash&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome Bash&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/awesome-lists/awesome-bash&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;awesome-lists/awesome-bash&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/joseluisq/awesome-bash-commands&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome Bash Commands&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/alebcay/awesome-shell&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome Shell&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/uhub/awesome-shell&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uhub/awesome-shell&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/webpro/awesome-dotfiles&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome dotfiles&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cheat-sheets&#34;&gt;&#xA;  Cheat Sheets&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#cheat-sheets&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Cheat Sheets Lists&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cheatography.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cheatography&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/LeCoupa/awesome-cheatsheets&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome-Cheatsheets&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/detailyang/awesome-cheatsheet&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome Cheatsheet&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cloud-native&#34;&gt;&#xA;  Cloud Native&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#cloud-native&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Cloud Native Lists&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

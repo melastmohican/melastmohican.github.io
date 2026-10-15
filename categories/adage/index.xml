@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Adage on melastmohican.github.io</title>
-    <link>https://melastmohican.github.io/categories/adage/</link>
-    <description>Recent content in Adage on melastmohican.github.io</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 20 May 2020 07:54:54 -0700</lastBuildDate><atom:link href="https://melastmohican.github.io/categories/adage/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Murphy&#39;s laws and other principles of disaster</title>
-      <link>https://melastmohican.github.io/posts/murphys-laws/</link>
-      <pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/murphys-laws/</guid>
-      <description>Murphy&amp;rsquo;s Laws If anything can go wrong, it will. If there is a possibility of several things going wrong, the one that will cause the most damage will be the first one to go wrong. If anything just cannot go wrong, it will anyway. If you perceive that there are four possible ways in which something can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Adage on melastmohican.github.io</title>
+		<link>https://melastmohican.github.io/categories/adage/</link>
+		<description>Recent content in Adage on melastmohican.github.io</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 20 May 2020 07:54:54 -0700</lastBuildDate>
+		
+			<atom:link href="https://melastmohican.github.io/categories/adage/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Murphy&#39;s laws and other principles of disaster</title>
+				<link>https://melastmohican.github.io/posts/murphys-laws/</link>
+				<pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
+				<guid>https://melastmohican.github.io/posts/murphys-laws/</guid>
+				<description>&lt;h2 id=&#34;murphys-laws&#34;&gt;&#xA;  Murphy&amp;rsquo;s Laws&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#murphys-laws&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If anything can go wrong, it will.&lt;/li&gt;&#xA;&lt;li&gt;If there is a possibility of several things going wrong, the one that will cause the most damage will be the first one to go wrong.&lt;/li&gt;&#xA;&lt;li&gt;If anything just cannot go wrong, it will anyway.&lt;/li&gt;&#xA;&lt;li&gt;If you perceive that there are four possible ways in which something can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop.&lt;/li&gt;&#xA;&lt;li&gt;Left to themselves, things tend to go from bad to worse.&lt;/li&gt;&#xA;&lt;li&gt;If everything seems to be going well, you have obviously overlooked something.&lt;/li&gt;&#xA;&lt;li&gt;Nature always sides with the hidden flaw.&lt;/li&gt;&#xA;&lt;li&gt;Mother nature is a bitch.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;zymurgs-seventh-exception-to-murphys-law&#34;&gt;&#xA;  Zymurg&amp;rsquo;s Seventh Exception to Murphy&amp;rsquo;s Law&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#zymurgs-seventh-exception-to-murphys-law&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;When it rains, it pours.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>tls on melastmohican.github.io</title>
-    <link>https://melastmohican.github.io/tags/tls/</link>
-    <description>Recent content in tls on melastmohican.github.io</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 14 Mar 2020 21:35:50 -0700</lastBuildDate><atom:link href="https://melastmohican.github.io/tags/tls/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Convert Kafka JKS certificate to PEM</title>
-      <link>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</link>
-      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</guid>
-      <description>Intro Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).
-Here are the commands to extract the Certificate Authority (CA) certificate:
-$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12 $ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem You can then convert your client keystore to be usable from languages supporting .</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Tls on melastmohican.github.io</title>
+		<link>https://melastmohican.github.io/tags/tls/</link>
+		<description>Recent content in Tls on melastmohican.github.io</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 14 Mar 2020 21:35:50 -0700</lastBuildDate>
+		
+			<atom:link href="https://melastmohican.github.io/tags/tls/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Convert Kafka JKS certificate to PEM</title>
+				<link>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</link>
+				<pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+				<guid>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</guid>
+				<description>&lt;h2 id=&#34;intro&#34;&gt;&#xA;  Intro&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#intro&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).&lt;/p&gt;&#xA;&lt;p&gt;Here are the commands to extract the Certificate Authority (CA) certificate:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ openssl pkcs12 -&lt;span style=&#34;font-weight:bold&#34;&gt;in&lt;/span&gt; server.p12 -nokeys -out ca_cert.pem&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can then convert your client keystore to be usable from languages supporting .pem, with similar commands:&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

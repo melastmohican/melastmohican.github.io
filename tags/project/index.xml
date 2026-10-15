@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>project on melastmohican.github.io</title>
-    <link>https://melastmohican.github.io/tags/project/</link>
-    <description>Recent content in project on melastmohican.github.io</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 06 Mar 2020 09:50:53 -0800</lastBuildDate><atom:link href="https://melastmohican.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Maven Archetypes Project Templating</title>
-      <link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
-      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</guid>
-      <description>Intro I am developer and I like DRY. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use Spring Initializr to boostrap your new application or even better without leaving the shell Spring Boot CLI. You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files?</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Project on melastmohican.github.io</title>
+		<link>https://melastmohican.github.io/tags/project/</link>
+		<description>Recent content in Project on melastmohican.github.io</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 06 Mar 2020 09:50:53 -0800</lastBuildDate>
+		
+			<atom:link href="https://melastmohican.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Maven Archetypes Project Templating</title>
+				<link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
+				<pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</guid>
+				<description>&lt;h2 id=&#34;intro&#34;&gt;&#xA;  Intro&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#intro&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I am developer and I like &lt;a href=&#34;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DRY&lt;/a&gt;. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use &lt;a href=&#34;https://start.spring.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Initializr&lt;/a&gt; to boostrap your new application or even better without leaving the shell &lt;a href=&#34;https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#cli-init&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Boot CLI&lt;/a&gt;.  You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files? Wouldn&amp;rsquo;t be nice to have project template and generate new one by answersing few simple questions? Project generation (scaffolding) was made popular by the Ruby on Rails framework and now we got many generators included in popular frameworks or standalone but if you are already using Maven as you your build tool don&amp;rsquo;t look any further.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

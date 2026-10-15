@@ -1,120 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="author" content="Mariusz Jurgielewicz">
-    <meta name="description" content="melastmohican.github.io">
-    <meta name="keywords" content="blog,developer,personal">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Convert Kafka JKS certificate to PEM"/>
-<meta name="twitter:description" content="Creating X509 certificates from JKS format"/>
-
-    <meta property="og:title" content="Convert Kafka JKS certificate to PEM" />
-<meta property="og:description" content="Creating X509 certificates from JKS format" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-03-14T21:35:50-07:00" />
-<meta property="article:modified_time" content="2020-03-14T21:35:50-07:00" />
-
-
-
-    
-      <base href="https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/">
-    
-    <title>
+<head>
+  <title>
   Convert Kafka JKS certificate to PEM · melastmohican.github.io
 </title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 
-    
-      <link rel="canonical" href="https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/">
-    
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
 
-    
-      
-      
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
-    
 
-    
+<meta name="author" content="Mariusz Jurgielewicz">
+<meta name="description" content="Creating X509 certificates from JKS format">
+<meta name="keywords" content="blog,developer,personal">
 
-    
 
-    
-      <link rel="stylesheet" href="https://melastmohican.github.io/css/custom.css" />
-    
 
-    
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Convert Kafka JKS certificate to PEM">
+	<meta name="twitter:description" content="Creating X509 certificates from JKS format">
 
-    
+<meta property="og:url" content="https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/">
+	<meta property="og:site_name" content="melastmohican.github.io">
+	<meta property="og:title" content="Convert Kafka JKS certificate to PEM">
+	<meta property="og:description" content="Creating X509 certificates from JKS format">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2020-03-14T21:35:50-07:00">
+		<meta property="article:modified_time" content="2020-03-14T21:35:50-07:00">
+		<meta property="article:tag" content="Code">
+		<meta property="article:tag" content="Development">
+		<meta property="article:tag" content="Java">
+		<meta property="article:tag" content="Kafka">
+		<meta property="article:tag" content="Certificate">
+		<meta property="article:tag" content="Ssl">
 
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.105.0">
-  </head>
+
+
+<link rel="canonical" href="https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/">
+
+
+<link rel="preload" href="https://melastmohican.github.io/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://melastmohican.github.io/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://melastmohican.github.io/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
 
   
   
-  <body class="colorscheme-light">
-    <main class="wrapper">
-      <nav class="navigation">
+  <link rel="stylesheet" href="https://melastmohican.github.io/css/coder.min.5e94c1acf7aa2066035cf2764ae3e4fe39db101d68b870f919966100d51fb861.css" integrity="sha256-XpTBrPeqIGYDXPJ2SuPk/jnbEB1ouHD5GZZhANUfuGE=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="https://melastmohican.github.io/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://melastmohican.github.io/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="https://melastmohican.github.io/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://melastmohican.github.io/images/apple-touch-icon.png">
+
+<link rel="manifest" href="https://melastmohican.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://melastmohican.github.io/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
   <section class="container">
+    
     <a class="navigation-title" href="https://melastmohican.github.io/">
       melastmohican.github.io
     </a>
     
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/posts/">Blog</a>
-          </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://melastmohican.github.io/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://melastmohican.github.io/about/">About</a>
+            </li>
+          
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://melastmohican.github.io/about/">About</a>
-          </li>
         
-      
-      
-    </ul>
+      </ul>
     
   </section>
 </nav>
 
 
-      <div class="content">
-        
+    <div class="content">
+      
   <section class="container post">
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Convert Kafka JKS certificate to PEM</h1>
+          <h1 class="title">
+            <a class="title-link" href="https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/">
+              Convert Kafka JKS certificate to PEM
+            </a>
+          </h1>
         </div>
         <div class="post-meta">
           <div class="date">
             <span class="posted-on">
-              <i class="fas fa-calendar"></i>
-              <time datetime='2020-03-14T21:35:50-07:00'>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2020-03-14T21:35:50-07:00">
                 March 14, 2020
               </time>
             </span>
             <span class="reading-time">
-              <i class="fas fa-clock"></i>
-              1-minute read
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
             </span>
           </div>
+          
           <div class="categories">
-  <i class="fas fa-folder"></i>
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
     <a href="https://melastmohican.github.io/categories/development/">Development</a>
       <span class="separator">•</span>
     <a href="https://melastmohican.github.io/categories/code/">Code</a>
@@ -130,39 +173,66 @@
     <a href="https://melastmohican.github.io/categories/security/">Security</a></div>
 
           <div class="tags">
-  <i class="fas fa-tag"></i>
-    <a href="https://melastmohican.github.io/tags/code/">code</a>
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/code/">Code</a>
+    </span>
       <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/development/">development</a>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/development/">Development</a>
+    </span>
       <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/java/">java</a>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/java/">Java</a>
+    </span>
       <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/kafka/">kafka</a>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/kafka/">Kafka</a>
+    </span>
       <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/certificate/">certificate</a>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/certificate/">Certificate</a>
+    </span>
       <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/ssl/">ssl</a>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/ssl/">Ssl</a>
+    </span>
       <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/tls/">tls</a>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/tls/">Tls</a>
+    </span>
       <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/jks/">jks</a>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/jks/">Jks</a>
+    </span>
       <span class="separator">•</span>
-    <a href="https://melastmohican.github.io/tags/pem/">pem</a></div>
+    <span class="tag">
+      <a href="https://melastmohican.github.io/tags/pem/">Pem</a>
+    </span></div>
 
         </div>
       </header>
 
-      <div>
+      
+
+
+      <div class="post-content">
         
-        <h2 id="intro">Intro</h2>
+        <h2 id="intro">
+  Intro
+  <a class="heading-link" href="#intro">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
 <p>Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).</p>
 <p>Here are the commands to extract the Certificate Authority (CA) certificate:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12
-</span></span><span style="display:flex;"><span>$ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12
+</span></span><span style="display:flex;"><span>$ openssl pkcs12 -<span style="font-weight:bold">in</span> server.p12 -nokeys -out ca_cert.pem
 </span></span></code></pre></div><p>You can then convert your client keystore to be usable from languages supporting .pem, with similar commands:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ keytool -importkeystore -srckeystore dev.client.keystore.jks -destkeystore client.p12 -deststoretype PKCS12
-</span></span><span style="display:flex;"><span>$ openssl pkcs12 -in client.p12 -nokeys -out client.cer.pem
-</span></span><span style="display:flex;"><span>$ openssl pkcs12 -in client.p12 -nodes -nocerts -out client.key.pem
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>$ keytool -importkeystore -srckeystore dev.client.keystore.jks -destkeystore client.p12 -deststoretype PKCS12
+</span></span><span style="display:flex;"><span>$ openssl pkcs12 -<span style="font-weight:bold">in</span> client.p12 -nokeys -out client.cer.pem
+</span></span><span style="display:flex;"><span>$ openssl pkcs12 -<span style="font-weight:bold">in</span> client.p12 -nodes -nocerts -out client.key.pem
 </span></span></code></pre></div>
       </div>
 
@@ -174,55 +244,95 @@
         
         
         
+        
+        
+        
+        
       </footer>
     </article>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
       }
-    };
-  </script>
+    );"></script>
   </section>
 
-      </div>
+    </div>
 
-      <footer class="footer">
+    <footer class="footer">
   <section class="container">
+    ©
     
-      <p>No bits were harmed during creation of this page.</p>
+    2026
+     Mariusz Jurgielewicz 
+    ·
     
-    
-      
-        © 2022
-      
-       Mariusz Jurgielewicz 
-    
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
     
   </section>
 </footer>
 
-    </main>
+  </main>
 
-    
+  
 
-    
+  
+  
+  <script src="https://melastmohican.github.io/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
 
-  </body>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
 
 </html>

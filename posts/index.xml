@@ -1,100 +1,80 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on melastmohican.github.io</title>
-    <link>https://melastmohican.github.io/posts/</link>
-    <description>Recent content in Posts on melastmohican.github.io</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 14 Nov 2022 14:27:13 -0800</lastBuildDate><atom:link href="https://melastmohican.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Rusty Feather</title>
-      <link>https://melastmohican.github.io/posts/rusty-feather/</link>
-      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/rusty-feather/</guid>
-      <description>Recently I stumbled upon info about using Rust language on embedded systems including microcontrollers. I searched for some tutorials and online trainings and it seems like you need specific hardware usually. Getting STM32F3DISCOVERY or nRF52840 DK is not practical because I will have limited use for these boards after completing training. I was almost willing to get micro:bit when I found out that Ferrous Systems and Espressif’s announced Rust Training on ESP32.</description>
-    </item>
-    
-    <item>
-      <title>Murphy&#39;s laws and other principles of disaster</title>
-      <link>https://melastmohican.github.io/posts/murphys-laws/</link>
-      <pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/murphys-laws/</guid>
-      <description>Murphy&amp;rsquo;s Laws If anything can go wrong, it will. If there is a possibility of several things going wrong, the one that will cause the most damage will be the first one to go wrong. If anything just cannot go wrong, it will anyway. If you perceive that there are four possible ways in which something can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop.</description>
-    </item>
-    
-    <item>
-      <title>Terraform Best Practice Guide for Developers</title>
-      <link>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</link>
-      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</guid>
-      <description>Terraform is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.</description>
-    </item>
-    
-    <item>
-      <title>Convert Kafka JKS certificate to PEM</title>
-      <link>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</link>
-      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</guid>
-      <description>Intro Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).
-Here are the commands to extract the Certificate Authority (CA) certificate:
-$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12 $ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem You can then convert your client keystore to be usable from languages supporting .</description>
-    </item>
-    
-    <item>
-      <title>What new language should I learn as Java Developer</title>
-      <link>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</link>
-      <pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</guid>
-      <description>If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant.</description>
-    </item>
-    
-    <item>
-      <title>List of Awesome Lists</title>
-      <link>https://melastmohican.github.io/posts/awesome-awesome-lists/</link>
-      <pubDate>Mon, 09 Mar 2020 09:51:44 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/awesome-awesome-lists/</guid>
-      <description>Awesome Awesome lists about all kinds of interesting topics
-Awesome
-AWS Amazon Web Services Awesome Lists
-Awesome CloudFormation JeffRMoore/awesome-cloudformation adamchainz/awesome-cloudformation donnemartin/awesome-aws Awesome AWS Amplify
-Bash Bash Awesome Lists
-Awesome Bash awesome-lists/awesome-bash Awesome Bash Commands Awesome Shell uhub/awesome-shell Awesome dotfiles
-Cheat Sheets Cheat Sheets Lists
-Cheatography Awesome-Cheatsheets Awesome Cheatsheet
-Cloud Native Cloud Native Lists
-Awesome Cloud Native
-CSV CSV Awesome Lists
-Awesome CSV
-Dart Dart Language Awesome Lists
-Awesome Dart Awesome Angel Awesome Flutter</description>
-    </item>
-    
-    <item>
-      <title>Maven Archetypes Project Templating</title>
-      <link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
-      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</guid>
-      <description>Intro I am developer and I like DRY. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use Spring Initializr to boostrap your new application or even better without leaving the shell Spring Boot CLI. You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files?</description>
-    </item>
-    
-    <item>
-      <title>Migrating existing AWS infrastructure to new acount</title>
-      <link>https://melastmohican.github.io/posts/aws-resource-migration/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/aws-resource-migration/</guid>
-      <description>Scenario We want to migrate hundreds of AWS resources to a new account. Up to now, all resources were created manually using AWS Console or CLI tool.
-CloudFormation CloudFormation is the inhouse cloud provisioning tool of AWS for declaratively describing your cloud resources.
-CloudFormation is a hard, complex, inconsistent and badly documented piece of software. A stack is an atomic collection of resources in CloudFormation. Its creation or update succeeds only and only if all the resources within the stack succeed.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Posts on melastmohican.github.io</title>
+		<link>https://melastmohican.github.io/posts/</link>
+		<description>Recent content in Posts on melastmohican.github.io</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 15 Oct 2026 07:40:00 -0700</lastBuildDate>
+		
+			<atom:link href="https://melastmohican.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Fable of King Anthropic and the Great Ledger</title>
+				<link>https://melastmohican.github.io/posts/the-fable-of-king-anthropic/</link>
+				<pubDate>Thu, 15 Oct 2026 07:40:00 -0700</pubDate>
+				<guid>https://melastmohican.github.io/posts/the-fable-of-king-anthropic/</guid>
+				<description>&lt;figure&gt;&lt;img src=&#34;https://melastmohican.github.io/images/the-fable-of-king-anthropic.jpeg&#34;&#xA;&#x9;&#x9;&#x9;alt=&#34;King Anthropic and the Mechanical Knights&#34;&gt;&lt;figcaption&gt;&#xA;&#x9;&#x9;&#x9;&lt;h4&gt;King Anthropic and the Mechanical Knights&lt;/h4&gt;&#xA;&#x9;&#x9;&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;In the silicon realm of the Upper Bay, King Anthropic sat upon a throne of humming accelerators, watching his realm transform.&lt;/p&gt;&#xA;&lt;p&gt;For generations, the realm’s scholar-engineers had recorded their deeds in the Great Iron Ledger of Git. The law of the Ledger was ancient and unbending: any scholar who wished to etch a single glyph into the scrolls had first to forge a complete replica of the entire library, hauling the heavy brass plates of all past history upon their own back. In May of the year 2026, the scholars stamped roughly 2,500 amendments a day into the Ledger. Work proceeded at the deliberate pace of thoughtful minds.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Rusty Feather</title>
+				<link>https://melastmohican.github.io/posts/rusty-feather/</link>
+				<pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/rusty-feather/</guid>
+				<description>&lt;p&gt;Recently I stumbled upon info about using Rust language on embedded systems including microcontrollers. I searched for some tutorials and online trainings and it seems like you need specific hardware usually. Getting &lt;a href=&#34;https://docs.rust-embedded.org/book/intro/hardware.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;STM32F3DISCOVERY&lt;/a&gt; or &lt;a href=&#34;https://embedded-trainings.ferrous-systems.com/hardware.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nRF52840 DK&lt;/a&gt; is not practical because I will have limited use for these boards after completing training.  I was almost willing to get &lt;a href=&#34;https://docs.rust-embedded.org/discovery/microbit/02-requirements/index.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;micro:bit&lt;/a&gt; when I found out that Ferrous Systems and Espressif’s &lt;a href=&#34;https://www.espressif.com/en/news/ESP_RUST_training&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;announced&lt;/a&gt; &lt;em&gt;&lt;strong&gt;Rust Training on ESP32&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;esp-rust-board&#34;&gt;&#xA;  ESP Rust Board&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#esp-rust-board&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;It is officially called &lt;strong&gt;ESP32-C3-DevKit-RUST-1&lt;/strong&gt; if you want to search for it. The board is based on successful ESP32-C3-MINI-1 module and has 6DoF IMU (ICM-42670-P), a temperature and humidity sensor (SHTC3), a Li-Ion battery charger, and a Type-C USB in familiar Adafruit Feather format. It is pretty close to &lt;a href=&#34;https://www.adafruit.com/product/5303&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adafruit ESP32-S2 Feather with BME280 Sensor&lt;/a&gt; minus Stemma connector but with IMU sensor instead.&#xA;&lt;figure&gt;&lt;img src=&#34;https://raw.githubusercontent.com/esp-rs/esp-rust-board/master/assets/rust_board_v1.2_diagram.png&#34;&gt;&lt;figcaption&gt;&#xA;&#x9;&#x9;&#x9;&lt;h4&gt;ESP32-C3-DevKit-RUST-1&lt;/h4&gt;&#xA;&#x9;&#x9;&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Murphy&#39;s laws and other principles of disaster</title>
+				<link>https://melastmohican.github.io/posts/murphys-laws/</link>
+				<pubDate>Wed, 20 May 2020 07:54:54 -0700</pubDate>
+				<guid>https://melastmohican.github.io/posts/murphys-laws/</guid>
+				<description>&lt;h2 id=&#34;murphys-laws&#34;&gt;&#xA;  Murphy&amp;rsquo;s Laws&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#murphys-laws&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If anything can go wrong, it will.&lt;/li&gt;&#xA;&lt;li&gt;If there is a possibility of several things going wrong, the one that will cause the most damage will be the first one to go wrong.&lt;/li&gt;&#xA;&lt;li&gt;If anything just cannot go wrong, it will anyway.&lt;/li&gt;&#xA;&lt;li&gt;If you perceive that there are four possible ways in which something can go wrong, and circumvent these, then a fifth way, unprepared for, will promptly develop.&lt;/li&gt;&#xA;&lt;li&gt;Left to themselves, things tend to go from bad to worse.&lt;/li&gt;&#xA;&lt;li&gt;If everything seems to be going well, you have obviously overlooked something.&lt;/li&gt;&#xA;&lt;li&gt;Nature always sides with the hidden flaw.&lt;/li&gt;&#xA;&lt;li&gt;Mother nature is a bitch.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;zymurgs-seventh-exception-to-murphys-law&#34;&gt;&#xA;  Zymurg&amp;rsquo;s Seventh Exception to Murphy&amp;rsquo;s Law&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#zymurgs-seventh-exception-to-murphys-law&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;When it rains, it pours.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Terraform Best Practice Guide for Developers</title>
+				<link>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</link>
+				<pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
+				<guid>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Terraform&lt;/a&gt; is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Convert Kafka JKS certificate to PEM</title>
+				<link>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</link>
+				<pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+				<guid>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</guid>
+				<description>&lt;h2 id=&#34;intro&#34;&gt;&#xA;  Intro&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#intro&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).&lt;/p&gt;&#xA;&lt;p&gt;Here are the commands to extract the Certificate Authority (CA) certificate:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ openssl pkcs12 -&lt;span style=&#34;font-weight:bold&#34;&gt;in&lt;/span&gt; server.p12 -nokeys -out ca_cert.pem&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can then convert your client keystore to be usable from languages supporting .pem, with similar commands:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>What new language should I learn as Java Developer</title>
+				<link>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</link>
+				<pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</guid>
+				<description>&lt;p&gt;If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant. We switched to a different OpenJDK vendor and we are using &lt;a href=&#34;https://aws.amazon.com/corretto/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Amazon Correto&lt;/a&gt; now. We also migrated all ouf our microservices from Java 8 to 11 for a different reason which I might mention later.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>List of Awesome Lists</title>
+				<link>https://melastmohican.github.io/posts/awesome-awesome-lists/</link>
+				<pubDate>Mon, 09 Mar 2020 09:51:44 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/awesome-awesome-lists/</guid>
+				<description>&lt;h2 id=&#34;awesome&#34;&gt;&#xA;  Awesome&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#awesome&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Awesome lists about all kinds of interesting topics&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/sindresorhus/awesome&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;aws&#34;&gt;&#xA;  AWS&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#aws&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Amazon Web Services Awesome Lists&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/aws-cloudformation/awesome-cloudformation&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome CloudFormation&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/JeffRMoore/awesome-cloudformation&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JeffRMoore/awesome-cloudformation&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/adamchainz/awesome-cloudformation&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;adamchainz/awesome-cloudformation&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/donnemartin/awesome-aws&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;donnemartin/awesome-aws&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/dabit3/awesome-aws-amplify&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome AWS Amplify&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;bash&#34;&gt;&#xA;  Bash&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#bash&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Bash Awesome Lists&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://awesomeopensource.com/project/awesome-lists/awesome-bash&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome Bash&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/awesome-lists/awesome-bash&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;awesome-lists/awesome-bash&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/joseluisq/awesome-bash-commands&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome Bash Commands&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/alebcay/awesome-shell&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome Shell&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/uhub/awesome-shell&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;uhub/awesome-shell&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/webpro/awesome-dotfiles&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome dotfiles&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cheat-sheets&#34;&gt;&#xA;  Cheat Sheets&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#cheat-sheets&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Cheat Sheets Lists&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cheatography.com/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cheatography&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/LeCoupa/awesome-cheatsheets&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome-Cheatsheets&lt;/a&gt; &lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/detailyang/awesome-cheatsheet&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Awesome Cheatsheet&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cloud-native&#34;&gt;&#xA;  Cloud Native&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#cloud-native&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Cloud Native Lists&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Maven Archetypes Project Templating</title>
+				<link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
+				<pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</guid>
+				<description>&lt;h2 id=&#34;intro&#34;&gt;&#xA;  Intro&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#intro&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I am developer and I like &lt;a href=&#34;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DRY&lt;/a&gt;. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use &lt;a href=&#34;https://start.spring.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Initializr&lt;/a&gt; to boostrap your new application or even better without leaving the shell &lt;a href=&#34;https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#cli-init&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Boot CLI&lt;/a&gt;.  You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files? Wouldn&amp;rsquo;t be nice to have project template and generate new one by answersing few simple questions? Project generation (scaffolding) was made popular by the Ruby on Rails framework and now we got many generators included in popular frameworks or standalone but if you are already using Maven as you your build tool don&amp;rsquo;t look any further.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Migrating existing AWS infrastructure to new acount</title>
+				<link>https://melastmohican.github.io/posts/aws-resource-migration/</link>
+				<pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/aws-resource-migration/</guid>
+				<description>&lt;h1 id=&#34;scenario&#34;&gt;&#xA;  Scenario&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#scenario&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;We want to migrate hundreds of AWS resources to a new account. Up to now, all resources were created manually using AWS Console or CLI tool.&lt;/p&gt;&#xA;&lt;h2 id=&#34;cloudformation&#34;&gt;&#xA;  CloudFormation&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#cloudformation&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;CloudFormation is the inhouse cloud provisioning tool of AWS for declaratively describing your cloud resources.&lt;/p&gt;&#xA;&lt;p&gt;CloudFormation is a hard, complex, inconsistent and badly documented piece of software. A stack is an atomic collection of resources in CloudFormation. Its creation or update succeeds only and only if all the resources within the stack succeed. A failure within a stack update leads to a rollback back to the previous state.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

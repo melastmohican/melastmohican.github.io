@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>sensor on melastmohican.github.io</title>
-    <link>https://melastmohican.github.io/tags/sensor/</link>
-    <description>Recent content in sensor on melastmohican.github.io</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 14 Nov 2022 14:27:13 -0800</lastBuildDate><atom:link href="https://melastmohican.github.io/tags/sensor/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Rusty Feather</title>
-      <link>https://melastmohican.github.io/posts/rusty-feather/</link>
-      <pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/rusty-feather/</guid>
-      <description>Recently I stumbled upon info about using Rust language on embedded systems including microcontrollers. I searched for some tutorials and online trainings and it seems like you need specific hardware usually. Getting STM32F3DISCOVERY or nRF52840 DK is not practical because I will have limited use for these boards after completing training. I was almost willing to get micro:bit when I found out that Ferrous Systems and Espressif’s announced Rust Training on ESP32.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Sensor on melastmohican.github.io</title>
+		<link>https://melastmohican.github.io/tags/sensor/</link>
+		<description>Recent content in Sensor on melastmohican.github.io</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 14 Nov 2022 14:27:13 -0800</lastBuildDate>
+		
+			<atom:link href="https://melastmohican.github.io/tags/sensor/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Rusty Feather</title>
+				<link>https://melastmohican.github.io/posts/rusty-feather/</link>
+				<pubDate>Mon, 14 Nov 2022 14:27:13 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/rusty-feather/</guid>
+				<description>&lt;p&gt;Recently I stumbled upon info about using Rust language on embedded systems including microcontrollers. I searched for some tutorials and online trainings and it seems like you need specific hardware usually. Getting &lt;a href=&#34;https://docs.rust-embedded.org/book/intro/hardware.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;STM32F3DISCOVERY&lt;/a&gt; or &lt;a href=&#34;https://embedded-trainings.ferrous-systems.com/hardware.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nRF52840 DK&lt;/a&gt; is not practical because I will have limited use for these boards after completing training.  I was almost willing to get &lt;a href=&#34;https://docs.rust-embedded.org/discovery/microbit/02-requirements/index.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;micro:bit&lt;/a&gt; when I found out that Ferrous Systems and Espressif’s &lt;a href=&#34;https://www.espressif.com/en/news/ESP_RUST_training&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;announced&lt;/a&gt; &lt;em&gt;&lt;strong&gt;Rust Training on ESP32&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;esp-rust-board&#34;&gt;&#xA;  ESP Rust Board&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#esp-rust-board&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;It is officially called &lt;strong&gt;ESP32-C3-DevKit-RUST-1&lt;/strong&gt; if you want to search for it. The board is based on successful ESP32-C3-MINI-1 module and has 6DoF IMU (ICM-42670-P), a temperature and humidity sensor (SHTC3), a Li-Ion battery charger, and a Type-C USB in familiar Adafruit Feather format. It is pretty close to &lt;a href=&#34;https://www.adafruit.com/product/5303&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adafruit ESP32-S2 Feather with BME280 Sensor&lt;/a&gt; minus Stemma connector but with IMU sensor instead.&#xA;&lt;figure&gt;&lt;img src=&#34;https://raw.githubusercontent.com/esp-rs/esp-rust-board/master/assets/rust_board_v1.2_diagram.png&#34;&gt;&lt;figcaption&gt;&#xA;&#x9;&#x9;&#x9;&lt;h4&gt;ESP32-C3-DevKit-RUST-1&lt;/h4&gt;&#xA;&#x9;&#x9;&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

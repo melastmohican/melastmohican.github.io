@@ -1,60 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>code on melastmohican.github.io</title>
-    <link>https://melastmohican.github.io/tags/code/</link>
-    <description>Recent content in code on melastmohican.github.io</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2020 12:36:30 -0700</lastBuildDate><atom:link href="https://melastmohican.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Terraform Best Practice Guide for Developers</title>
-      <link>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</link>
-      <pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</guid>
-      <description>Terraform is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.</description>
-    </item>
-    
-    <item>
-      <title>Convert Kafka JKS certificate to PEM</title>
-      <link>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</link>
-      <pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</guid>
-      <description>Intro Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).
-Here are the commands to extract the Certificate Authority (CA) certificate:
-$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12 $ openssl pkcs12 -in server.p12 -nokeys -out ca_cert.pem You can then convert your client keystore to be usable from languages supporting .</description>
-    </item>
-    
-    <item>
-      <title>What new language should I learn as Java Developer</title>
-      <link>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</link>
-      <pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</guid>
-      <description>If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant.</description>
-    </item>
-    
-    <item>
-      <title>Maven Archetypes Project Templating</title>
-      <link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
-      <pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</guid>
-      <description>Intro I am developer and I like DRY. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use Spring Initializr to boostrap your new application or even better without leaving the shell Spring Boot CLI. You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files?</description>
-    </item>
-    
-    <item>
-      <title>Migrating existing AWS infrastructure to new acount</title>
-      <link>https://melastmohican.github.io/posts/aws-resource-migration/</link>
-      <pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
-      
-      <guid>https://melastmohican.github.io/posts/aws-resource-migration/</guid>
-      <description>Scenario We want to migrate hundreds of AWS resources to a new account. Up to now, all resources were created manually using AWS Console or CLI tool.
-CloudFormation CloudFormation is the inhouse cloud provisioning tool of AWS for declaratively describing your cloud resources.
-CloudFormation is a hard, complex, inconsistent and badly documented piece of software. A stack is an atomic collection of resources in CloudFormation. Its creation or update succeeds only and only if all the resources within the stack succeed.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Code on melastmohican.github.io</title>
+		<link>https://melastmohican.github.io/tags/code/</link>
+		<description>Recent content in Code on melastmohican.github.io</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 21 Mar 2020 12:36:30 -0700</lastBuildDate>
+		
+			<atom:link href="https://melastmohican.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Terraform Best Practice Guide for Developers</title>
+				<link>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</link>
+				<pubDate>Sat, 21 Mar 2020 12:36:30 -0700</pubDate>
+				<guid>https://melastmohican.github.io/posts/terraform_best_practice_guide_for_developers/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Terraform&lt;/a&gt; is an open-source infrastructure as code software tool created by HashiCorp. It enables users to define and provision infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL), or optionally JSON. Terraform is platform-agnostic; you can use it to manage bare metal servers or cloud servers like AWS, Google Cloud Platform, OpenStack, and Azure. Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open-source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Convert Kafka JKS certificate to PEM</title>
+				<link>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</link>
+				<pubDate>Sat, 14 Mar 2020 21:35:50 -0700</pubDate>
+				<guid>https://melastmohican.github.io/posts/convert_kafka_jks_certificate_to_pem/</guid>
+				<description>&lt;h2 id=&#34;intro&#34;&gt;&#xA;  Intro&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#intro&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Kafka supports encryption and authentication via SSL. However, the generated certificates are in Java KeyStore (JKS) format so if you need to use them in other language you need to convert them to X.509 format (.pem – Privacy-enhanced Electronic Mail).&lt;/p&gt;&#xA;&lt;p&gt;Here are the commands to extract the Certificate Authority (CA) certificate:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ keytool -importkeystore -srckeystore dev.client.truststore.jks -destkeystore server.p12 -deststoretype PKCS12&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ openssl pkcs12 -&lt;span style=&#34;font-weight:bold&#34;&gt;in&lt;/span&gt; server.p12 -nokeys -out ca_cert.pem&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can then convert your client keystore to be usable from languages supporting .pem, with similar commands:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>What new language should I learn as Java Developer</title>
+				<link>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</link>
+				<pubDate>Fri, 13 Mar 2020 05:38:17 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/as-java-developer-what-language-learn/</guid>
+				<description>&lt;p&gt;If you are a Java programmer and are thinking of learning some more programming languages to expand your knowledge and skills, but not sure which programming languages to choose, then you are not alone. Last year there were multiple talks in our organization about migrating away from Java because o potential problems with new Oracle licensing. It is still unclear how Oracle will be auditing for Java licensing and what it will mean should an organization not be compliant. We switched to a different OpenJDK vendor and we are using &lt;a href=&#34;https://aws.amazon.com/corretto/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Amazon Correto&lt;/a&gt; now. We also migrated all ouf our microservices from Java 8 to 11 for a different reason which I might mention later.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Maven Archetypes Project Templating</title>
+				<link>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</link>
+				<pubDate>Fri, 06 Mar 2020 09:50:53 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/maven-archetypes-project-templating/</guid>
+				<description>&lt;h2 id=&#34;intro&#34;&gt;&#xA;  Intro&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#intro&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I am developer and I like &lt;a href=&#34;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DRY&lt;/a&gt;. If there is any task you have to do more than once you should probably automate it. starting a new project, it can be tedious and time-consuming to start over and over again from scratch. You can use &lt;a href=&#34;https://start.spring.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Initializr&lt;/a&gt; to boostrap your new application or even better without leaving the shell &lt;a href=&#34;https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#cli-init&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Spring Boot CLI&lt;/a&gt;.  You will get nice clean project with the latest versions of dependencies but what if you need to use specific internal libraries or configuration files? Wouldn&amp;rsquo;t be nice to have project template and generate new one by answersing few simple questions? Project generation (scaffolding) was made popular by the Ruby on Rails framework and now we got many generators included in popular frameworks or standalone but if you are already using Maven as you your build tool don&amp;rsquo;t look any further.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Migrating existing AWS infrastructure to new acount</title>
+				<link>https://melastmohican.github.io/posts/aws-resource-migration/</link>
+				<pubDate>Thu, 05 Mar 2020 13:37:39 -0800</pubDate>
+				<guid>https://melastmohican.github.io/posts/aws-resource-migration/</guid>
+				<description>&lt;h1 id=&#34;scenario&#34;&gt;&#xA;  Scenario&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#scenario&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;We want to migrate hundreds of AWS resources to a new account. Up to now, all resources were created manually using AWS Console or CLI tool.&lt;/p&gt;&#xA;&lt;h2 id=&#34;cloudformation&#34;&gt;&#xA;  CloudFormation&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#cloudformation&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;CloudFormation is the inhouse cloud provisioning tool of AWS for declaratively describing your cloud resources.&lt;/p&gt;&#xA;&lt;p&gt;CloudFormation is a hard, complex, inconsistent and badly documented piece of software. A stack is an atomic collection of resources in CloudFormation. Its creation or update succeeds only and only if all the resources within the stack succeed. A failure within a stack update leads to a rollback back to the previous state.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
