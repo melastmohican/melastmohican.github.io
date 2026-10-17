@@ -10,9 +10,23 @@
 		
 		
 		
-			<lastBuildDate>Thu, 15 Oct 2026 07:40:00 -0700</lastBuildDate>
+			<lastBuildDate>Fri, 16 Oct 2026 22:20:00 -0700</lastBuildDate>
 		
 			<atom:link href="https://melastmohican.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Artificial Intelligence</title>
+				<link>https://melastmohican.github.io/categories/artificial-intelligence/</link>
+				<pubDate>Fri, 16 Oct 2026 22:20:00 -0700</pubDate>
+				<guid>https://melastmohican.github.io/categories/artificial-intelligence/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Stories</title>
+				<link>https://melastmohican.github.io/categories/stories/</link>
+				<pubDate>Fri, 16 Oct 2026 22:20:00 -0700</pubDate>
+				<guid>https://melastmohican.github.io/categories/stories/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Architecture</title>
 				<link>https://melastmohican.github.io/categories/architecture/</link>
@@ -25,13 +39,6 @@
 				<link>https://melastmohican.github.io/categories/software-engineering/</link>
 				<pubDate>Thu, 15 Oct 2026 07:40:00 -0700</pubDate>
 				<guid>https://melastmohican.github.io/categories/software-engineering/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Stories</title>
-				<link>https://melastmohican.github.io/categories/stories/</link>
-				<pubDate>Thu, 15 Oct 2026 07:40:00 -0700</pubDate>
-				<guid>https://melastmohican.github.io/categories/stories/</guid>
 				<description></description>
 			</item>
 			<item>

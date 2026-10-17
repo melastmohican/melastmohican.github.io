@@ -2,40 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://melastmohican.github.io/categories/architecture/</loc>
-    <lastmod>2026-10-15T07:40:00-07:00</lastmod>
+    <loc>https://melastmohican.github.io/tags/ai/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/anthropic/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/artificial-intelligence/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/categories/</loc>
-    <lastmod>2026-10-15T07:40:00-07:00</lastmod>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/cyberiad/</loc>
-    <lastmod>2026-10-15T07:40:00-07:00</lastmod>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/fable/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/posts/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/satire/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/stories/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/tags/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/posts/the-two-trillion-thaler-homunculus/</loc>
+    <lastmod>2026-10-16T22:20:00-07:00</lastmod>
+  </url><url>
+    <loc>https://melastmohican.github.io/categories/architecture/</loc>
     <lastmod>2026-10-15T07:40:00-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/git/</loc>
     <lastmod>2026-10-15T07:40:00-07:00</lastmod>
   </url><url>
-    <loc>https://melastmohican.github.io/</loc>
-    <lastmod>2026-10-15T07:40:00-07:00</lastmod>
-  </url><url>
     <loc>https://melastmohican.github.io/tags/monorepo/</loc>
-    <lastmod>2026-10-15T07:40:00-07:00</lastmod>
-  </url><url>
-    <loc>https://melastmohican.github.io/posts/</loc>
     <lastmod>2026-10-15T07:40:00-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/categories/software-engineering/</loc>
     <lastmod>2026-10-15T07:40:00-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/tags/software-engineering/</loc>
-    <lastmod>2026-10-15T07:40:00-07:00</lastmod>
-  </url><url>
-    <loc>https://melastmohican.github.io/categories/stories/</loc>
-    <lastmod>2026-10-15T07:40:00-07:00</lastmod>
-  </url><url>
-    <loc>https://melastmohican.github.io/tags/</loc>
     <lastmod>2026-10-15T07:40:00-07:00</lastmod>
   </url><url>
     <loc>https://melastmohican.github.io/posts/the-fable-of-king-anthropic/</loc>
